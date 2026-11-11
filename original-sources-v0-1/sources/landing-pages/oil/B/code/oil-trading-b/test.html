@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightweight Mini Charts 定制版</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            padding: 20px;
+        }
+
+        /* ===== 网格容器 ===== */
+        .lw-mini-charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ===== 迷你图表卡片（还原最新设计图） ===== */
+        .lw-mini-chart-card {
+            background: #f8f6f4;
+            border-radius: 12px;
+            padding: 18px 20px 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .lw-mini-chart-card .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+        .lw-mini-chart-card .left-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .lw-mini-chart-card .symbol-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: #111111;
+            letter-spacing: 0.3px;
+        }
+        .lw-mini-chart-card .change {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .lw-mini-chart-card .price {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.3px;
+        }
+
+        /* 涨跌颜色（跌为暗红 #9b2226，涨为绿 #319f75） */
+        .color-up { color: #319f75; }
+        .color-down { color: #9b2226; }
+
+        /* 图表区域与末端圆点定位 */
+        .lw-mini-chart-card .chart-wrap {
+            position: relative;
+            width: 100%;
+            height: 110px;
+        }
+        .lw-mini-chart-card .chart-area {
+            width: 100%;
+            height: 100%;
+        }
+        .lw-mini-chart-card .end-dot {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background: #319f75;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            display: none;
+            z-index: 3;
+        }
+
+        /* 隐藏 TradingView 左下角默认水印Logo（保持画面干净） */
+        .lw-mini-chart-card a[href*="tradingview"] {
+            display: none !important;
+        }
+
+        .loading {
+            padding: 35px 0;
+            color: #999999;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 挂载容器 -->
+    <div id="lw_mini_charts_container" class="lw-mini-charts-grid"></div>
+
+    <script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+    <script>
+        class LwMiniAreaCharts {
+            constructor(options) {
+                this.container = typeof options.container === 'string'
+                    ? document.querySelector(options.container)
+                    : options.container;
+                this.datafeedUrl = (options.datafeedUrl || 'https://trade.ebccrm.com/trading/view').replace(/\/$/, '');
+                this.token = options.token || '';
+                // 支持传入字符串数组 ['XTIUSD'] 或对象数组 [{ symbol: 'XTIUSD', title: 'WEST TEXAS OIL', decimals: 3 }]
+                this.items = (options.items || options.symbols || ['XAUUSD']).map(item =>
+                    typeof item === 'string' ? { symbol: item, title: item } : item
+                );
+                this.resolution = options.resolution || '1D';
+                this.refreshInterval = options.refreshInterval || 30000;
+                this.charts = {};
+                this.timer = null;
+                this.uid = 'lw_' + Math.random().toString(36).slice(2, 7);
+
+                if (this.container) {
+                    this.init();
+                }
+            }
+
+            init() {
+                this.update();
+                if (this.refreshInterval > 0) {
+                    this.timer = setInterval(() => this.update(), this.refreshInterval);
+                }
+            }
+
+            escapeHtml(str) {
+                var div = document.createElement('div');
+                div.textContent = str || '';
+                return div.innerHTML;
+            }
+
+            utcToYYYYMMDD(ts) {
+                var d = new Date(ts * 1000);
+                return d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0') + '-' + String(d.getUTCDate()).padStart(2, '0');
+            }
+
+            fetchLightweightChartData(symbol) {
+                var to = Math.floor(Date.now() / 1000) + 60;
+                var from = to - 86400 * 90;
+                var headers = { 'Content-Type': 'application/json' };
+                if (this.token) headers['token'] = this.token;
+                var url = this.datafeedUrl + '/history?symbol=' + encodeURIComponent(symbol) + '&resolution=' + this.resolution + '&from=' + from + '&to=' + to;
+
+                return fetch(url, { credentials: 'same-origin', headers: headers })
+                    .then(function(r) { return r.json(); })
+                    .then((data) => {
+                        if (data.s !== 'ok' || !data.c || !data.c.length) return { data: [], error: false };
+                        var useBusinessDay = this.resolution === '1D' || this.resolution === '1W';
+                        var bars = [];
+                        for (var i = 0; i < data.t.length; i++) {
+                            var t = data.t[i];
+                            bars.push({
+                                time: useBusinessDay ? this.utcToYYYYMMDD(t) : t,
+                                close: data.c[i],
+                                value: data.c[i]
+                            });
+                        }
+                        return { data: bars, error: false };
+                    })
+                    .catch(function() { return { data: [], error: true }; });
+            }
+
+            update() {
+                if (!this.datafeedUrl || !this.container) return;
+
+                Object.keys(this.charts).forEach((k) => {
+                    if (this.charts[k]) this.charts[k].remove();
+                });
+                this.charts = {};
+
+                if (!this.container.children.length) {
+                    this.container.innerHTML = '<div class="lw-mini-chart-card"><div class="loading">加载中…</div></div>';
+                }
+
+                Promise.all(this.items.map((item) => this.fetchLightweightChartData(item.symbol)))
+                    .then((results) => {
+                        var html = '';
+                        this.items.forEach((item, i) => {
+                            var priceId = `${this.uid}_price_${i}`;
+                            var changeId = `${this.uid}_change_${i}`;
+                            var chartId = `${this.uid}_chart_${i}`;
+                            var dotId = `${this.uid}_dot_${i}`;
+                            var displayTitle = item.title || item.symbol;
+
+                            html += '<div class="lw-mini-chart-card">' +
+                                '<div class="card-header">' +
+                                    '<div class="left-info">' +
+                                        '<div class="symbol-name">' + this.escapeHtml(displayTitle) + '</div>' +
+                                        '<div class="change" id="' + changeId + '">--</div>' +
+                                    '</div>' +
+                                    '<div class="price" id="' + priceId + '">--</div>' +
+                                '</div>' +
+                                '<div class="chart-wrap">' +
+                                    '<div class="chart-area" id="' + chartId + '"></div>' +
+                                    '<span class="end-dot" id="' + dotId + '"></span>' +
+                                '</div>' +
+                            '</div>';
+                        });
+                        this.container.innerHTML = html;
+
+                        results.forEach((r, i) => {
+                            var data = r.data;
+                            var item = this.items[i];
+                            var decimals = item.decimals != null ? item.decimals : 3;
+                            var priceEl = document.getElementById(`${this.uid}_price_${i}`);
+                            var changeEl = document.getElementById(`${this.uid}_change_${i}`);
+                            var chartId = `${this.uid}_chart_${i}`;
+                            var dotId = `${this.uid}_dot_${i}`;
+
+                            if (r.error || !data || !data.length) {
+                                if (priceEl) priceEl.textContent = '--';
+                                if (changeEl) changeEl.textContent = r.error ? '加载失败' : '无数据';
+                                return;
+                            }
+
+                            var lastBar = data[data.length - 1], firstBar = data[0];
+                            var lastPrice = lastBar.close;
+                            var diff = lastPrice - firstBar.close;
+                            var changePercent = firstBar.close !== 0 ? (diff / firstBar.close * 100) : 0;
+                            var up = diff >= 0;
+                            var colorCls = up ? 'color-up' : 'color-down';
+
+                            // 右上角价格与颜色
+                            if (priceEl) {
+                                priceEl.className = 'price ' + colorCls;
+                                priceEl.textContent = lastPrice.toFixed(decimals);
+                            }
+                            // 左上角副标题：-2.13% (2.20)
+                            if (changeEl) {
+                                changeEl.className = 'change ' + colorCls;
+                                var sign = up ? '+' : '';
+                                changeEl.textContent = sign + changePercent.toFixed(2) + '% (' + Math.abs(diff).toFixed(2) + ')';
+                            }
+
+                            requestAnimationFrame(() => {
+                                this.createAreaMiniChart(chartId, dotId, data);
+                            });
+                        });
+                    })
+                    .catch(() => {
+                        this.container.innerHTML = '<div class="lw-mini-chart-card"><div class="loading">加载失败</div></div>';
+                    });
+            }
+
+            createAreaMiniChart(containerId, dotId, data) {
+                var container = document.getElementById(containerId);
+                var dotEl = document.getElementById(dotId);
+                if (!container || typeof LightweightCharts === 'undefined') return;
+
+                var w = Math.max(container.offsetWidth || 0, 200), h = 110;
+                var chart = LightweightCharts.createChart(container, {
+                    width: w,
+                    height: h,
+                    autoSize: true,
+                    layout: {
+                        background: { type: 'solid', color: 'transparent' },
+                        textColor: 'transparent',
+                        attributionLogo: false
+                    },
+                    grid: {
+                        vertLines: { visible: false },
+                        horzLines: { visible: false }
+                    },
+                    rightPriceScale: {
+                        visible: false,
+                        borderVisible: false,
+                        scaleMargins: { top: 0.12, bottom: 0.08 }
+                    },
+                    leftPriceScale: {
+                        visible: false,
+                        borderVisible: false
+                    },
+                    timeScale: {
+                        visible: false,
+                        borderVisible: false,
+                        rightOffset: 1 // 留出右侧一点空间给末端小圆点
+                    },
+                    crosshair: {
+                        horzLine: { visible: false },
+                        vertLine: { visible: false }
+                    },
+                    handleScroll: false,
+                    handleScale: false
+                });
+
+                this.charts[containerId] = chart;
+
+                // 固定使用设计图同款青绿色渐变面积图
+                var series = chart.addAreaSeries({
+                    topColor: 'rgba(49, 159, 117, 0.25)',
+                    bottomColor: 'rgba(49, 159, 117, 0.0)',
+                    lineColor: '#319f75',
+                    lineWidth: 2,
+                    priceLineVisible: false,
+                    lastValueVisible: false,
+                    crosshairMarkerVisible: false
+                });
+
+                var seriesData = data.map(function(d) {
+                    return { time: d.time, value: d.close };
+                });
+                series.setData(seriesData);
+                chart.timeScale().fitContent();
+
+                // 计算并定位曲线末端实心小圆点
+                var updateEndDot = function() {
+                    if (!dotEl || !seriesData.length) return;
+                    var lastPoint = seriesData[seriesData.length - 1];
+                    var x = chart.timeScale().timeToCoordinate(lastPoint.time);
+                    var y = series.priceToCoordinate(lastPoint.value);
+                    if (x !== null && y !== null) {
+                        dotEl.style.left = x + 'px';
+                        dotEl.style.top = y + 'px';
+                        dotEl.style.display = 'block';
+                    }
+                };
+
+                setTimeout(updateEndDot, 50);
+                window.addEventListener('resize', updateEndDot);
+            }
+
+            destroy() {
+                if (this.timer) clearInterval(this.timer);
+                Object.keys(this.charts).forEach((k) => {
+                    if (this.charts[k]) this.charts[k].remove();
+                });
+                this.charts = {};
+            }
+        }
+
+        // ===== 调用示例：渲染 WTI 原油 与 布伦特原油 两个卡片 =====
+        window.addEventListener('DOMContentLoaded', function() {
+            new LwMiniAreaCharts({
+                container: '#lw_mini_charts_container',
+                datafeedUrl: 'https://trade.ebccrm.com/trading/view',
+                token: '__REDACTED_QUOTE_API_TOKEN__',
+                items: [
+                    {
+                        symbol: 'XAUUSD',          // 这里填真实接口品种代码（例如 XTIUSD 或 USOIL）
+                        title: 'WEST TEXAS OIL',   // 左上角展示的标题文字
+                        decimals: 3                // 右上角价格保留小数位数（图中 92.522 为 3 位）
+                    },
+                    {
+                        symbol: 'EURUSD',          // 这里填布伦特原油接口代码（例如 XBRUSD 或 UKOIL）
+                        title: 'BRENT CRUDE OIL',  // 左上角展示的标题文字
+                        decimals: 3
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

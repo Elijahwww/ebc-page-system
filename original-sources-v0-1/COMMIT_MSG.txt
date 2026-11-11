@@ -1,0 +1,12 @@
+assets: import original page sources v0.1
+
+- Add sources/ archive for 9 page versions: ETF A/B/C, Oil A/B,
+  Copy Trading A/B, website US stocks design (D) and usstocks code (X)
+- Each version keeps PC/MB designs, readable Vue/Vike source with all
+  locales, original URL note, and a manifest.md linked to its CASE ID
+- Hardcoded quote API token replaced with __REDACTED_QUOTE_API_TOKEN__
+  in oil A/B +Page.vue and test.html; .DS_Store files excluded
+- No analysis reports, PM assets, root rules or skills changed
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01XW7DCnX3zo2ZDSJHQk3hr1
