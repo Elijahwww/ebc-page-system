@@ -3,6 +3,12 @@
 > 状态：DESIGN_BASELINE_CANDIDATE；历史案例索引见 sources/INDEX.md 与 asset-review/cases/CASE-00x.md（原始资源 PR #3）。
 > 模块是候选信息职责，不是固定屏数或必选模块列表。优先按 PM Brief 选择。
 
+## 所有页面首先决定 Header 类型
+- 完整官网 Header：在适用市场按获批素材表现 EBC 主 Logo 与 FC Barcelona 合作标识；详见 [Header 与品牌标识规范](header-brand-and-partnership.md)。
+- 精简 LP Header：EBC 主 Logo 优先，FC Barcelona 合作标识是否展示按渠道、市场和授权判断，不预设全站强制。
+- 无 Header：用户指定无头无尾的设计任务或特殊嵌入式页面可省略，并在项目级 Design Override 说明。
+- 当前历史源码只提供 topMenuNoA 的调用，没有共享组件实现，不能用它推定正式 Header 的图形和尺寸。
+
 ## A. 官网品牌页（Corporate / About / Careers）
 目标：帮助访问者迅速理解公司是什么、能提供什么、有什么可核验的可信证据，以及下一步去哪里。
 - Apple-inspired：明亮背景、专业排版、宽松留白、真实团队/办公/产品影像、有限品牌红强调。
