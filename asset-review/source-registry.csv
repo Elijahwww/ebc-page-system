@@ -1,0 +1,166 @@
+﻿source_id,case_id,version,local_path(相对 D:\原始资产),file_type,role,size_bytes,mtime(UTC+8),read_status,sensitive,upload_to_github,recommendation,notes
+SRC-001,CASE-001,-,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/.DS_Store,DS_Store,macOS 元数据,6148,2026-07-01 14:15,SKIPPED,no,NO,忽略,同目录 locales/.DS_Store 亦存在，未单独登记
+SRC-002,CASE-001,-,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/.DS_Store,DS_Store,macOS 元数据,6148,2026-07-01 14:15,SKIPPED,no,NO,忽略,同目录 locales/.DS_Store 亦存在，未单独登记
+SRC-003,CASE-001,-,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/.DS_Store,DS_Store,macOS 元数据,6148,2026-07-01 14:15,SKIPPED,no,NO,忽略,同目录 locales/.DS_Store 亦存在，未单独登记
+SRC-004,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/其他信息.txt,txt,页面URL说明,66,2026-11-11 16:47,READ_FULL,no,CANDIDATE,URL 已写入案例报告,
+SRC-005,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/设计图/PC端设计图.png,png,设计稿 1412x4289,3948016,2026-11-11 16:42,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-006,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/设计图/移动端设计图.png,png,设计稿 736x8203,4279027,2026-11-11 16:43,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-007,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/+Page.vue,vue,前端源码,68264,2026-11-09 11:11,READ_FULL,no,NO,核心页面代码；仅在仓库保存结构化分析，不上传源码,mtime 2026-11-09 11:11 为批量复制时间，不代表版本
+SRC-008,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/+config.ts,ts,前端源码,79,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-009,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/+onBeforePrerenderStart.ts,ts,前端源码,868,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-010,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/+onBeforeRender.ts,ts,前端源码,1309,2026-07-01 18:01,READ_FULL,no,NO,框架配置；无需上传,
+SRC-011,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/+route.ts,ts,前端源码,426,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-012,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/en/index.ts,ts,i18n 文案,2396,2026-07-14 18:08,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-013,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/es/index.ts,ts,i18n 文案,2638,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-014,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/id/index.ts,ts,i18n 文案,2720,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-015,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/ja/index.ts,ts,i18n 文案,2667,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-016,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/ko/index.ts,ts,i18n 文案,2765,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-017,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/pt/index.ts,ts,i18n 文案,2746,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-018,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/th/index.ts,ts,i18n 文案,4571,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-019,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/vi/index.ts,ts,i18n 文案,3000,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-020,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/zh_CN/index.ts,ts,i18n 文案（中文主参考）,2017,2026-07-14 18:08,READ_FULL,no,CANDIDATE,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-021,CASE-001,A,推广页/ETF 推广页/A版本（针对小白投资者）/页面代码/etf-a/locales/zh_TW/index.ts,ts,i18n 文案,2108,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-022,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/其他信息.txt,txt,页面URL说明,74,2026-11-11 16:51,READ_FULL,no,CANDIDATE,URL 已写入案例报告,
+SRC-023,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/设计图/PC端设计图.png,png,设计稿 1920x5350,5454323,2026-11-11 16:55,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-024,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/设计图/移动端设计图.png,png,设计稿 750x8296,3985843,2026-11-11 16:55,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-025,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/+Page.vue,vue,前端源码,61798,2026-09-18 16:06,READ_FULL,no,NO,核心页面代码；仅在仓库保存结构化分析，不上传源码,
+SRC-026,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/+onBeforePrerenderStart.ts,ts,前端源码,895,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-027,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/+onBeforeRender.ts,ts,前端源码,1336,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-028,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/+route.ts,ts,前端源码,453,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-029,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/en/index.ts,ts,i18n 文案,2532,2026-07-14 18:08,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-030,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/es/index.ts,ts,i18n 文案,2813,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-031,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/id/index.ts,ts,i18n 文案,2795,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-032,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/ja/index.ts,ts,i18n 文案,2824,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-033,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/ko/index.ts,ts,i18n 文案,2929,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-034,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/pt/index.ts,ts,i18n 文案,2920,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-035,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/th/index.ts,ts,i18n 文案,4901,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-036,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/vi/index.ts,ts,i18n 文案,3188,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-037,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/zh_CN/index.ts,ts,i18n 文案（中文主参考）,2144,2026-07-14 18:08,READ_FULL,no,CANDIDATE,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,部分 key 与模板硬编码文案不一致
+SRC-038,CASE-001,B,推广页/ETF 推广页/B版本（针对中国大陆购买ETF用户）/页面代码/etf-b/locales/zh_TW/index.ts,ts,i18n 文案,2232,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由仅启用 zh，此文件未使用
+SRC-039,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/其他信息.txt,txt,页面URL说明,74,2026-11-11 16:56,READ_FULL,no,CANDIDATE,URL 已写入案例报告,
+SRC-040,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/设计图/PC端设计图.png,png,设计稿 1920x5838,5567935,2026-11-11 16:53,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-041,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/设计图/移动端设计图.png,png,设计稿 750x9159,3996786,2026-11-11 16:54,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-042,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/+Page.vue,vue,前端源码,69114,2026-11-09 11:11,READ_FULL,no,NO,核心页面代码；仅在仓库保存结构化分析，不上传源码,mtime 2026-11-09 11:11 为批量复制时间，不代表版本
+SRC-043,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/+config.ts,ts,前端源码,79,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-044,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/+onBeforePrerenderStart.ts,ts,前端源码,868,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-045,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/+onBeforeRender.ts,ts,前端源码,1309,2026-07-01 18:01,READ_FULL,no,NO,框架配置；无需上传,
+SRC-046,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/+route.ts,ts,前端源码,426,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-047,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/en/index.ts,ts,i18n 文案,2445,2026-07-14 18:08,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-048,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/es/index.ts,ts,i18n 文案,2785,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-049,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/id/index.ts,ts,i18n 文案,2659,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-050,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/ja/index.ts,ts,i18n 文案,2879,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-051,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/ko/index.ts,ts,i18n 文案,2810,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-052,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/pt/index.ts,ts,i18n 文案,2866,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-053,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/th/index.ts,ts,i18n 文案,4522,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-054,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/vi/index.ts,ts,i18n 文案,3170,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-055,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/zh_CN/index.ts,ts,i18n 文案（中文主参考）,2117,2026-07-14 18:08,READ_FULL,no,CANDIDATE,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-056,CASE-001,C,推广页/ETF 推广页/C版本（平台现有存量客户）/页面代码/etf-c/locales/zh_TW/index.ts,ts,i18n 文案,2180,2026-07-14 18:08,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-057,CASE-002,-,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/.DS_Store,DS_Store,macOS 元数据,6148,2026-07-01 14:15,SKIPPED,no,NO,忽略,同目录 locales/.DS_Store 亦存在，未单独登记
+SRC-058,CASE-002,-,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/.DS_Store,DS_Store,macOS 元数据,6148,2026-07-01 14:15,SKIPPED,no,NO,忽略,同目录 locales/.DS_Store 亦存在，未单独登记
+SRC-059,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/其他信息.txt,txt,页面URL说明,82,2026-11-11 16:11,READ_FULL,no,CANDIDATE,URL 已写入案例报告,
+SRC-060,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/设计图/PC端设计图.png,png,设计稿 1332x2913,2896218,2026-11-11 16:09,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-061,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/设计图/移动端设计图.png,png,设计稿 575x5895,2804543,2026-11-11 16:10,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-062,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/+Page.vue,vue,前端源码,36844,2026-11-09 11:11,READ_FULL,YES: 硬编码 API token,NO,核心页面代码；仅在仓库保存结构化分析，不上传源码；建议轮换/限制该 token 权限,mtime 2026-11-09 11:11 为批量复制时间，不代表版本
+SRC-063,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/+config.ts,ts,前端源码,79,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-064,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/+onBeforePrerenderStart.ts,ts,前端源码,873,2026-10-09 14:12,READ_FULL,no,NO,框架配置；无需上传,
+SRC-065,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/+onBeforeRender.ts,ts,前端源码,851,2026-09-23 15:10,READ_FULL,no,NO,框架配置；无需上传,
+SRC-066,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/+route.ts,ts,前端源码,431,2026-10-12 14:13,READ_FULL,no,NO,框架配置；无需上传,
+SRC-067,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/en/index.ts,ts,i18n 文案,4041,2026-10-13 17:12,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-068,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/es/index.ts,ts,i18n 文案,4795,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-069,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/id/index.ts,ts,i18n 文案,4236,2026-10-12 10:13,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-070,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/ja/index.ts,ts,i18n 文案,4451,2026-10-14 16:15,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-071,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/ko/index.ts,ts,i18n 文案,4077,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-072,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/mn/index.ts,ts,i18n 文案,7168,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-073,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/pt/index.ts,ts,i18n 文案,4658,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-074,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/th/index.ts,ts,i18n 文案,8534,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-075,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/vi/index.ts,ts,i18n 文案,4882,2026-10-12 10:41,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-076,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/zh_CN/index.ts,ts,i18n 文案（中文主参考）,3492,2026-10-14 10:09,READ_FULL,no,CANDIDATE,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-077,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/locales/zh_TW/index.ts,ts,i18n 文案,3520,2026-10-14 10:11,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-078,CASE-002,A,推广页/原油推广页/A版本（针对小白投资者）/页面代码/oil-trading-a/test.html,html,前端源码,15924,2026-10-08 16:01,READ_FULL,YES: 硬编码 API token,NO,行情卡原型草稿（A/B 两份相同）；含 token，禁止上传；建议轮换/限制该 token 权限,
+SRC-079,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/其他信息.txt,txt,页面URL说明,82,2026-11-11 16:17,READ_FULL,no,CANDIDATE,URL 已写入案例报告,
+SRC-080,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/设计图/PC端设计图.png,png,设计稿 1524x3775,3630633,2026-11-11 16:15,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-081,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/设计图/移动端设计图.png,png,设计稿 710x7597,3709315,2026-11-11 16:17,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-082,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/+Page.vue,vue,前端源码,42116,2026-11-09 11:11,READ_FULL,YES: 硬编码 API token,NO,核心页面代码；仅在仓库保存结构化分析，不上传源码；建议轮换/限制该 token 权限,mtime 2026-11-09 11:11 为批量复制时间，不代表版本
+SRC-083,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/+config.ts,ts,前端源码,79,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-084,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/+onBeforePrerenderStart.ts,ts,前端源码,873,2026-10-09 14:13,READ_FULL,no,NO,框架配置；无需上传,
+SRC-085,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/+onBeforeRender.ts,ts,前端源码,851,2026-09-23 15:10,READ_FULL,no,NO,框架配置；无需上传,
+SRC-086,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/+route.ts,ts,前端源码,431,2026-10-09 14:13,READ_FULL,no,NO,框架配置；无需上传,
+SRC-087,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/en/index.ts,ts,i18n 文案,4030,2026-10-13 17:12,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-088,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/es/index.ts,ts,i18n 文案,4750,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-089,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/id/index.ts,ts,i18n 文案,4109,2026-10-13 17:34,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-090,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/ja/index.ts,ts,i18n 文案,4385,2026-10-12 10:46,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-091,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/ko/index.ts,ts,i18n 文案,4154,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-092,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/mn/index.ts,ts,i18n 文案,6841,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-093,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/pt/index.ts,ts,i18n 文案,4587,2026-10-12 10:46,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-094,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/th/index.ts,ts,i18n 文案,8237,2026-10-13 17:12,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-095,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/vi/index.ts,ts,i18n 文案,4912,2026-10-12 10:46,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-096,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/zh_CN/index.ts,ts,i18n 文案（中文主参考）,3436,2026-10-12 10:46,READ_FULL,no,CANDIDATE,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-097,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/locales/zh_TW/index.ts,ts,i18n 文案,3459,2026-10-14 10:07,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-098,CASE-002,B,推广页/原油推广页/B版本（针对专业投资者）/页面代码/oil-trading-b/test.html,html,前端源码,15924,2026-10-08 16:01,READ_FULL,YES: 硬编码 API token,NO,行情卡原型草稿（A/B 两份相同）；含 token，禁止上传；建议轮换/限制该 token 权限,
+SRC-099,CASE-003,-,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/.DS_Store,DS_Store,macOS 元数据,6148,2026-07-01 14:15,SKIPPED,no,NO,忽略,同目录 locales/.DS_Store 亦存在，未单独登记
+SRC-100,CASE-003,-,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/.DS_Store,DS_Store,macOS 元数据,6148,2026-07-01 14:15,SKIPPED,no,NO,忽略,同目录 locales/.DS_Store 亦存在，未单独登记
+SRC-101,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/其他信息.txt,txt,页面URL说明,83,2026-11-11 16:25,READ_FULL,no,CANDIDATE,URL 已写入案例报告,
+SRC-102,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/设计图/PC端设计图.png,png,设计稿 1499x2680,2219485,2026-11-11 16:27,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-103,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/设计图/移动端设计图.png,png,设计稿 1126x9561,6372801,2026-11-11 16:29,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-104,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/+Page.vue,vue,前端源码,27936,2026-11-09 11:11,READ_FULL,no,NO,核心页面代码；仅在仓库保存结构化分析，不上传源码,mtime 2026-11-09 11:11 为批量复制时间，不代表版本
+SRC-105,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/+config.ts,ts,前端源码,79,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-106,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/+onBeforePrerenderStart.ts,ts,前端源码,874,2026-09-23 14:57,READ_FULL,no,NO,框架配置；无需上传,
+SRC-107,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/+onBeforeRender.ts,ts,前端源码,851,2026-09-23 15:10,READ_FULL,no,NO,框架配置；无需上传,
+SRC-108,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/+route.ts,ts,前端源码,432,2026-09-23 14:56,READ_FULL,no,NO,框架配置；无需上传,
+SRC-109,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/en/index.ts,ts,i18n 文案,2928,2026-10-15 11:53,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-110,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/es/index.ts,ts,i18n 文案,3428,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-111,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/id/index.ts,ts,i18n 文案,2954,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-112,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/ja/index.ts,ts,i18n 文案,3426,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-113,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/ko/index.ts,ts,i18n 文案,3017,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-114,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/mn/index.ts,ts,i18n 文案,5480,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-115,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/pt/index.ts,ts,i18n 文案,3342,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-116,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/th/index.ts,ts,i18n 文案,6994,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-117,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/vi/index.ts,ts,i18n 文案,3665,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-118,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/zh_CN/index.ts,ts,i18n 文案（中文主参考）,2375,2026-10-15 11:53,READ_FULL,no,CANDIDATE,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-119,CASE-003,A,推广页/跟单推广页/A版本（针对小白投资者）/页面代码/copy-trading-a/locales/zh_TW/index.ts,ts,i18n 文案,2355,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-120,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/其他信息.txt,txt,页面URL说明,83,2026-11-11 16:32,READ_FULL,no,CANDIDATE,URL 已写入案例报告,
+SRC-121,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/设计图/PC端设计图.png,png,设计稿 1403x2551,2164347,2026-11-11 16:31,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-122,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/设计图/移动端设计图.png,png,设计稿 694x6291,2921945,2026-11-11 16:32,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-123,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/+Page.vue,vue,前端源码,26139,2026-11-09 11:11,READ_FULL,no,NO,核心页面代码；仅在仓库保存结构化分析，不上传源码,mtime 2026-11-09 11:11 为批量复制时间，不代表版本
+SRC-124,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/+config.ts,ts,前端源码,79,2026-07-01 14:15,READ_FULL,no,NO,框架配置；无需上传,
+SRC-125,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/+onBeforePrerenderStart.ts,ts,前端源码,874,2026-09-23 17:03,READ_FULL,no,NO,框架配置；无需上传,
+SRC-126,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/+onBeforeRender.ts,ts,前端源码,851,2026-09-23 15:10,READ_FULL,no,NO,框架配置；无需上传,
+SRC-127,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/+route.ts,ts,前端源码,432,2026-09-23 17:03,READ_FULL,no,NO,框架配置；无需上传,
+SRC-128,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/en/index.ts,ts,i18n 文案,2397,2026-10-15 11:53,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-129,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/es/index.ts,ts,i18n 文案,2774,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-130,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/id/index.ts,ts,i18n 文案,2612,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-131,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/ja/index.ts,ts,i18n 文案,2799,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-132,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/ko/index.ts,ts,i18n 文案,2392,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-133,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/mn/index.ts,ts,i18n 文案,4343,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-134,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/pt/index.ts,ts,i18n 文案,2721,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-135,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/th/index.ts,ts,i18n 文案,5851,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-136,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/vi/index.ts,ts,i18n 文案,3144,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-137,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/zh_CN/index.ts,ts,i18n 文案（中文主参考）,1988,2026-10-15 11:53,READ_FULL,no,CANDIDATE,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-138,CASE-003,B,推广页/跟单推广页/B版本（针对专业投资者）/页面代码/copy-trading-b/locales/zh_TW/index.ts,ts,i18n 文案,1975,2026-10-15 11:53,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-139,CASE-004,-,官网页面/美股产品介绍页/页面代码/usstocks/.DS_Store,DS_Store,macOS 元数据,6148,2025-12-17 11:27,SKIPPED,no,NO,忽略,同目录 locales/.DS_Store 亦存在，未单独登记
+SRC-140,CASE-004,D,官网页面/美股产品介绍页/设计图/PC端设计图.png,png,官网设计稿 1920x6434,2901578,2026-11-11 17:00,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-141,CASE-004,D,官网页面/美股产品介绍页/设计图/移动端设计图.png,png,官网设计稿 375x6015,873043,2026-11-11 17:01,READ_FULL(切片目检),no,NO,大型二进制，暂不上传；如需在仓库引用，导出 ≤1600px 宽 JPG 缩略图后再评估授权,设计图早于代码版本，见案例报告
+SRC-142,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/+Page.vue,vue,前端源码,26901,2026-11-09 11:11,READ_FULL,no,NO,核心页面代码；仅在仓库保存结构化分析，不上传源码,mtime 2026-11-09 11:11 为批量复制时间，不代表版本
+SRC-143,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/+config.ts,ts,前端源码,79,2026-05-19 09:16,READ_FULL,no,NO,框架配置；无需上传,
+SRC-144,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/+onBeforePrerenderStart.ts,ts,前端源码,790,2025-12-17 11:27,READ_FULL,no,NO,框架配置；无需上传,
+SRC-145,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/+onBeforeRender.ts,ts,前端源码,778,2025-12-17 11:27,READ_FULL,no,NO,框架配置；无需上传,
+SRC-146,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/+route.ts,ts,前端源码,423,2025-12-17 11:27,READ_FULL,no,NO,框架配置；无需上传,
+SRC-147,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/en/index.ts,ts,i18n 文案,7858,2025-12-17 11:27,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,遗留 Affiliate 页文案，路由未启用
+SRC-148,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/es/index.ts,ts,i18n 文案,1978,2026-01-13 18:05,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-149,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/id/index.ts,ts,i18n 文案,7815,2025-12-17 11:27,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由未启用（onBeforeRender 仅 zh/es/pt），内容未读
+SRC-150,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/ja/index.ts,ts,i18n 文案,9445,2025-12-17 11:27,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由未启用（onBeforeRender 仅 zh/es/pt），内容未读
+SRC-151,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/ko/index.ts,ts,i18n 文案,8846,2025-12-17 11:27,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由未启用（onBeforeRender 仅 zh/es/pt），内容未读
+SRC-152,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/pt/index.ts,ts,i18n 文案,1875,2025-12-17 11:27,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-153,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/th/index.ts,ts,i18n 文案,15003,2025-12-17 11:27,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由未启用（onBeforeRender 仅 zh/es/pt），内容未读
+SRC-154,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/vi/index.ts,ts,i18n 文案,9642,2025-12-17 11:27,LISTED_ONLY,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,路由未启用（onBeforeRender 仅 zh/es/pt），内容未读
+SRC-155,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/zh_CN/index.ts,ts,i18n 文案（中文主参考）,1677,2025-12-17 11:27,READ_FULL,no,CANDIDATE,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,
+SRC-156,CASE-004,X,官网页面/美股产品介绍页/页面代码/usstocks/locales/zh_TW/index.ts,ts,i18n 文案,6898,2025-12-17 11:27,READ_FULL,no,NO,中文文案已逐字摘入案例报告；多语言文件留待 Localization 阶段处理,遗留 Affiliate 页文案，路由未启用
+SRC-157,CASE-004,X(code)/D(design),官网页面/美股产品介绍页/其他信息.txt,txt,页面URL说明,88,2026-11-11 17:01,READ_FULL,no,CANDIDATE,URL 已写入案例报告,
+EXT-001,CASE-001-A,A,https://ebcglobalmarketing.org/etf-a/zh,url,线上页面,,2026-11-11,WEBFETCH_TEXT,no,CANDIDATE,文本与代码一致,仅文本
+EXT-002,CASE-001-B,B,https://ebcglobalmarketing.org/etf-b/zh,url,线上页面,,2026-11-11,WEBFETCH_TEXT,no,CANDIDATE,文本与代码一致,
+EXT-003,CASE-001-C,C,https://ebcglobalmarketing.org/etf-c/zh,url,线上页面,,2026-11-11,WEBFETCH_TEXT,no,CANDIDATE,文本与代码一致,Hero 图片需人工核对
+EXT-004,CASE-002-A,A,https://ebcglobalmarketing.org/oil-trading-a/zh,url,线上页面,,2026-11-11,WEBFETCH_TEXT,no,CANDIDATE,文本与代码一致,
+EXT-005,CASE-002-B,B,https://ebcglobalmarketing.org/oil-trading-b/zh,url,线上页面,,2026-11-11,WEBFETCH_TEXT,no,CANDIDATE,文本与代码一致,
+EXT-006,CASE-003-A,A,https://ebcglobalmarketing.org/copy-trading-a/zh,url,线上页面,,2026-11-11,WEBFETCH_TEXT,no,CANDIDATE,文本与代码一致,信号卡未在静态 HTML 中出现
+EXT-007,CASE-003-B,B,https://ebcglobalmarketing.org/copy-trading-b/zh,url,线上页面,,2026-11-11,WEBFETCH_TEXT,no,CANDIDATE,文本与代码一致,countTo 静态值为 0
+EXT-008,CASE-004,D,https://www.ebc.com/zh-cn/trading-product/share-cfds/,url,官网线上页面,,2026-11-11,FAILED(client_error/网络策略拒绝),no,CANDIDATE,需在可访问环境核查,
