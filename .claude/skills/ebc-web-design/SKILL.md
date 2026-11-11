@@ -10,8 +10,9 @@ description: Plan, design and QA EBC corporate/product/advertising web pages wit
 2. design/foundations/web-design-system.md
 3. design/foundations/tokens.css
 4. design/patterns/page-types.md
-5. design/qa/design-review-checklist.md
-6. design/research/provenance-and-decisions.md
+5. design/patterns/header-brand-and-partnership.md
+6. design/qa/design-review-checklist.md
+7. design/research/provenance-and-decisions.md
 
 ## Read task inputs first
 - PM Brief / user request, page type (corporate, product, performance LP, campaign)
@@ -26,7 +27,7 @@ When needed, consult sources/INDEX.md, the relevant version manifest and asset-r
 1. Summarize the page's one main job and each section's one distinct user question. Do not invent copy, product status, facts, permissions or returns.
 2. Select a page-type pattern and write Design Override: what defaults apply, what changes, and why.
 3. Use Apple-inspired principles (hierarchy, whitespace, precision, restrained motion) and EBC proposed tokens. **Never claim token numbers are Apple's official webpage specifications.**
-4. Make desktop and mobile layouts together. Define H1/body/CTA, media crops, stacking, spacing, responsive behavior, forms, FAQ, states and transitions.
+4. Specify Header mode (full EBC site header / simplified LP header / no header), and on applicable official site pages include the left EBC + FC Barcelona approved partnership lockup. Use approved brand assets only; mark ASSET_REQUIRED when missing. Make desktop and mobile layouts together. Define H1/body/CTA, media crops, stacking, spacing, responsive behavior, forms, FAQ, states and transitions.
 5. For functional UI, explicitly document click destinations, input validation, disabled/loading/error/focus states and keyboard navigation. Real APIs only if provided and authorized; otherwise mark Demo.
 6. Prefer semantic accessible HTML, responsive CSS Grid/Flex + clamp; do not force historic 1920/750 vw-rem, 996 breakpoint, 3D Hero, H1 two lines or fixed screen counts.
 7. Check text contrast, risk notices, 44px recommended target size, 200% zoom, long translated strings, reduced motion, responsive imagery and legal information legibility.
