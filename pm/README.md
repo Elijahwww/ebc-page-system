@@ -36,3 +36,11 @@ Claude Code 可调用根目录下的 [PM Skill](../.claude/skills/pm-page-strate
 
 ## 不在当前范围
 不把缺少来源的过往对话、行业传闻或竞品文案当作 EBC 已批准事实；不生成生产可发布文案；不替代法务/合规确认；不包含客户个人信息和凭证。
+
+## v0.2 · 内部资料驱动的工作流扩展（待批准）
+- [页面项目全流程](workflows/pm-page-delivery.md)：EXPLORE / DELIVER 两种执行模式、G1–G6 阶段交付。
+- [分阶段验收清单](checklists/pm-stage-gates.md)：YES / NO / N-A / TO_CONFIRM、阻断级别、证据与 Owner。
+- [LP 路由与归因参考](references/lp-routing-and-attribution.md)：语言路由、BID/linkCode、注册和 CRM 数据，均要求项目级重新确认。
+- [转化问题诊断](methods/conversion-diagnosis.md)：从流量与受众到页面再到 CRM/后端，ETF 仅作历史观察。
+
+来源为用户于 2026-11-11 提供的《产品部项目checklist.pdf》和《MAR-Landing Page Knowledge Base-111126-094756.pdf》及流程图片；这些是供人审核的**历史操作资料**，不是当前所有市场和页面已批准的强制标准。法务/广告合规、实际接口和责任人的现行状态必须重新确认。
