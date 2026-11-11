@@ -25,6 +25,11 @@
 - 禁止通过全站 vw-rem 等比缩放导致超宽屏字体过大或低分辨率字体过小；推荐 fluid clamp 与现代栅格布局。
 - 页面应允许 200% 缩放、语言扩展而不遮挡关键功能。
 
+## 2A. Header 品牌区（EBC_PROPOSED_TOKEN）
+- 完整官网 Header 的导航左侧需评估 EBC Logo 与 FC Barcelona 官方合作标识的联合呈现；不得把合作标识强制套用到所有市场 LP。
+- 提案：Desktop Header 72px（紧凑 64px），Mobile 56–64px；Logo 可视高度及安全留白按正式批准的品牌物料调整。
+- 具体 Logo 组合、点击行为、素材授权、折叠布局及 QA 见 [Header 与品牌标识规范](../patterns/header-brand-and-partnership.md)。
+
 ## 3. Typography（EBC_PROPOSED_TOKEN）
 | 角色 | Desktop 推荐 | Mobile 推荐 | 行高 | 字重 |
 |---|---|---|---|---|
