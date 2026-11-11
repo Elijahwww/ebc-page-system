@@ -9,8 +9,9 @@
 1. [基础规范与详细参数](foundations/web-design-system.md)：布局、字体、色彩、留白、组件状态、运动、响应式、图像、可访问性。
 2. [CSS Design Tokens](foundations/tokens.css)：可复制的参考 token；为推荐初始值，不等于公司批准的品牌规范。
 3. [页面类型与场景变体](patterns/page-types.md)：官网、产品页、SEM/社媒 LP、活动页采用不同的信息结构。
-4. [设计走查](qa/design-review-checklist.md)：设计阶段与实现验收。
-5. [证据与决策边界](research/provenance-and-decisions.md)：Apple 官方原则、WCAG Web 标准、EBC 历史案例观察及未核实项。
+4. [导航与品牌标识](patterns/header-brand-and-partnership.md)：EBC 左侧品牌区、巴萨官方合作标识、Desktop/Mobile 导航及素材授权边界。
+5. [设计走查](qa/design-review-checklist.md)：设计阶段与实现验收。
+6. [证据与决策边界](research/provenance-and-decisions.md)：Apple 官方原则、WCAG Web 标准、EBC 历史案例观察及未核实项。
 
 ## 设计立场
 - **Apple-inspired, EBC-owned**：学习清晰、层级、排版、留白和克制的动效；不复制 Apple 商标、图片、网站代码、受限制字体或独特网页装饰。
