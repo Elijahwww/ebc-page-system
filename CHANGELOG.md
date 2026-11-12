@@ -1,5 +1,12 @@
 # EBC Page System · 版本与关键变化
 
+## v0.2.0 · 2026-11-12 · 可检验的视觉设计方向与 AI Coding 反模板循环
+- 提取用户历史 Figma Make Pre-IPO SKILL 的「精确层级/版心/间距/组件与桌面手机并审」机制，明确产品事实、固定 5600px/900px 等不是全站规则。
+- 研究 Anthropic frontend-design、Impeccable、UI UX Pro Max、Vercel Web Guidelines、shadcn、React Bits、21st.dev，以及可核查的 X 实践讨论；热度仅为研究线索，不作为有效性证明。
+- 新增 `design/methods/visual-direction-and-iteration.md`、`design/qa/visual-quality-scorecard.md`、`design/tests/visual-quality-regression.md`；更新现有 EBC Design Skill、Design System、QA 与跨模型入口。
+- 强制区分 **审美方向 / Visual Critique** 与 **功能/工程 QA**，真实截图修订优先；详见 [ITER-20261112-004](iterations/2026-11-12-visual-quality-v0-2.md)。
+- 初始文档和文件引用已验证；真实多模型运行测试及用户对具体页面的视觉认可仍为 `NOT_RUN`。
+
 ## v0.1.2 · 2026-11-12 · 跨 AI Agent 上下文交接和确认稿保护
 - 新增 `agents/cross-agent-handoff.md`、`projects/HANDOFF-TEMPLATE.md` 和五组行为回归测试，统一 GPT / Claude Desktop / Gemini / Grok 的任务交接、文件版本、锁定文案与反馈回流。
 - 主要入口 `AGENTS.md`、`PILOT.md`、`README.md`、`projects/README.md`、`CLAUDE.md`、`GEMINI.md` 只引用统一协议，不各自另造相互冲突的规则。
