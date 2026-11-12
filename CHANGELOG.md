@@ -1,5 +1,10 @@
 # EBC Page System · 版本与关键变化
 
+## v0.1.2 · 2026-11-12 · 跨 AI Agent 上下文交接和确认稿保护
+- 新增 `agents/cross-agent-handoff.md`、`projects/HANDOFF-TEMPLATE.md` 和五组行为回归测试，统一 GPT / Claude Desktop / Gemini / Grok 的任务交接、文件版本、锁定文案与反馈回流。
+- 主要入口 `AGENTS.md`、`PILOT.md`、`README.md`、`projects/README.md`、`CLAUDE.md`、`GEMINI.md` 只引用统一协议，不各自另造相互冲突的规则。
+- 详情见 [ITER-20261112-003](iterations/2026-11-12-cross-agent-handoff.md)；模型端真实交接行为尚未执行测试。
+
 ## v0.1.1 · 2026-11-12 · 中文主稿优先和地区化策略解耦
 
 - 根据用户明确确认的工作流，普通项目先用中文完成 D/R/U/C/S 和中文 Copy Sheet 审查，翻译作为后续独立本地化任务，禁止直接逐字转换。

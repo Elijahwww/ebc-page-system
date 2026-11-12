@@ -67,6 +67,11 @@ D 需求 → R 研究 → U 用户决策心理和多路径模拟 → C 文案 �
 第一期不做冗长合规审批，但应确保 EBC、监管/实体、产品性质、交易状态、费率/数字/收益等事实不被写错或误导；必要风险披露仍需清楚保留。
 `Demo` ≠ `Ready for Production`。正式上线还需按当前公司实际要求完成审批、注册/数据流/语言/归因与 QA。
 
+## 5A. 不同 AI / Agent 的交接与单一事实来源
+任何跨 GPT、Claude Desktop、Gemini、Grok、Cursor 的任务切换，统一执行 [跨 Agent 交接协议](agents/cross-agent-handoff.md)，使用 `projects/<slug>/handoff.md`（[模板](projects/HANDOFF-TEMPLATE.md)）记录**当前任务、Git commit/版本、已确认中文文案、允许改动范围、必读文件、验收条件和回流位置**。
+项目的 `brief.md`、`pm-decision.md`、`copy-sheet.md` 是当前协作的事实/决定来源；`runs/<agent>-<date>/` 是独立建议区，不能自动覆盖锁定稿。接收方要验证版本和权限，遇到旧快照标 `STALE_HANDOFF`；无法访问仓库不能假装已经读取。不同 AI 没有天然的自动对话同步，必须通过真实共享文件/连接器/用户交接完成。
+**中文文案确认后应冻结该版本的语义与 Copy ID；设计/开发发现逻辑问题时返回 PM/Copy，不私自改稿。**
+
 ## 6. 真实项目与多模型对比必须保留可验证的证据
 先阅读 [真实项目执行指南](PILOT.md)。需要跨模型比较时再使用 [评估表](pilot/EVALUATION.md)。
 同一任务使用相同用户 Brief、已知资料、仓库分支和目标页状态；记录 Agent/模型、能否浏览器截图、是否读取正确资料、PM 循环/反证是否真的改变版本、Copy/Design/代码结果。

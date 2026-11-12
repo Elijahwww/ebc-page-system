@@ -4,4 +4,6 @@
 
 `.claude/skills/*.md` 虽是 Claude 的文件路径，但其内容为跨模型可复用的业务执行方法，Gemini 可以作为普通 Markdown 读取，不需要假装能够自动加载 Claude Skills。
 
+作为独立评审 Agent 时，先读 [跨 Agent 交接协议](agents/cross-agent-handoff.md) 及项目 `handoff.md`，核对仓库 Commit 与已确认的 Copy Sheet 版本。Gemini 的批评或备选方案先写入独立 `runs/`，不自动覆盖用户批准的中文文案和 PM 方案。若使用的是旧导入快照，应标 `STALE_HANDOFF` 并刷新版本。
+
 核心：PM 的 D/R/U/C/S 五节点要分别批判与实质修订；资料不足主动执行跨行业网页文本/截图研究；不伪造用户反馈、A/B 转化结果或未实际取得的视觉证据。
