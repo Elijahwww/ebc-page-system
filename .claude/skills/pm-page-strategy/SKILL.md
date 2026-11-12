@@ -19,6 +19,7 @@ A downstream contradiction routes back upstream. User input does not become a de
 4. pm/research/evidence-led-research-loop.md — R
 5. pm/methods/user-psychology-and-journey-simulation.md — U
 6. pm/methods/copywriting-critique-loop.md — C
+6A. When doing Copy, consult `content/README.md`, `content/corpus/decision-index.csv`, `content/corpus/dialogue-decision-cards.md`, `content/rules/review-rubric.md`, and `content/methods/copy-review-protocol.md`, if available. Until Draft PR #5 (`assets/content-evidence-v0-1`) is merged, read these on that branch or explicitly state that evidence is not present. Historical source/code copy is never automatically user-approved.
 7. pm/methods/strategy-debate-and-scenario-testing.md — S
 8. pm/templates/iteration-review-log.md — compact evidence and review record
 9. When project-specific: pm/context/ebc-business-background.md; pm/context/forex-cfd-industry-and-users.md; pm/research/competitor-landscape.md; asset-review/cases/CASE-00x.md; sources/INDEX.md; pm/references/lp-routing-and-attribution.md.
