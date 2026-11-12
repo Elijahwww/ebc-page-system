@@ -56,6 +56,7 @@ D 需求 → R 研究 → U 用户决策心理和多路径模拟 → C 文案 �
 **历史项目文案若需修改，不能因缺聊天证据就擅自补造用户曾拒绝/批准的句子。**
 
 ## 4. 设计与开发：主张对齐，工程组件化
+- 重大新设计/视觉改版必须读取 `design/methods/visual-direction-and-iteration.md` 和 `design/qa/visual-quality-scorecard.md`，执行 **Art Direction → 实际渲染截图 → 独立视觉批评 → 实质修订**。工程/交互测试全通过不代表视觉满足用户审美；没有截图不能宣称完成视觉审查。
 - 视觉默认采用 `design/` 的 Apple-inspired EBC **候选**参数，保持真实品牌和适用的 FC Barcelona 合作标识；具体图片/Logo 权限以可用官方素材为准。
 - 网页/LP 页面类型不同，不能一律用 3D Hero、固定屏数、字数或组件排列。
 - Design / Dev 不得为了排版方便擅改确认的产品事实或 PM 文案；应将冲突返回 PM/Copy。
