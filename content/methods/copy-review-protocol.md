@@ -25,6 +25,9 @@
 - Oil B 的具体交易机制比 Oil A 的生活场景适合有原油交易认知的人；若目标是普通 SEO 产品介绍，可能需要两种解释结合。
 - 需要避免同一个历史 LP 的文案模式压制品牌官网的不同信息职责。
 
+## 2A. 现有标准无法回答时的外部研究回路
+在 EBC 已确认文案不足、被历史样本限制、文案几次修改仍是同义词、或页面类型完全新时，触发跨节点 `research/methods/reference-escalation-loop.md`，目前位于 `assets/reference-intelligence-v0-1` 独立 Draft PR。按 CFD 同类型页面 → 大金融/金融科技 → Apple 等全球科技头部的同一**页面任务**比较 H1、subtitle、模块职责、信息分布与 CTA。真实截图与页面 DOM 共同理解页面；缺截图标 `TEXT_ONLY_VISUAL_PENDING` 不臆测排版。拆解“为什么可能这样写”，再结合 EBC 用户心理和业务事实形成原文 V1→候选 V2，不抄字句/未授权素材。外部网页的原理只是 BENCHMARK_CANDIDATE，无法自动变成 USER_CONFIRMED 或 APPROVED_PATTERN。
+
 ## 3. V1：不同策略的文案候选
 至少两个真正不同的切入：
 1. **直接信息型**：是什么/能做什么/下一步；
