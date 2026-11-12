@@ -1,7 +1,7 @@
 # EBC Website Copy Intelligence · v0.1
 
 > 状态：EVIDENCE_BACKED_CANDIDATE，创建 2026-11-12。定位：把 EBC 官网页面和推广页**真实文案决策**变成可审查、可复用、可进化的生产资产。不是一份仅写“专业 / 克制 / 苹果风格”的品牌口号清单。
-> 本分支独立于 PM PR #1、原始资产 PR #3、Design PR #4；三者尚未合并 main。引用跨分支文件应以分支 URL 读取，不能假定在 main 可用。
+> 当前为 `main` 上可持续更新的文案知识基线；最初由 PR #5 引入，与 PM、原始资产和 Design 共同集成。`USER_CONFIRMED` / `OBSERVED` / `RULE_CANDIDATE` 等状态仍须严格区分。
 
 ## 关键结论
 当前 PM v1.0 的 Copy 节点已定义“2–3 种策略 → 质疑 → 重写”，但**没有具备足够来源、用户确认状态、反例、决策原因的真实 EBC 文案库**。新增本体系是补全经验模型，不取代 PM 的 D/R/U/C/S 循环。
