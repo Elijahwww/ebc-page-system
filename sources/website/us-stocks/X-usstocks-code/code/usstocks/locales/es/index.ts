@@ -1,0 +1,27 @@
+export default {
+  promote: {
+    title: "Acciones de EE. UU. y productos internacionales en EBC | EBC Financial Group",
+  },
+  logo_img:"@img/usstocks/logo_es.png",
+  在EBC交易美股:['Acciones de EE. UU. y productos',' internacionales en EBC'],
+  一个账户:"Opera acciones de EE. UU. y aprovecha las oportunidades del mercado.",
+  美股券商:"Bróker Tradicional",
+  无需美股账户:"Mercado de acciones de EE.UU. más accesible",
+  双向灵活交易:"Operaciones flexibles",
+  门槛低:"Menor barrera de entrada",
+  无税费:"",
+  开户手续繁琐:"Procesos de apertura más extensos",
+  限制多:"Más restricciones operativas",
+  卖空资金要求较高:'La venta en corto requiere alto margen',
+  需要缴纳利得税:"",
+  为什么选择EBC做美股:"¿Por qué elegir a EBC?",
+  零门槛入场:"Entrada sin barreras",
+  无需开设美股开户:"Sin necesidad de cuenta en EE. UU., accede fácilmente al mercado global",
+  "多空T+0交易":"Operaciones long/short con T+0, control total de la dirección",
+  一个账户交易全球:"Una cuenta, acceso global",
+  除美股外:"Acciones de EE. UU. y más de 200 activos globales con una sola cuenta",
+  稳定透明的交易环境:"Entorno estable y transparente",
+  极速订单执行和机构级流动性:"Ejecución ultrarrápida y liquidez institucional para potenciar tu ventaja",
+  关于EBC:"Acerca de EBC",
+  EBC金融集团总部位于伦敦:"EBC Financial Group tiene su sede en Londres y cuenta con más de 40 años de experiencia en la industria. Con regulación de primer nivel a nivel global, ejecución de órdenes en milisegundos, liquidez de estándar institucional y un sistema integral de protección, EBC ofrece a sus clientes un entorno de trading seguro, profesional y estable.EBC es socio oficial del FC Barcelona y posee presencia global, con oficinas en centros financieros clave como Tokio, Sídney, Singapur, Hong Kong y las Islas Caimán."
+};
