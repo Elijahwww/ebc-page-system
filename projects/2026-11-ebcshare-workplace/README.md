@@ -1,12 +1,12 @@
 # EBC Share · 可交互前端视觉方案
 
-版本 1.0 · 2026-11-12 · FRONTEND_REVIEW_READY
+版本 2.0 · 2026-11-12 · VISUAL_V2_REVIEW_READY（Claude 视觉重构，待用户评审）
 
 交付重点：集团工作平台的页面样式、信息结构和交互。静态 HTML/CSS/JS 可直接托管预览，不包含生产后台。正式应用地址、SSO、权限、持久化与各系统接口由 IT 接入。
 
 ## 打开与运行
 
-将 `demo/` 作为静态站点根目录。开发时可在项目目录运行 `python -m http.server 8080 --directory demo`，访问 `http://localhost:8080`。无需安装依赖、构建或 API Key。也可打开 `demo/index.html`；剪贴板能力以浏览器安全上下文为准。
+将 `demo/` 作为静态站点根目录。开发时可在项目目录运行 `python -m http.server 8080 --directory demo`，访问 `http://localhost:8080`。无需安装依赖、构建或 API Key；展示字体 Fraunces 已随 `demo/assets/fonts/` 自托管，没有外部请求。也可打开 `demo/index.html`；剪贴板能力以浏览器安全上下文为准。
 
 ## 已实现页面
 
