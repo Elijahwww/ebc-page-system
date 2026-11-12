@@ -42,7 +42,7 @@
 - 完整 Hero + 核心模块 + CTA 的信息逻辑及实质修订；
 - 不同结构策略的优劣、推荐方案、每模块任务与后续 CTA/注册路径；
 - 每个节点至少一个可指出的 V1→V2 差异及回退记录。
-**B. Design Spec：** 如测试包含视觉，列出 Desktop/Mobile 信息顺序、版心、排版 token、品牌 Header/巴萨标识约束、模块交互。
+**B. Design Spec：** 如任务包含视觉，先有 Art Direction Brief/方向选型与反模板自审，再列 Desktop/Mobile 信息顺序、版心、tokens、品牌 Header/巴萨标识约束与交互。真实可运行页面应有截图后 Visual Critique、实际修订，不以功能 QA PASS 取代审美。
 **C. Demo + QA：** 如测试包含开发，给出运行方法、组件分拆、关键状态、截图或真实预览（实际存在时）、已测与未测项；不要以静态效果图冒充运行程序。
 
 ## 4. 必须能区分的状态
