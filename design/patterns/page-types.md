@@ -3,6 +3,9 @@
 > 状态：DESIGN_BASELINE_CANDIDATE；历史案例索引见 sources/INDEX.md 与 asset-review/cases/CASE-00x.md（原始资源 PR #3）。
 > 模块是候选信息职责，不是固定屏数或必选模块列表。优先按 PM Brief 选择。
 
+## 默认中文设计，不等于中国市场
+普通多语言官网/LP 以中文已确认的页面逻辑与 Design Token 为主，目标语言进入独立 Localization 后检查真实排版影响；不按每种语言提前制作不同设计。`target_market` 若明确为日本等特定市场，需在 PM 阶段读取当地研究和规范，针对确有差异的模块/节日活动/CTA 进行小范围 Market Override。完整逻辑见 `localization/chinese-first-and-market-overrides.md`。
+
 ## 所有页面首先决定 Header 类型
 - 完整官网 Header：在适用市场按获批素材表现 EBC 主 Logo 与 FC Barcelona 合作标识；详见 [Header 与品牌标识规范](header-brand-and-partnership.md)。
 - 精简 LP Header：EBC 主 Logo 优先，FC Barcelona 合作标识是否展示按渠道、市场和授权判断，不预设全站强制。
