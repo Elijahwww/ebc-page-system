@@ -7,15 +7,17 @@
 当前 PM v1.0 的 Copy 节点已定义“2–3 种策略 → 质疑 → 重写”，但**没有具备足够来源、用户确认状态、反例、决策原因的真实 EBC 文案库**。新增本体系是补全经验模型，不取代 PM 的 D/R/U/C/S 循环。
 
 ## 使用顺序
+0. [可检索决策索引](corpus/decision-index.csv)：首批 12 个项目审稿案例，按模块、状态、机制查找。
 1. [证据分级与决策记录法](methods/extraction-and-governance.md)：明确谁确认、哪一版、为何修改。
 2. [对话中有明确用户判断的文案卡片](corpus/dialogue-decision-cards.md)：与各项目的明确审查意见对应，包含否定理由、重新使用边界。
 3. [历史 LP 源码文案结构对照](corpus/landing-page-copy-anatomy.md)：ETF A/B/C、Oil A/B、Copy Trading A/B；**CODE_OBSERVED，非用户审美批准**。
 4. [官网线上文案样本](corpus/website-snapshots-2026-11-12.md)：首页、About、产品总览、美股产品、Anthropic 的公开抓取样本；**LIVE_OBSERVED，不代替实时、已批准内容**。
 5. [可量化的审查量表](rules/review-rubric.md)：判断信息任务、逻辑、可证据性、表意、叙事层级、用户匹配和 CTA。
 6. [文案逆向拆解与重写操作](methods/copy-review-protocol.md)：一条文案为何成立、换场景为何失效。
-7. [决策卡模板](templates/copy-decision-card.md)：新项目每次审查自动积累原句、修改、原因。
-8. [回归测试](tests/copy-standard-regression.md)：用真实已确认的修改作为评测案例。
-9. [.claude/skills/ebc-copy-evidence/SKILL.md](../.claude/skills/ebc-copy-evidence/SKILL.md)：使 Claude Code 按需读取本资产。
+7. [已确认案例的描述性量化测量](analytics/approved-sample-measurements.md)：精确字符/汉字统计 + 语义任务，不臆造字数硬阈值。
+8. [决策卡模板](templates/copy-decision-card.md)：新项目每次审查自动积累原句、修改、原因。
+9. [回归测试](tests/copy-standard-regression.md)：用真实已确认的修改作为评测案例。
+10. [.claude/skills/ebc-copy-evidence/SKILL.md](../.claude/skills/ebc-copy-evidence/SKILL.md)：使 Claude Code 按需读取本资产。
 
 ## 文案状态：不混淆！
 - `USER_CONFIRMED_IN_CHAT`：用户明确采用或认可对应**句子与情境**；不自动代表已在线上发布。
