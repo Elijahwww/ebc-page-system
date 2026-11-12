@@ -19,16 +19,16 @@ A downstream contradiction routes back upstream. User input does not become a de
 4. pm/research/evidence-led-research-loop.md — R
 5. pm/methods/user-psychology-and-journey-simulation.md — U
 6. pm/methods/copywriting-critique-loop.md — C
-6A. When doing Copy, consult `content/README.md`, `content/corpus/decision-index.csv`, `content/corpus/dialogue-decision-cards.md`, `content/rules/review-rubric.md`, and `content/methods/copy-review-protocol.md`, if available. Until Draft PR #5 (`assets/content-evidence-v0-1`) is merged, read these on that branch or explicitly state that evidence is not present. Historical source/code copy is never automatically user-approved.
+6A. When doing Copy, consult `content/README.md`, `content/corpus/decision-index.csv`, `content/corpus/dialogue-decision-cards.md`, `content/rules/review-rubric.md`, and `content/methods/copy-review-protocol.md` on the current `main` baseline. Historical source/code copy is never automatically user-approved.
 7. pm/methods/strategy-debate-and-scenario-testing.md — S
 8. pm/templates/iteration-review-log.md — compact evidence and review record
 9. When project-specific: pm/context/ebc-business-background.md; pm/context/forex-cfd-industry-and-users.md; pm/research/competitor-landscape.md; asset-review/cases/CASE-00x.md; sources/INDEX.md; pm/references/lp-routing-and-attribution.md.
 10. For the developer handoff ONLY: pm/workflows/pm-page-delivery.md; pm/checklists/pm-stage-gates.md.
 
-The original source asset case reports may be on a separate Draft PR; check that their paths exist, never assume main includes them.
+Historical page evidence is in `sources/` and `asset-review/` on `main`. Verify the relevant real files before relying on them; do not assume missing shared components exist.
 
 ## Shared external benchmark escalation (when current EBC knowledge is insufficient)
-Across D/R/U/C/S, invoke `.claude/skills/ebc-reference-discovery/SKILL.md` and `research/methods/reference-escalation-loop.md` on `assets/reference-intelligence-v0-1` (Draft PR #6; if unavailable, state this). Triggers: missing matching case, contradictory or low-confidence evidence, two revisions without substantive improvement, novel page/job, or high-impact decision needing independent comparison. Search by priority **direct CFD/Forex same page task → broader finance/fintech → top tech (e.g. Apple)**. Research official live HTML **and actual PC/MB screenshots when browser tool exists**, decompose text placement, module job, action/visual flow, then return to affected PM nodes with concrete V1→V2. If screenshots are unavailable label TEXT_ONLY_VISUAL_PENDING. Do not claim text results validate visuals.
+Across D/R/U/C/S, invoke `.claude/skills/ebc-reference-discovery/SKILL.md` and `research/methods/reference-escalation-loop.md` from the current `main` working tree. Triggers: missing matching case, contradictory or low-confidence evidence, two revisions without substantive improvement, novel page/job, or high-impact decision needing independent comparison. Search by priority **direct CFD/Forex same page task → broader finance/fintech → top tech (e.g. Apple)**. Research official live HTML **and actual PC/MB screenshots when browser tool exists**, decompose text placement, module job, action/visual flow, then return to affected PM nodes with concrete V1→V2. If screenshots are unavailable label TEXT_ONLY_VISUAL_PENDING. Do not claim text results validate visuals.
 This is a fallback *and challenge mechanism*, not an optional appendix or a linear final research phase.
 
 ## Start
