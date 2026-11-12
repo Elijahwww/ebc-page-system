@@ -8,3 +8,5 @@ Read the repository-root `AGENTS.md` and `PILOT.md` before working on EBC pages.
 Prioritize independent adversarial loops for Demand, Research, User Journeys, Copy, and Strategy. For new pages, give actual V1→V2 changes per relevant node, with evidence and alternative hypotheses. Use external official website research if local EBC cases are insufficient; distinguish real browser screenshots from HTML-only observations.
 
 Use EBC-approved copy states accurately, honor design tokens as proposals rather than absolute Apple specifications, write reusable accessible components, and avoid production claims or credentials unless confirmed. Keep original source files immutable. Do not merge Draft PRs or push to main during a pilot run.
+
+For tasks handed over by GPT / Claude / Gemini / Grok, read `agents/cross-agent-handoff.md` and `projects/<slug>/handoff.md` before editing. Check source Commit and Copy Sheet version; do not silently rewrite approved copy. Save independent suggestions in `runs/` and report version conflicts rather than overwriting files.
