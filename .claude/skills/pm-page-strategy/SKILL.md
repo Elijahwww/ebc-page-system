@@ -55,6 +55,16 @@ Progress counts only if the review finds a defect, updates a decision/artifact, 
 
 Every node must connect to a decision about the page. Don't write 5 verbose documents that repeat the same idea.
 
+## Independent node Skills (when the user requests a specific PM subtask)
+The five independent Skills implement the node-level critique/revision loop and may be invoked separately; the parent Skill coordinates and routes among them:
+- .claude/skills/ebc-pm-demand/SKILL.md
+- .claude/skills/ebc-pm-research/SKILL.md
+- .claude/skills/ebc-pm-user-journey/SKILL.md
+- .claude/skills/ebc-pm-copy-critique/SKILL.md
+- .claude/skills/ebc-pm-strategy-debate/SKILL.md
+
+A parent run must not skip the loop because a standalone node was invoked. A focused node can call another when it encounters missing evidence or a conflicting assumption. Five independent node loops are stronger than five prompt headings inside a single static report.
+
 ## Review protocol and routing
 - If Research disproves audience or proposition → revisit D, U and C.
 - If User reveals misunderstanding or mistrust → revise C and S, then simulate again.
