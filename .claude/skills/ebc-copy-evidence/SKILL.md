@@ -5,6 +5,9 @@ description: Read and apply EBC website and landing-page copy that was actually 
 
 # EBC Copy Intelligence · evidence first v0.1
 
+## Chinese-first writing and independent localization
+Draft and critique EBC copy in Chinese first, preserving user-verified decision cards and original meaning; do not launch full translation until the Chinese Copy Sheet is approved. Translation is later transcreation, not literal substitution. For market-targeted copy (e.g., Japan campaigns), take local audience, channels and cultural context into account **before** Chinese internal drafting. `working_language=zh-CN` does not imply `target_market=China`. Read `localization/chinese-first-and-market-overrides.md`.
+
 ## Why this Skill exists
 EBC copy quality cannot be enforced by saying "professional, restrained, user-centric, Apple style". The real reference standard is the user’s historical *decisions* with page purpose, source version, accepted/rejected wording, and reasons. Distinguish observed published code from user-approved material.
 

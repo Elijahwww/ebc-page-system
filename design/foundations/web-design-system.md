@@ -10,6 +10,9 @@
 4. Inclusive & adaptive：不同尺寸、输入方式、文字长度/语种下保持信息可用。
 5. Product first：产品/市场数据真实、显著条件与风险清晰，视觉不得制造虚假收益确定性。
 
+## 默认中文视觉方案与局部市场例外
+页面的结构、视觉规则和组件化实现按中文确认的 PM/Copy 内容形成默认设计；正式翻译在后续独立任务进行，不因缺翻译而暂停中文 Demo。若明确是日本等当地页面，设计前读取 PM 的当地用户研究与 `localization/chinese-first-and-market-overrides.md`，只对当地视觉、图文和交互真正需要的差异做 Design Override；通用栅格不必每种语言重新定义。
+
 ## 2. 布局与栅格（EBC_PROPOSED_TOKEN）
 | Viewport | 结构 | 内容版心 | 左右安全边距 | 推荐列/间距 |
 |---|---|---|---|---|

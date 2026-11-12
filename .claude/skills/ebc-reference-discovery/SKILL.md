@@ -18,6 +18,9 @@ Examples: a new Careers page without approved examples; product Hero copy cycles
 - Optionally `research/seed/careers-benchmark-2026-11-12.md` to inspect correctly marked text-only examples
 These reference files are included in the latest `main` working baseline. Check actual accessible files and tools; never claim web screenshot evidence unless captured.
 
+## Locale-aware discovery
+When `target_market` is explicitly Japan or another local market, search and capture official examples relevant to that locale within each industry tier first (same industry → finance → top tech), then broaden geography if evidence is insufficient. Reports may remain in Chinese as the working language; Chinese does not imply Chinese users. Do not create a Japan-specific rule without a source. The workflow lives in `localization/chinese-first-and-market-overrides.md`.
+
 ## Required steps
 1. Identify the actual problem; quote what existing EBC assets can and cannot solve.
 2. Prioritize sources in order: T1 direct CFD/Forex/online brokerage *same page job* → T2 adjacent finance/fintech same task → T3 leading tech/cross-industry best-in-class → T4 other well-justified analogues. T0 EBC context should be checked first, but don't let a weak EBC precedent block better evidence.

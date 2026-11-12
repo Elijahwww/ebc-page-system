@@ -14,6 +14,9 @@ description: Plan, design and QA EBC corporate/product/advertising web pages wit
 6. design/qa/design-review-checklist.md
 7. design/research/provenance-and-decisions.md
 
+## Chinese-first design with local-market exceptions
+Use the reviewed Chinese copy and information hierarchy for default Desktop/Mobile design. Do not block Chinese design on missing translations. Shared components, layout and behavior normally remain unchanged across markets; check actual target-language length and fonts at localization QA, with local overrides only where the project requires. For Japan-targeted activity pages, research local-market design/content context while still working in Chinese internally; never treat Chinese text as evidence of China market. Read `localization/chinese-first-and-market-overrides.md`.
+
 ## Read task inputs first
 - PM Brief / user request, page type (corporate, product, performance LP, campaign)
 - target market(s), languages, audience, device priorities, channel, live vs demo status
