@@ -22,6 +22,15 @@ PM Agent 应当让模型先完成可检查的策略性工作，帮助人工集�
 
 **审查记录**：[iteration-review-log.md](templates/iteration-review-log.md)，**首期行为验收**：[pm-agent-acceptance.md](tests/pm-agent-acceptance.md)。
 
+## 独立节点 Skill（可由主 Skill 编排，也可单独调用）
+- [需求挑战](../.claude/skills/ebc-pm-demand/SKILL.md)
+- [证据调研](../.claude/skills/ebc-pm-research/SKILL.md)
+- [用户心理与路径](../.claude/skills/ebc-pm-user-journey/SKILL.md)
+- [文案批评与重写](../.claude/skills/ebc-pm-copy-critique/SKILL.md)
+- [方案竞争](../.claude/skills/ebc-pm-strategy-debate/SKILL.md)
+
+每个 Skill 都必须先提出反对意见、实质性修订，再给出当前建议；“自我评审通过”而没有更改不能算完成。
+
 ## 三、业务知识与案例（输入，不是制定规则的直接证据）
 - [EBC 业务背景](context/ebc-business-background.md)
 - [Forex/CFD 与受众假设](context/forex-cfd-industry-and-users.md)
