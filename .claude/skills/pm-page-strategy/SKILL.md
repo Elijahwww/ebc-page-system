@@ -27,6 +27,10 @@ A downstream contradiction routes back upstream. User input does not become a de
 
 The original source asset case reports may be on a separate Draft PR; check that their paths exist, never assume main includes them.
 
+## Shared external benchmark escalation (when current EBC knowledge is insufficient)
+Across D/R/U/C/S, invoke `.claude/skills/ebc-reference-discovery/SKILL.md` and `research/methods/reference-escalation-loop.md` on `assets/reference-intelligence-v0-1` (Draft PR #6; if unavailable, state this). Triggers: missing matching case, contradictory or low-confidence evidence, two revisions without substantive improvement, novel page/job, or high-impact decision needing independent comparison. Search by priority **direct CFD/Forex same page task → broader finance/fintech → top tech (e.g. Apple)**. Research official live HTML **and actual PC/MB screenshots when browser tool exists**, decompose text placement, module job, action/visual flow, then return to affected PM nodes with concrete V1→V2. If screenshots are unavailable label TEXT_ONLY_VISUAL_PENDING. Do not claim text results validate visuals.
+This is a fallback *and challenge mechanism*, not an optional appendix or a linear final research phase.
+
 ## Start
 Read the user's actual request, previous decisions, evidence/URLs/screenshots/code and success definition. Retrieve known context before asking the user to repeat it. Record unknown facts, but don't force the user to fill a full form.
 Select QUICK (small task) / STANDARD (page planning) / DEEP (strategy/rebuild). Default STANDARD for a new page.
