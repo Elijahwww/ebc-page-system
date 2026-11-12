@@ -37,6 +37,9 @@
 | `CHANGELOG.md` | 可用系统版本历史与重大变化 |
 | `localization/` | 中文主稿优先、独立本地化与地区市场差异规则；术语库接入状态 |
 
+## 不同 AI 协作与交接
+GPT、Claude Desktop、Gemini、Grok 等共享同一项目目录和确认版本；切换 Agent 时使用 [统一交接协议](agents/cross-agent-handoff.md) 和 [交接包模板](projects/HANDOFF-TEMPLATE.md)。下一 Agent 只需读取最小交接包及必要源文件，不重建全部历史、不覆盖已确认中文文案；其他模型的独立建议保存在 `runs/` 并明确回流。
+
 ## 中文优先与地区市场适配
 默认以**中文**执行 PM 分析、用户路径、文案创作和页面设计审查；中文文案确认后才进入独立翻译/本地化阶段，**禁止简单直译**。中文是工作语言，**并不代表目标市场为中国**。日本等明确的本地市场页面，应在 PM 研究阶段先采用当地受众、渠道和市场规范，中文版只是内部决策和审稿语言；通用视觉/组件尽量复用，仅对确有需求的局部进行市场适配。详见 [Chinese-first 与 Market Override](localization/chinese-first-and-market-overrides.md)。
 
