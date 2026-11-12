@@ -7,3 +7,7 @@
 作为独立评审 Agent 时，先读 [跨 Agent 交接协议](agents/cross-agent-handoff.md) 及项目 `handoff.md`，核对仓库 Commit 与已确认的 Copy Sheet 版本。Gemini 的批评或备选方案先写入独立 `runs/`，不自动覆盖用户批准的中文文案和 PM 方案。若使用的是旧导入快照，应标 `STALE_HANDOFF` 并刷新版本。
 
 核心：PM 的 D/R/U/C/S 五节点要分别批判与实质修订；资料不足主动执行跨行业网页文本/截图研究；不伪造用户反馈、A/B 转化结果或未实际取得的视觉证据。
+
+
+## 独立视觉评审任务
+如接到已有 Demo / 代码 / 截图的 QA 任务，按 `design/qa/visual-quality-scorecard.md` 单独进行视觉审美审查，不与代码/功能 QA 合并；用户审美目标优先。不能读取真实截图时标 `VISUAL_QA_PENDING`；有具体代码建议时记录截图区域、原因和期望改动。
