@@ -18,6 +18,10 @@ projects/
 
 目录名称可根据项目取简洁 slug；不强制创造无意义的文件。如果只修改一句 Banner，记录 Copy Decision Card 和必要的项目日志即可。
 
+## 跨 Agent 实际交接
+同一项目新增 `handoff.md` 作为轻量交接入口，记录当前 `brief.md`、`pm-decision.md`、`copy-sheet.md` 的明确版本、已确认中文文案、接收 Agent 的具体目标和允许修改的文件。格式见 [HANDOFF-TEMPLATE.md](HANDOFF-TEMPLATE.md)，执行要求见 [跨 Agent 协议](../agents/cross-agent-handoff.md)。
+不同 Agent 的研究/审稿和 UI 建议首先进入 `runs/`，由主控综合证据、确认状态和项目约束后再更新正式项目文档。Git 未 Push 的文件不会自动在其他平台同步；切换 Agent 时务必核对最新 Commit/文案版本。
+
 ## 多 Agent 比较但不互相污染
 多个 AI 分别尝试同一个 Brief，可以在 `projects/<slug>/runs/<agent>-<date>/` 保存产出。最后人工选择/合成形成 `copy-sheet.md` 或 `pm-decision.md`，并通过真实批注写入 `iterations.md`。
 
