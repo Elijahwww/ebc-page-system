@@ -1,0 +1,10 @@
+---
+description: EBC page-system repo: PM-led iterative decision loops, evidence-backed copy, external reference research and componentized UI development.
+alwaysApply: true
+---
+
+Read the repository-root `AGENTS.md` and `PILOT.md` before working on EBC pages. Treat Claude SKILL.md files as portable instructions even if your agent does not auto-discover them.
+
+Prioritize independent adversarial loops for Demand, Research, User Journeys, Copy, and Strategy. For new pages, give actual V1→V2 changes per relevant node, with evidence and alternative hypotheses. Use external official website research if local EBC cases are insufficient; distinguish real browser screenshots from HTML-only observations.
+
+Use EBC-approved copy states accurately, honor design tokens as proposals rather than absolute Apple specifications, write reusable accessible components, and avoid production claims or credentials unless confirmed. Keep original source files immutable. Do not merge Draft PRs or push to main during a pilot run.

@@ -1,0 +1,165 @@
+/*
+ * EBC Web Design Tokens v0.1
+ * STATUS: EBC_PROPOSED_TOKEN / NOT APPROVED BRAND STANDARD
+ * APPLE-INSPIRED PRINCIPLES, NOT APPLE OFFICIAL CSS
+ * This reference is framework-agnostic and safe to copy, subject to review.
+ */
+:root {
+  /* Brand candidates: from historic page code, still need owner approval */
+  --ebc-brand-red: #a52933;
+  --ebc-brand-red-hover: #8d212b;
+  --ebc-brand-red-active: #6e1722;
+  --ebc-brand-burgundy: #5d2333;
+
+  /* Neutral stages: initial proposal */
+  --ebc-bg: #ffffff;
+  --ebc-bg-soft: #f5f5f7;
+  --ebc-bg-inverse: #1d1d1f;
+  --ebc-text: #1d1d1f;
+  --ebc-text-muted: #6e6e73;
+  --ebc-text-inverse: #ffffff;
+  --ebc-border-subtle: #d2d2d7;
+  --ebc-focus: #005fcc;
+  --ebc-error: #a52933;
+
+  /* Use legal system fonts. Do not bundle Apple SF Pro files. */
+  --ebc-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --ebc-font-w-normal: 400;
+  --ebc-font-w-medium: 500;
+  --ebc-font-w-semibold: 600;
+  --ebc-font-w-bold: 700;
+
+  --ebc-type-display: clamp(3rem, 5vw, 4.75rem);
+  --ebc-type-hero: clamp(2.625rem, 4.2vw, 4rem);
+  --ebc-type-section: clamp(2.125rem, 3.3vw, 3.25rem);
+  --ebc-type-card: clamp(1.375rem, 2vw, 1.875rem);
+  --ebc-type-lead: clamp(1.125rem, 1.35vw, 1.375rem);
+  --ebc-type-body: 1rem;
+  --ebc-type-meta: 0.875rem;
+  --ebc-type-fine: 0.875rem;
+  --ebc-line-display: 1.12;
+  --ebc-line-heading: 1.22;
+  --ebc-line-body: 1.6;
+
+  --ebc-space-1: 0.25rem;
+  --ebc-space-2: 0.5rem;
+  --ebc-space-3: 0.75rem;
+  --ebc-space-4: 1rem;
+  --ebc-space-6: 1.5rem;
+  --ebc-space-8: 2rem;
+  --ebc-space-12: 3rem;
+  --ebc-space-16: 4rem;
+  --ebc-space-20: 5rem;
+  --ebc-space-24: 6rem;
+  --ebc-space-32: 8rem;
+
+  --ebc-container-standard: 75rem; /* 1200px */
+  --ebc-container-visual: 80rem; /* 1280px */
+  --ebc-container-copy: 47.5rem; /* 760px */
+  --ebc-gutter: 3rem;
+  --ebc-grid-gap: 1.5rem;
+  --ebc-section-space: clamp(6rem, 7.5vw, 9rem);
+
+  --ebc-radius-small: 0.75rem;
+  --ebc-radius-medium: 1rem;
+  --ebc-radius-large: 1.5rem;
+  --ebc-radius-pill: 999px;
+
+  /* Header proposal; official logo geometry & partner use must be approved */
+  --ebc-header-height: 4.5rem; /* 72px desktop */
+  --ebc-header-brand-gap: 1.25rem;
+  --ebc-header-logo-height: 2rem; /* 32px guideline, not fixed */
+  --ebc-header-partner-height: 1.75rem; /* 28px guideline */
+
+  --ebc-control-height: 3rem;
+  --ebc-control-min-hit: 2.75rem; /* 44px recommended */
+  --ebc-motion-fast: 150ms;
+  --ebc-motion-normal: 240ms;
+  --ebc-motion-reveal: 400ms;
+  --ebc-motion-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --ebc-gutter: 2rem;
+    --ebc-grid-gap: 1.25rem;
+    --ebc-section-space: clamp(5rem, 7vw, 7rem);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --ebc-header-height: 3.75rem; /* 60px */
+    --ebc-header-brand-gap: 0.75rem;
+    --ebc-header-logo-height: 1.625rem;
+    --ebc-header-partner-height: 1.375rem;
+    --ebc-gutter: 1.25rem;
+    --ebc-grid-gap: 1rem;
+    --ebc-section-space: clamp(4rem, 9vw, 5.5rem);
+    --ebc-type-display: clamp(2.125rem, 9vw, 2.75rem);
+    --ebc-type-hero: clamp(2rem, 8vw, 2.5rem);
+    --ebc-type-section: clamp(1.75rem, 7vw, 2.25rem);
+    --ebc-type-card: clamp(1.25rem, 5vw, 1.5rem);
+    --ebc-type-lead: 1rem;
+  }
+}
+
+@media (max-width: 359px) {
+  :root {
+    --ebc-gutter: 1rem;
+  }
+}
+
+.ebc-container {
+  width: min(calc(100% - 2 * var(--ebc-gutter)), var(--ebc-container-standard));
+  margin-inline: auto;
+}
+
+.ebc-container--visual {
+  max-width: var(--ebc-container-visual);
+}
+
+.ebc-container--copy {
+  max-width: var(--ebc-container-copy);
+}
+
+.ebc-btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--ebc-control-height);
+  min-width: var(--ebc-control-min-hit);
+  padding: 0.75rem 1.75rem;
+  border: 0;
+  border-radius: var(--ebc-radius-pill);
+  background: var(--ebc-brand-red);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color var(--ebc-motion-fast) ease;
+}
+
+.ebc-btn--primary:hover { background: var(--ebc-brand-red-hover); }
+.ebc-btn--primary:active { background: var(--ebc-brand-red-active); }
+.ebc-btn--primary:focus-visible {
+  outline: 3px solid var(--ebc-focus);
+  outline-offset: 3px;
+}
+.ebc-btn--primary:disabled,
+.ebc-btn--primary[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  /* Disabled controls must not initiate live registration actions. */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
