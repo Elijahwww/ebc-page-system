@@ -26,7 +26,7 @@
 | `pm/` | PM 五节点思考引擎、方法、验收、真实项目流程参考 |
 | `content/` | EBC 历史用户审稿决策卡、文案语义拆分、评价量表 |
 | `research/` | 跨行业网站发现、截图/DOM 与反证机制 |
-| `design/` | Apple-inspired EBC Web Design Token、页面类型、Header、QA |
+| `design/` | EBC 视觉方向/反 AI 模板审查、真实截图迭代、设计 Tokens、Header 与独立视觉/工程 QA |
 | `sources/` | 已脱敏的历史页面源码、页面截图和 manifest；**原始证据请勿覆盖** |
 | `asset-review/` | Claude 首轮原始案例分析、报告、来源登记 |
 | `cases/`、`insights/`、`evaluations/` | 案例审计、初始候选规则和核查记录 |
@@ -39,6 +39,9 @@
 
 ## 不同 AI 协作与交接
 GPT、Claude Desktop、Gemini、Grok 等共享同一项目目录和确认版本；切换 Agent 时使用 [统一交接协议](agents/cross-agent-handoff.md) 和 [交接包模板](projects/HANDOFF-TEMPLATE.md)。下一 Agent 只需读取最小交接包及必要源文件，不重建全部历史、不覆盖已确认中文文案；其他模型的独立建议保存在 `runs/` 并明确回流。
+
+## 视觉规范 v0.2 · 审美和功能单独验收
+重大页面设计与视觉重构应先阅读 [Art Direction 循环](design/methods/visual-direction-and-iteration.md) 和 [Visual Quality Scorecard](design/qa/visual-quality-scorecard.md)。要求真实项目专属视觉方向、代码运行后的 PC/Mobile 截图、视觉问题 V1→V2 实质修改；**功能通过不代表视觉得到用户认可**。用户的旧 Figma Make SKILL 只迁移设计方法，不复制旧产品文案、页长及蓝色 CTA。
 
 ## 中文优先与地区市场适配
 默认以**中文**执行 PM 分析、用户路径、文案创作和页面设计审查；中文文案确认后才进入独立翻译/本地化阶段，**禁止简单直译**。中文是工作语言，**并不代表目标市场为中国**。日本等明确的本地市场页面，应在 PM 研究阶段先采用当地受众、渠道和市场规范，中文版只是内部决策和审稿语言；通用视觉/组件尽量复用，仅对确有需求的局部进行市场适配。详见 [Chinese-first 与 Market Override](localization/chinese-first-and-market-overrides.md)。
