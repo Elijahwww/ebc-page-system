@@ -2,6 +2,11 @@
 
 > 状态：METHOD_CANDIDATE，与 PM `D/R/U/C/S` 中的 Copy 节点配合。目的不是让模型模仿一些漂亮例句，而是还原用户曾经反复斟酌的具体判断。
 
+## 默认生产顺序
+- 先以中文进行完整 PM/Copy 分析、备选文案的审查循环及中文 Copy Sheet 确认，然后把 Copy ID、事实限制、语义和用户任务作为本地化输入；此阶段不要提前并行翻译所有语言。
+- 中文是内部主稿语言，**不等于该文案给中国市场用户看**；日本等地区定向文案应在创作中文主稿之前研究目标市场的用户意图及当地行业表达。
+- 翻译阶段做本地化创作，不逐字直译；改变信息职责或事实时回流中文主稿审查。详见 `localization/chinese-first-and-market-overrides.md`。
+
 ## 0. 输入（尽量由 Agent 自行读取）
 - 页面类型、用户/市场/渠道、一次想解决的认知问题；
 - 当前产品状态、需要写入的真实事实、可能的市场限界；
@@ -26,7 +31,7 @@
 - 需要避免同一个历史 LP 的文案模式压制品牌官网的不同信息职责。
 
 ## 2A. 现有标准无法回答时的外部研究回路
-在 EBC 已确认文案不足、被历史样本限制、文案几次修改仍是同义词、或页面类型完全新时，触发跨节点 `research/methods/reference-escalation-loop.md`，目前位于 `assets/reference-intelligence-v0-1` 独立 Draft PR。按 CFD 同类型页面 → 大金融/金融科技 → Apple 等全球科技头部的同一**页面任务**比较 H1、subtitle、模块职责、信息分布与 CTA。真实截图与页面 DOM 共同理解页面；缺截图标 `TEXT_ONLY_VISUAL_PENDING` 不臆测排版。拆解“为什么可能这样写”，再结合 EBC 用户心理和业务事实形成原文 V1→候选 V2，不抄字句/未授权素材。外部网页的原理只是 BENCHMARK_CANDIDATE，无法自动变成 USER_CONFIRMED 或 APPROVED_PATTERN。
+在 EBC 已确认文案不足、被历史样本限制、文案几次修改仍是同义词、或页面类型完全新时，触发跨节点 `research/methods/reference-escalation-loop.md`，当前位于 `main` 的 `research/` 目录。按 CFD 同类型页面 → 大金融/金融科技 → Apple 等全球科技头部的同一**页面任务**比较 H1、subtitle、模块职责、信息分布与 CTA。真实截图与页面 DOM 共同理解页面；缺截图标 `TEXT_ONLY_VISUAL_PENDING` 不臆测排版。拆解“为什么可能这样写”，再结合 EBC 用户心理和业务事实形成原文 V1→候选 V2，不抄字句/未授权素材。外部网页的原理只是 BENCHMARK_CANDIDATE，无法自动变成 USER_CONFIRMED 或 APPROVED_PATTERN。
 
 ## 3. V1：不同策略的文案候选
 至少两个真正不同的切入：
