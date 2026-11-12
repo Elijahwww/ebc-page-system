@@ -7,7 +7,7 @@
 - `ebc-pm-demand` / `ebc-pm-research` / `ebc-pm-user-journey` / `ebc-pm-copy-critique` / `ebc-pm-strategy-debate`：可单独调用的节点；
 - `ebc-copy-evidence`：真实 EBC 文案决策和具体审稿量表；
 - `ebc-reference-discovery`：内部知识缺口时跨行业搜索网页、截图、反证、回流；
-- `ebc-web-design`：Apple-inspired EBC 网页视觉基线和 Design QA。
+- `ebc-web-design`：EBC 视觉方向反模板审查、实际截图驱动的 Art Direction 循环，以及**分离的视觉 QA 与工程 QA**；参考 `design/methods/visual-direction-and-iteration.md`。
 
 使用 Claude Desktop 的 Code 页面处理其他 AI 移交的任务时，先读 [跨 Agent 交接协议](agents/cross-agent-handoff.md) 和对应项目的 `handoff.md`。仅按允许范围实现；已确认的中文 Copy ID / 文案不许为了排版静默改写。若 GitHub Desktop 本地仓库未 Push，其他 Agent 未必可见；遇到版本冲突必须先复核。
 
