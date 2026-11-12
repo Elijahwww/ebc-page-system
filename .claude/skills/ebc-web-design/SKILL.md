@@ -23,6 +23,9 @@ description: Plan, design and QA EBC corporate/product/advertising web pages wit
 
 When needed, consult sources/INDEX.md, the relevant version manifest and asset-review cases **on the original-sources branch or after it is merged**. These are history, not a template to copy verbatim.
 
+## Cross-industry reference discovery when internal design cases are insufficient
+Before inventing ungrounded patterns, if the current page type or visual/content relationship is missing, conflicting or stagnating, invoke `.claude/skills/ebc-reference-discovery/SKILL.md` (Draft PR #6 / `assets/reference-intelligence-v0-1`). Search **CFD/Forex same page type → broader finance/fintech → top tech (e.g. Apple)**, analyze information functions and actual page screenshots with desktop/mobile viewports. A text-only web fetch cannot support precise claims about whitespace, typography, image role or screenshot positioning; tag `TEXT_ONLY_VISUAL_PENDING` until browser capture. Extract transferable visual *principles*, not third-party assets or pixel-for-pixel copies. Return new insights as project Design Override and revised page V2, cross-check with PM Copy/User/Strategy.
+
 ## Execution
 1. Summarize the page's one main job and each section's one distinct user question. Do not invent copy, product status, facts, permissions or returns.
 2. Select a page-type pattern and write Design Override: what defaults apply, what changes, and why.
