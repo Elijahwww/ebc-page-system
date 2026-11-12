@@ -13,6 +13,11 @@
 5. [设计走查](qa/design-review-checklist.md)：设计阶段与实现验收。
 6. [证据与决策边界](research/provenance-and-decisions.md)：Apple 官方原则、WCAG Web 标准、EBC 历史案例观察及未核实项。
 
+## 语言与地区的设计边界
+- 默认以**已审查的中文**信息架构和文案做 PC/Mobile 设计及 Demo；不用等待全部译稿，也不提前强制为每个语言单独制作不同的页面。
+- 通用栅格、组件、交互和主要内容流程优先复用；设计需具有合理文字长度弹性，但不因为存在翻译需求就强制每个模块缩短中文。
+- 如果项目明确面向日本等本地市场，应先读 `localization/chinese-first-and-market-overrides.md` 及真实有效的当地规范/参考研究，只对视觉、字体、内容顺序或交互中确有证据的差异创建 Design Override。中文仅作为内部审稿稿本，不能把中文市场习惯当本地策略。
+
 ## 设计立场
 - **Apple-inspired, EBC-owned**：学习清晰、层级、排版、留白和克制的动效；不复制 Apple 商标、图片、网站代码、受限制字体或独特网页装饰。
 - 当前不依赖旧 EBC 共享组件；可以由 Agent 新建可复用代码，但必须符合本仓库 PM 方案与业务事实。
