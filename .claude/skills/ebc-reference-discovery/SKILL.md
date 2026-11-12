@@ -16,7 +16,7 @@ Examples: a new Careers page without approved examples; product Hero copy cycles
 - `research/templates/reference-evidence-card.md`
 - Relevant existing EBC approved materials / code / copy case cards in current available branch
 - Optionally `research/seed/careers-benchmark-2026-11-12.md` to inspect correctly marked text-only examples
-These reference files currently live in a separate Draft PR. Until merged, do not pretend they are in main.
+These reference files are included in the latest `main` working baseline. Check actual accessible files and tools; never claim web screenshot evidence unless captured.
 
 ## Required steps
 1. Identify the actual problem; quote what existing EBC assets can and cannot solve.
