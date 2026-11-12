@@ -19,6 +19,9 @@ EBC copy quality cannot be enforced by saying "professional, restrained, user-ce
 
 Copy records exist on the content PR branch until merged. The source-assets branch also may be separate. **Do not assume main has those paths until merge.**
 
+## Autonomous external reference escalation
+When internal approved examples lack the same page job, available examples conflict, two rounds are still superficial, or a novel page cannot be expressed well: invoke `.claude/skills/ebc-reference-discovery/SKILL.md` on `assets/reference-intelligence-v0-1` (shared Draft PR #6). Rank searches by directly related CFD/Forex same page task → broader finance/fintech same task → head technology companies. Compare **what Hero, supporting text, next sections and CTA accomplish for the reader**, using live HTML and real screenshots when available. If screenshots aren't available, mark visual analysis pending and do text-only. Update the user-meaning model and rewrite actual EBC copy; never copy foreign slogans, unverified claims or imply their conversion performance.
+
 ## When the PM Copy node invokes this
 1. Define the audience, incoming user expectation, and specific *belief change* the module must accomplish.
 2. Retrieve 1–3 relevant EBC historical decisions by **same information job** rather than just the same product keyword.
