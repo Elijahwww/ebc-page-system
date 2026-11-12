@@ -1,14 +1,42 @@
-# 前端交接 v1
+# Claude 视觉优化交接 v2
 
-项目 `2026-11-ebcshare-workplace`；全球内部员工；工作语言中文；视觉评审阶段。基线仓库 main commit：`eeb846fb36254a5515ad2a3dd89f293e9acad828`。本次前端的确切提交见所在 PR/版本记录。
+状态：VISUAL_REWORK_REQUIRED · 2026-11-12。当前视觉未通过用户评审；不得把现有样式或 design-spec.md 视为已确认定稿。
 
-## 下一项工作
+## 直接开始的位置
 
-以当前页面完成视觉评审，再由 IT 将演示状态替换成真实应用目录、员工身份和内容接口。此交接不要求重写四个业务系统。
+- 仓库：Elijahwww/ebc-page-system
+- 分支：`projects/ebcshare-frontend-preview`（尚未合并到 main）
+- 项目：`projects/2026-11-ebcshare-workplace/`
+- 前端：`demo/index.html`、`demo/styles.css`、`demo/app.js`、`demo/data.js`、`demo/assets/`
+- 原前端基线提交：`e03462881be7b2f59b4b315e2bd3be2a8e88f210`；本交接更新只改文档，下一位 Agent 以该分支最新 HEAD 为准。
+- 草稿 PR：https://github.com/Elijahwww/ebc-page-system/pull/10
+- 当前公开预览：https://ebc-share-workplace-elijah.familiarleopard16.chatgpt.site/
+- 托管 Site：`appgprj_6af5655fcbe4819184010f4ae87f3735`；已发布源码提交 `0d7235f6b6136b24bfd6ed12ca24813ff81a6035`。GitHub 工作分支和托管源码是两份副本，未配置自动同步；修改 GitHub 后需要单独更新部署，不能声称 Push 后预览自动变化。
 
-用户已确认：可交互的前端样式是主交付，中英文，覆盖全球部门；后端实现交 IT。未确认：本版具体版式/新文案。Copy Sheet v1 全部 WORKING_CANDIDATE；暂无 USER_APPROVED_COPY。
+## 用户最新反馈与任务
 
-最小必读：brief.md、pm-decision.md、copy-sheet.md、design-spec.md、qa-report.md。允许改本项目前端和草稿；保留附件活动事实和用户范围，重大变动写 iterations.md。后续独立候选放 `runs/<agent>-<date>/`；语义冲突回流 PM/Copy，视觉问题回流 Design。
+用户原话：“我感觉视觉做得很糟糕，我想用Cladue优化下”。
+
+本次任务：基于现有需求和可交互源码，由 Claude 重新评估并改善前端视觉；允许调整版式、布局、字体、颜色、间距、图文素材和组件，而非默认只做局部换色。用户没有指定新的审美方向，不得替用户虚构具体偏好或批准记录。当前 PM 方案也只是候选，可以提出有依据的调整。
+
+用户已明确确认的范围：
+
+1. 交付接近上线质量的可交互前端样式；业务后台和真实接口交给 IT，不重做完整前后端系统。
+2. 集团内部各国家地区、各部门员工；界面中英文。
+3. 保留社区动态、通知公告和积分，并形成翻译、EBC Board、域名、素材库的统一入口。
+4. 预览应可直接打开，不增加登录、验证码或 ChatGPT 登录动作；2026-11-12 已按用户要求改为公开访问并在未登录页面验证。
+
+## 必读与修改边界
+
+先读取仓库 AGENTS.md 与本 handoff，再读 brief.md、pm-decision.md、copy-sheet.md、design-spec.md，并实际运行 demo。qa-report.md 只证明上一版的有限功能检查，不证明视觉获认可。Copy Sheet v1 是 WORKING_CANDIDATE，无 USER_APPROVED_COPY；可有依据地修订，但同步维护双语意义和 Copy ID。
+
+允许：重构本项目 UI、交互呈现与草稿文案；必要时调整候选信息结构。保留：真实 Board 附件数据及“交付范围不等于完成进度”的口径。不要编造真实业务数据，不接入凭证，不擅自修改全局规则或历史源文件。
+
+## 交付与验收
+
+直接交付实际可运行的页面。中英文及桌面/窄屏分别检查；搜索、收藏、公告、动态、Board 筛选等已有交互需继续可用。截图必须来自真实渲染，并列出实质视觉变化。更新 design-spec.md、iterations.md 和 handoff.md；独立研究或备选可放 runs/claude-2026-11-12/。明确实际部署结果；没有托管权限时交付源码和本地预览，不假称线上已更新。
+
+视觉改善完成后再交用户评审。当前没有用户认可的新方向，也没有完成 Claude 优化。
 
 ## IT 接入位置
 
@@ -22,6 +50,6 @@
 | `translation()` | 预设译文示例 | 导向现有 SEO 系统或替换工作区；不可把示例按钮作为翻译 API |
 | shell / profile | 示例账户与积分 | 集团身份、真实积分规则、区域与时区配置 |
 
-正式接入后再确认：应用地址与访问模式、身份与权限、真实内容语言、品牌 Logo 文件、跨浏览器/触屏测试。前端不含凭证，不向外部发送用户文本；预览部署保持私有，未改动 ebcshare.com。
+正式接入后再确认：应用地址与访问模式、身份与权限、真实内容语言、品牌 Logo 文件、跨浏览器/触屏测试。前端不含凭证，不向外部发送用户文本；预览已按用户要求公开免登录；集团正式业务站点 ebcshare.com 未改动。
 
-状态 READY_FOR_VISUAL_REVIEW。审核真实业务接入之后再评估集团生产上线；静态预览已经可以部署运行。
+状态 VISUAL_REWORK_REQUIRED。审核真实业务接入之后再评估集团生产上线；静态预览已经可以部署运行。
