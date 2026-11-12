@@ -9,4 +9,4 @@
 - `ebc-reference-discovery`：内部知识缺口时跨行业搜索网页、截图、反证、回流；
 - `ebc-web-design`：Apple-inspired EBC 网页视觉基线和 Design QA。
 
-先读 `PILOT.md` 再执行真实测试。禁止把 Draft 研究规则当已批准生产文案，禁止声称从未实际采集的截图可用于视觉分析。
+处理真实项目先读 `PILOT.md`，正常产出并在 `projects/` 记录版本。禁止把 Draft 研究规则当已批准生产文案，禁止声称从未实际采集的截图可用于视觉分析。
