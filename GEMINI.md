@@ -1,6 +1,6 @@
 # Gemini Agent — EBC Page System
 
-请先阅读仓库根目录的 `AGENTS.md`，再阅读 `PILOT.md`。这是本项目对 GPT、Claude、Gemini、Cursor 的统一任务协议。
+请先阅读仓库根目录的 `AGENTS.md`，再阅读 `PILOT.md`。这是本项目对 GPT、Claude、Gemini、Cursor 的统一任务协议，默认在 `main` 上使用并持续迭代。
 
 `.claude/skills/*.md` 虽是 Claude 的文件路径，但其内容为跨模型可复用的业务执行方法，Gemini 可以作为普通 Markdown 读取，不需要假装能够自动加载 Claude Skills。
 
