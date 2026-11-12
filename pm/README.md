@@ -36,7 +36,7 @@ PM Agent 应当让模型先完成可检查的策略性工作，帮助人工集�
 - [Forex/CFD 与受众假设](context/forex-cfd-industry-and-users.md)
 - [竞品参考矩阵](research/competitor-landscape.md)
 - [当前事实冲突](context/fact-verification-issues.md)
-- 用户已通过 PR #3 导入 sources/ 与 asset-review/，待正式合并。原案例证明“以前怎么做”，**不证明那样的版本转化效果更好**。
+- `sources/` 与 `asset-review/` 已作为历史证据纳入当前 `main` 工作基线。它们证明“以前怎么做”，**不证明那个版本转化效果更好**。
 
 ## 四、其他资产位于“后半段”
 - [页面策略/归因基础](methods/page-strategy-and-conversion.md)
