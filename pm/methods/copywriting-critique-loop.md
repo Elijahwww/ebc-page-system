@@ -3,6 +3,13 @@
 状态：METHOD_CANDIDATE。文案不是把模块名改成漂亮短句，而是把复杂产品信息与用户认知差距缩小，并推动**知情且适配的行动**。
 适用：Hero、模块标题/副标题、核心解释、对比文案、数据标注、FAQ、CTA、按钮微文案、活动状态和转化流程。
 
+## 0. 必须查 EBC 已审查文案语料（避免只有抽象风格词）
+- 先查 `content/corpus/decision-index.csv`，再按页面/受众/信息任务读 `content/corpus/dialogue-decision-cards.md` 及历史 LP/官网文案样本。
+- 按 `content/rules/review-rubric.md` 的四项否决和八维 0–2 分量表指出具体问题，注明历史实例 ID、证据状态、适用范围。
+- `content/` 目前在独立 Draft PR #5；合并前可能不存在于 PM 当前工作树，需跨分支读取，不能假装已经加载。
+- 只有 USER_CONFIRMED_IN_CHAT 能称用户审稿认可；LIVE_OBSERVED/CODE_OBSERVED 只是历史语料，不代表公司批准或更高转化。
+- 字数只是统计，不能硬推 H1 两行/四字标题；重点审查信息增量、用户理解与真实产品语义。
+
 ## 1. 在写之前，先确定“改变哪一个认知”
 对每处文案写短句：
 - Audience：谁读，已经知道什么？
