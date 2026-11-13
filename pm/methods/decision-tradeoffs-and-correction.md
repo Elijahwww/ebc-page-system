@@ -84,7 +84,7 @@
 ## 7. 与 Page Structure / Claude 同步后的合并计划
 1. 已读取 `research/page-structures/` 与 `sources/campaigns/` 和 7 个产品 LP 的 Vue/中文 locale；后续每次更新继续核验新资料，不凭旧摘要提升 `STRUCTURE_LOCKED`。
 2. 与 `pm/methods/page-logic-and-content-scope.md` 联动：每一候选模块先判是否同槽位 Variant、是否满足 MODULE_ADMISSION_GATE，再记录本文件中的被放弃选项和反转条件。
-3. 对当前的 `pm/methods/strategy-debate-and-scenario-testing.md`、`.claude/skills/pm-page-strategy/SKILL.md`、`AGENTS.md` 中“至少两个结构不同”措辞，在统一提交时**统一改为“至少两个真正不同的策略；已锁定骨架时允许同结构内竞争”**。
+3. 对当前的 `pm/methods/strategy-debate-and-scenario-testing.md`、`.claude/skills/pm-page-strategy/SKILL.md`、`AGENTS.md` 中“至少两个结构不同”措辞，本次已在整合分支同步修改为“真正不同的策略；已锁定骨架时允许同结构内竞争”，后续以真实 Agent 运行进行测试。
 4. 以真实赛事、一个复杂产品 LP 和官网案例运行回归测试，再讨论 `main` 变更；缺乏相关页面真实资料不能以自审替代测试。
 
 ## 最终原则
