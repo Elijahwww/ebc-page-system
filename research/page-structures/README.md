@@ -1,8 +1,8 @@
 # EBC Page Structure System · 页面结构规范（候选）
 
-> 状态：**`STRUCTURE_CANDIDATE`**，2026-11-13 由 Claude 依据 `sources/` 原始资料整理，待 GPT 跨案例复审与用户确认。
+> 状态：**`STRUCTURE_CANDIDATE`**，2026-11-13 由 Claude 依据 `sources/` 原始资料整理，已补 GPT 源码与中文 locale 复审记录，仍待用户确认。
 > **本目录目前没有任何 `STRUCTURE_LOCKED` 结构。** 在用户确认之前，这些文件是"默认建议"，不是强制标准。
-> 本轮未修改 `sources/`、`AGENTS.md`、全局 PM / Copy / Design Skills。
+> Claude 初版未修改 `sources/` 或全局 Agent 规则；此次整合新增三个只读来源 manifest 和 `sources/INDEX.md` 索引，并更新跨 Agent 入口与 PM/Copy/Design 规则，**未改原始 Vue/PNG**。
 
 ## 1. 这套规范解决什么
 
@@ -38,7 +38,7 @@
 | 主站产品频道页，需要报价、FAQ 等完整信息 | `WEB_PRODUCT`（单例候选，需补对照案例） |
 | 以上都不符合 | `NO_MATCH`：走 `AGENTS.md` 的常规 PM 流程，并把结果作为新类型候选登记到 `structure-exceptions.md` |
 
-2. **读取对应结构文件**的 B（标准模块结构）、C（模块标准表）、E（锁定规则）。
+2. **读取对应结构文件**的 B（历史模块结构）、C（模块标准表）、E（候选使用建议）；以 GPT 复审的证据边界为准，不把标题中的“锁定规则”误读为已锁定。
 3. **优先参考适用骨架**：如果项目有用户明确确认的 `STRUCTURE_LOCKED`，在其范围内遵守模块与顺序；若只有 `STRUCTURE_CANDIDATE`，将 Required/Conditional/Optional 当作**历史推荐**，先检验当前用户任务和必要事实，允许依据取舍增减，但需要简短理由。
 4. **只更新内容**：文案、图片与视觉、真实数据、必要的交互细节、语言与市场替换。各文件 C 表的"可变"栏列出了可以自由变化的部分。
 5. **不为完整感新增模块**。行业常见或视觉好看不是充分理由；先查 [模块变体](cross-case-module-map.md) 并做 MODULE_ADMISSION_GATE。如果确有新业务机制/不同入口、用户认知缺口或必要披露无法在现有槽位正确处理，可以提出 Structure Override 和取舍记录。
