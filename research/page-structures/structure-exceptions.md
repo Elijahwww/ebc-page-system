@@ -1,6 +1,6 @@
 # 结构差异与待决事项（Structure Exceptions）
 
-状态：全部 `OPEN` · 2026-11-13
+状态：原始待决项按原始记录保留；GPT 2026-11-13 对部分方法问题作候选审查，用户/业务需核对的仍为 OPEN。
 本文件登记尚未解决的结构差异、证据缺口和需要用户或 GPT 裁定的问题。已确认的 Structure Override 也记录在这里（目前没有）。
 
 决定权标注：`USER` 需要业务方确认；`GPT` 可由跨案例评审给出建议；`DATA` 需要补资料后才能判断。
@@ -56,3 +56,27 @@
 ## 已确认的 Structure Override
 
 （无）
+
+
+## 五、GPT 2026-11-13 复审补充（方法结论，不替代原始证据）
+
+**复审全文**：[review-2026-11-13.md](review-2026-11-13.md)。本章只是方法级候选裁决，**不是用户对结构的批准**：
+
+| Issue | 处理 | 状态 |
+|---|---|---|
+| EX-01 | 上层类型采用 `CAMPAIGN_TRADING_INCENTIVE`（抽奖/达标/排名）；原 `sources/campaigns/trading-contest/` 路径保留以免引用断裂 | GPT_REVIEWED_CANDIDATE |
+| EX-04 | 优先将回表单行动保留于已有步骤/收尾场景，基于用户路径选择；2/3 不能证明最佳位置 | GPT_REVIEWED_CANDIDATE |
+| EX-08 | **三个正文位是三个产品、七版的历史默认，不是最优上限**；ETF 活动到期后不能自动加入 WHY-EBC 来填满空槽位 | GPT_REVIEWED_CANDIDATE |
+| EX-10 | ETF-B 采用独立 `honor-list` 四监管实体轮播，其余大多数调用 `jianguan`；不是全部相同组件 | GPT_REVIEWED_CANDIDATE |
+| EX-11 | `ClosingSection` 的运营数据属于历史模块组合，未来是否展示仍需真实数据及业务必要性 | GPT_REVIEWED_CANDIDATE |
+| EX-16 | 关键规则图片化需要补可读文本与可访问性，属于内容呈现/工程 QA，**不是新增一屏营销模块** | GPT_REVIEWED_CANDIDATE |
+| EX-17 | 已核对 7 个 LP 中文 locale 和 US-X 中文 locale；其他语言/在线页面/共享组件仍未核验 | PARTIALLY_RESOLVED |
+| EX-18 | 已添加 3 份原始案例 `manifest.md` 与 `sources/INDEX.md` 登记；未重命名原素材 | DOCUMENTATION_FIXED |
+| EX-19 | 设计/代码/线上证据分开记录，不因代码可读就认定线上与之相同 | GPT_REVIEWED_CANDIDATE |
+| EX-23 | 已有已批准结构时策略竞争主要围绕用户路径、信息深度、模块内变体和内容取舍；不为形成不同结构而自动加屏 | METHOD_INTEGRATION |
+| EX-24 | 本 PR 新增 AGENTS、PM、Research、ChangeLog 导航入口；本次仍没有用户锁定的结构 | DOCUMENTATION_FIXED |
+| NEW-25 | ETF-B `honor-list` 历史监管编号与一些项目使用的其他口径可能不同；直接发布前需按实体、牌照类别、市场核对 | FACT_CONFLICT_OPEN |
+| NEW-26 | OIL-A 中文 locale 含不适用于原油页面的跟单遗留字段，文案提取必须按真实 Vue/组件引用键检查 | SOURCE_QUALITY_RECORDED |
+| NEW-27 | US-X 中文 locale 包含“无税费”等敏感营销主张，归属/市场/审批不明确，不得用于当前正式推广文案 | FACT_CONFLICT_OPEN |
+
+**仍需业务/线上资料的** EX-02、05、06、07、09、12、13、14、15、20、21、22 维持 OPEN；任何 GPT 回答均不等于用户批准的 `STRUCTURE_LOCKED`。
