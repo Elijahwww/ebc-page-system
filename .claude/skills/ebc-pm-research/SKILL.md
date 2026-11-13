@@ -13,6 +13,10 @@ Read:
 - pm/templates/iteration-review-log.md
 - Relevant evidence in sources/, asset-review/, pm/context/ and approved project materials.
 
+## Page structure discovery constraint
+
+For new page tasks read `research/page-structures/matching-and-hero-contract.md`, separating page family, Campaign mechanic and Hero Form/CTA mode. When existing EBC structures are missing, use **T0 verified official EBC website and EBC Campaigns → T1 CFD/Forex → T2 crypto exchange Campaigns → T3 broader finance → T4 tech/other if necessary**. Produce ordered module maps with Hero left/right placement, embedded form vs CTA, its actual destination, mobile layout and transfer risks. Crypto practices are layout references, never proof of valid EBC marketing claims. Explicit user CTA-only Hero requests override historical embedded-form defaults.
+
 ## Non-negotiable loop
 1. DEFINE: what exact business/user decision does this node settle?
 2. V1: write a real first answer or artifact, with evidence and unknowns.
