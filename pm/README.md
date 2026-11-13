@@ -48,7 +48,7 @@ PM Agent 应当让模型先完成可检查的策略性工作，帮助人工集�
 - [Decision Tradeoffs & Correction](methods/decision-tradeoffs-and-correction.md)：方案必须明确“选中、放弃、代价、失败/反转信号”；不追求全维度伪完美。
 - **已锁定结构时**保留模块职责，比较同结构内策略；**候选结构时**允许基于真实任务提出例外并保留记录。必要风险和产品事实不能因极简被删。
 
-## 四、其他资产位于“后半段"
+## 四、其他资产位于“后半段”
 - [页面策略/归因基础](methods/page-strategy-and-conversion.md)
 - [项目执行与交付](workflows/pm-page-delivery.md)
 - [PM 执行门禁清单](checklists/pm-stage-gates.md)
