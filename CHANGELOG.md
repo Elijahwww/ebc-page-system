@@ -1,5 +1,14 @@
 # EBC Page System · 版本与关键变化
 
+## v0.3.0 · 2026-11-13 · Page Structure System × PM 内容取舍与可纠错方案
+- Claude 已归档 `research/page-structures/` 十份结构报告及三个 `sources/campaigns/trading-contest/` 来源；GPT 对三份活动 Vue/locale 与七份 LP Vue + 七份中文 locale 和 US-X 中文 locale 做证据复审。三种机制是**抽奖/达标/排名**；七版三正文位是历史模板观察，**不是最佳或全站上限**；官网美股、US-X 单例保持待核。
+- 新增 [结构证据复审](research/page-structures/review-2026-11-13.md)、三个活动 Manifest 与 `sources/INDEX.md` 索引，修正监管区形态、历史到期 ETF 优惠、OIL-A locale 遗留等问题；原始源码和 PNG 未改。
+- 整合 [PM 页面逻辑/内容取舍](pm/methods/page-logic-and-content-scope.md)、[方案放弃与纠错](pm/methods/decision-tradeoffs-and-correction.md) 并接入 `AGENTS.md`、PM Agent/Strategy Skills、Copy、Design、Research、Claude/Gemini/PILOT。**已有锁定骨架时允许同结构下真正不同的策略**，不强迫另造模块；新增模块需证明现有职责无法承接。
+- 推荐方案必须说明 `CHOSEN / REJECTED / SACRIFICE / FAILURE CONDITION`，并审查冗余与必要信息完整性；新增八项回归场景 `NOT_RUN`。
+- **状态**：全部结构仍 `STRUCTURE_CANDIDATE` 或 `SINGLE_CASE_CANDIDATE`，无 `STRUCTURE_LOCKED`；三个活动页线上未核验、历史共享组件与正式营销数据未完全取得；真实 Agent 执行和转化结果未验证。
+- 过程与取舍见 [ITER-20261113-005](iterations/2026-11-13-structure-content-choice-integration.md)。
+
+
 ## v0.2.0 · 2026-11-12 · 可检验的视觉设计方向与 AI Coding 反模板循环
 - 提取用户历史 Figma Make Pre-IPO SKILL 的「精确层级/版心/间距/组件与桌面手机并审」机制，明确产品事实、固定 5600px/900px 等不是全站规则。
 - 研究 Anthropic frontend-design、Impeccable、UI UX Pro Max、Vercel Web Guidelines、shadcn、React Bits、21st.dev，以及可核查的 X 实践讨论；热度仅为研究线索，不作为有效性证明。
