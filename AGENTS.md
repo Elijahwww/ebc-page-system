@@ -9,7 +9,7 @@
 新建网页需求再读取：
 - PM 主能力：`.claude/skills/pm-page-strategy/SKILL.md`（非 Claude Agent 也可当成通用文本协议）
 - 文案：`content/README.md`、`content/corpus/decision-index.csv`、`content/rules/review-rubric.md`、`.claude/skills/ebc-copy-evidence/SKILL.md`
-- 页面结构：`research/page-structures/README.md`、适用 Page Type 分册、`research/page-structures/review-2026-11-13.md`；按需读 `pm/methods/page-logic-and-content-scope.md` 与 `pm/methods/decision-tradeoffs-and-correction.md`
+- 页面结构：`research/page-structures/README.md`、**`research/page-structures/matching-and-hero-contract.md`（每个新网页必读）**、适用 Page Type 分册、`research/page-structures/review-2026-11-13.md`；按需读 `pm/methods/page-logic-and-content-scope.md` 与 `pm/methods/decision-tradeoffs-and-correction.md`
 - 外部基准研究：`research/README.md`、`.claude/skills/ebc-reference-discovery/SKILL.md`
 - 设计与实现：`design/README.md`、`design/foundations/tokens.css`、`.claude/skills/ebc-web-design/SKILL.md`
 - 历史源证据：`sources/INDEX.md`、`asset-review/00-HANDOFF-FOR-GPT.md`、`cases/`、`insights/`，按需读取目标版本。
@@ -42,7 +42,8 @@ D 需求 → R 研究 → U 用户决策心理和多路径模拟 → C 文案 �
 
 ## 1A. 页面结构、取舍与纠错机制（2026-11-13）
 
-- 网页/LP/Campaign 先判断 `Page Type`、进入路径、用户决策任务及结构是否已获**用户明确确认**。读取 [Page Structure System](research/page-structures/README.md) 和 [GPT 跨案例复审](research/page-structures/review-2026-11-13.md)。**当前十份结构报告均为候选，没有 `STRUCTURE_LOCKED`。**
+- 网页/LP/Campaign 先分别判断 **`PAGE_FAMILY`（用途）、`CAMPAIGN_MECHANIC`（机制）、`HERO_CONVERSION`（首屏表单/CTA 及其目标）**、进入路径、用户决策任务及结构是否已获**用户明确确认**。读取 [Page Structure System](research/page-structures/README.md) 和 [GPT 跨案例复审](research/page-structures/review-2026-11-13.md)。**当前十份结构报告均为候选，没有 `STRUCTURE_LOCKED`。**
+- **先自动匹配结构库**：按用户指定页面用途/机制找已批准同类型骨架（若有），否则找结构候选，校验与用户新规则/市场/入口是否相符；**不能因 Hero 用 CTA 就把交易赛分类成产品推广 LP**。历史 Campaign 3/3 在 PC Hero 右侧内嵌注册表单，作为用户未指定时的默认候选；若用户明确要求 Hero CTA，直接改为按钮并按真实目标弹窗/跳转，**无需再生成右侧表单**。官网主站页未要求表单时不复制这一模式。
 - 历史模板可先用作**起点**，但不是必填或最多屏数。ETF/OIL/跟单七版均三正文位，只代表三个产品家族的历史写法；抽奖/达标/排名活动用同一骨架变体，不给每场硬加排行榜。
 - **新增内容准入**：它解决哪个当前用户未获回答的重要问题？现有模块/Variant 为什么无法承接？是否有真实数据/事实？若删除、合并、下沉、跳转，会造成什么具体信息缺口？见 [Page Logic & Content Scope](pm/methods/page-logic-and-content-scope.md)。
 - **必要内容完整性**：不可为了让页面短而丢失活动资格、真实获奖条件、重要交易风险、产品性质、地区/实体信息或其他适用披露。相反，不能为了“完美全面”生成与本次任务无关的品牌、FAQ、榜单、教育屏。
@@ -53,11 +54,11 @@ D 需求 → R 研究 → U 用户决策心理和多路径模拟 → C 文案 �
 ## 2. 优先内部证据，但不能困在已有标准
 先查询 EBC 用户已审稿文案、同页面案例、源代码与官方事实。
 出现 NO_MATCH / LOW_CONFIDENCE / CONFLICT / STAGNATION / NOVEL_PROBLEM / HIGH_IMPACT 时，调用共同外部研究技能：
-**同页面任务的 CFD/Forex → 更广的金融/Fintech → 头部科技公司（Apple 等）→ 其他有理由的行业。**
-必须抓可访问的真实页面文本；若当前 Agent 有浏览器截图能力，还应采集 PC/Mobile 整页和关键区块截图，分析信息放在哪里、视觉权重、CTA 交互和用户路径。
+**先 EBC 官网与已核实自有 Campaign/LP → CFD/Forex/券商 → 数字货币交易平台 → 更广金融行业 → 仍有缺口才查科技/其他行业。**
+必须抓可访问的真实页面文本，并优先比较**同任务页面纵向模块分布、Hero 右侧表单 vs CTA、注册/报名行为和重要规则的位置**；若当前 Agent 有浏览器截图能力，还应采集 PC/Mobile 整页和关键区块截图，分析信息放在哪里、视觉权重、CTA 交互和用户路径。
 **没有截图就标 `TEXT_ONLY_VISUAL_PENDING`，不能凭 HTML 想象网页视觉。**
 借鉴的是信息机制、页面任务和决策逻辑，不是第三方品牌素材、完整代码或逐字广告文案。
-研究最后必须使 D/R/U/C/S/Design 的一项产物发生**可说明的修订**，不只是写“参考了 Apple”。
+研究最后必须使 D/R/U/C/S/Design 的一项产物发生**可说明的修订**，不只是写“参考了 Apple”。**如果 EBC 已有结构足够且用户需求相容，就不强迫进行跨行业检索**；研究发现的额外模块仍需通过 `MODULE_ADMISSION_GATE`。
 
 ## 3. 文案证据与用户审稿状态
 - `USER_CONFIRMED_IN_CHAT`：只在有明确原话与场景时适用；对话历史缺失则不猜。
