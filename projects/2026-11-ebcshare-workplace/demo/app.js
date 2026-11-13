@@ -16,6 +16,14 @@
     chevron: '<path d="m9 5 7 7-7 7"/>',
     down: '<path d="m6 9 6 6 6-6"/>',
     arrow: '<path d="M4 12h16m-5-5 5 5-5 5"/>',
+    go: '<path d="M7 17 17 7M8.5 7H17v8.5"/>',
+    calendar: '<rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/>',
+    location: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
+    sunrise: '<path d="M3 18h18M7 15a5 5 0 0 1 10 0M12 2v5M9.5 4.5 12 2l2.5 2.5M4.6 10.6l1.4 1M19.4 10.6l-1.4 1M8 21.5h8"/>',
+    sunset: '<path d="M3 18h18M7 15a5 5 0 0 1 10 0M12 2v5M9.5 4.5 12 7l2.5-2.5M4.6 10.6l1.4 1M19.4 10.6l-1.4 1M8 21.5h8"/>',
+    moon: '<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/>',
+    medal: '<path d="M8.5 3h7l-2 5.2M8.5 3l2 5.2"/><circle cx="12" cy="14.5" r="6"/><path d="m12 11.6.9 1.9 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z"/>',
     external: '<path d="M14 3h7v7m0-7L11 13M10 4H4v16h16v-6"/>',
     star: '<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9z"/>',
     translate: '<path d="M3 5h12M9 2v3M5 5c0 5 5 9 9 10M12 5c0 5-4 9-9 11m10 5 4-11 4 11m-6.5-4h5"/>',
@@ -44,7 +52,7 @@
     download: '<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',
   };
   const icon = (n, small = false) =>
-    `<svg class="icon${small ? " small" : ""}" viewBox="0 0 24 24" aria-hidden="true">${paths[n] || paths.grid}</svg>`;
+    `<svg class="icon${small ? " small" : ""}${n === "go" ? " icon-go" : ""}" viewBox="0 0 24 24" aria-hidden="true">${paths[n] || paths.grid}</svg>`;
   const dict = {
     zh: {
       workspace: "工作台",
@@ -502,9 +510,6 @@
   } catch {}
   let state = { ...base, ...saved },
     ui = {
-      appCategory: "all",
-      appQ: "",
-      favOnly: false,
       communityTab: "work",
       postCategory: "all",
       department: "all",
@@ -516,7 +521,6 @@
       boardQ: "",
       offline: false,
       boardPage: 1,
-      globalQ: "",
       rankDept: false,
       entering: true, // route just changed → play the page entrance once
       pop: null, // id of the like/star that was just toggled → play its micro-animation once
@@ -755,7 +759,7 @@
   const appStatus = (a) => (state.requests.some((r) => r.app === a.id) ? "requested" : a.state);
   const route = () => {
     const name = location.hash.replace(/^#/, "").split("?")[0] || state.home;
-    return ["workspace", "community", "announcements", "apps", "board", "profile", "translation"].includes(name) ? name : "workspace";
+    return ["workspace", "community", "announcements", "board", "profile", "translation"].includes(name) ? name : "workspace";
   };
   function currentDate() {
     return new Date().toLocaleDateString(state.lang === "zh" ? "zh-CN" : "en-US", {
@@ -765,7 +769,7 @@
       timeZone: state.tz,
     });
   }
-  function zoneLabel() {
+  function zoneParts() {
     const cities = {
       "Asia/Shanghai": ["上海", "Shanghai"],
       "Asia/Singapore": ["新加坡", "Singapore"],
@@ -773,11 +777,18 @@
       "America/New_York": ["纽约", "New York"],
     };
     const parts = new Intl.DateTimeFormat("en", { timeZone: state.tz, timeZoneName: "shortOffset" }).formatToParts(new Date());
-    return (
-      (cities[state.tz] || [state.tz, state.tz])[state.lang === "zh" ? 0 : 1] +
-      " · " +
-      parts.find((x) => x.type === "timeZoneName").value.replace("GMT", "UTC")
-    );
+    return [(cities[state.tz] || [state.tz, state.tz])[state.lang === "zh" ? 0 : 1], parts.find((x) => x.type === "timeZoneName").value.replace("GMT", "UTC")];
+  }
+  function zoneLabel() {
+    return zoneParts().join(" · ");
+  }
+  function dayPart() {
+    const h = Number(new Intl.DateTimeFormat("en-US", { timeZone: state.tz, hour: "numeric", hourCycle: "h23" }).format(new Date())) % 24;
+    const ic = h >= 5 && h < 12 ? "sunrise" : h >= 12 && h < 17 ? "sun" : h >= 17 && h < 19 ? "sunset" : "moon";
+    if (h >= 5 && h < 12) return { icon: ic, hello: bi("早上好", "Good morning"), label: bi("早上", "Morning") };
+    if (h >= 12 && h < 18) return { icon: ic, hello: bi("下午好", "Good afternoon"), label: bi("下午", "Afternoon") };
+    if (h >= 18 && h < 23) return { icon: ic, hello: bi("晚上好", "Good evening"), label: bi("晚上", "Evening") };
+    return { icon: ic, hello: bi("夜深了", "Working late"), label: bi("深夜", "Late night") };
   }
   let lastFocus = null,
     toastTimer,
@@ -810,20 +821,23 @@
     const c = 2 * Math.PI * 34;
     return `<span class="xp-ring ${size}" role="img" aria-label="Lv.${XP.level} · ${XP.now} / ${XP.goal} XP"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="xp-track" cx="40" cy="40" r="34"/><circle class="xp-value" cx="40" cy="40" r="34" stroke-dasharray="${c.toFixed(1)}" style="--c:${c.toFixed(1)};--o:${(c * (1 - XP.now / XP.goal)).toFixed(1)}"/></svg><span class="xp-level"><small>Lv.</small>${XP.level}</span></span>`;
   }
+  /* Apps with an in-preview page link straight to it; the rest open their detail (request / coming soon). */
+  function appNavLink(a) {
+    const inner = `<span class="app-mini tone-${a.tone}">${icon(a.icon, true)}</span><span>${appName(a)}</span>`;
+    if (a.id === "translation" || a.id === "board") {
+      const current = route() === a.id;
+      return `<a class="nav-link ${current ? "active" : ""}" href="#${a.id}" title="${appName(a)}" aria-label="${appName(a)}" ${current ? 'aria-current="page"' : ""}>${inner}</a>`;
+    }
+    return `<button class="nav-link" title="${appName(a)}" aria-label="${appName(a)}" data-action="app" data-id="${a.id}">${inner}</button>`;
+  }
   function shell() {
     const r = route();
     const nav = [
       ["workspace", "home"],
       ["community", "community"],
-      ["announcements", "megaphone"],
-      ["apps", "grid"],
     ];
-    const active = r === "board" || r === "translation" ? "apps" : r;
-    const unread = unreadCount();
-    const crumb =
-      r === "board" || r === "translation"
-        ? `<a href="#apps">${t("apps")}</a>${icon("chevron", true)}<b>${t(r === "board" ? "boardTitle" : "sampleTranslation")}</b>`
-        : `<b>${t(active)}</b>`;
+    const active = r;
+    const crumb = `<b>${t(r === "board" ? "boardTitle" : r === "translation" ? "sampleTranslation" : r)}</b>`;
     return `<div class="mobile-sidebar-backdrop" data-action="close-menu"></div>
 <aside class="sidebar">
   <a href="#workspace" class="brand" aria-label="EBC Share"><span class="brand-ebc">EBC</span><span class="brand-word">Share</span></a>
@@ -831,17 +845,9 @@
   <nav class="nav-main" aria-label="${t("mainNav")}">${nav
     .map(
       ([name, i]) =>
-        `<a aria-label="${t(name)}" title="${t(name)}" class="nav-link ${active === name ? "active" : ""}" href="#${name}" ${active === name ? 'aria-current="page"' : ""}>${icon(i)}<span>${t(name)}</span>${name === "announcements" && unread ? `<b class="count">${unread}</b>` : ""}</a>`,
+        `<a aria-label="${t(name)}" title="${t(name)}" class="nav-link ${active === name ? "active" : ""}" href="#${name}" ${active === name ? 'aria-current="page"' : ""}>${icon(i)}<span>${t(name)}</span></a>`,
     )
-    .join("")}</nav>
-  <div class="sidebar-tools"><div class="nav-caption">${t("quickAccess")}</div>${apps
-    .filter((a) => state.favorites.includes(a.id))
-    .slice(0, 4)
-    .map(
-      (a) =>
-        `<button class="nav-link" title="${appName(a)}" data-action="app" data-id="${a.id}"><span class="app-mini tone-${a.tone}">${icon(a.icon, true)}</span><span>${appName(a)}</span></button>`,
-    )
-    .join("")}</div>
+    .join("")}${apps.map(appNavLink).join("")}</nav>
   <div class="sidebar-bottom">
     <button class="nav-link help-link" title="${t("help")}" data-action="help">${icon("help")}<span>${t("help")}</span></button>
     <button class="profile-row" aria-label="${t("profile")}" data-action="navigate" data-page="profile"><span class="avatar">EW</span><span class="profile-copy"><strong>Elijah Wong</strong><span>Marketing · Lv.${XP.level}</span></span>${icon("chevron", true)}</button>
@@ -851,7 +857,6 @@
   <header class="topbar">
     <button class="icon-button mobile-toggle" data-action="menu" aria-label="${t("mainNav")}">${icon("menu")}</button>
     <div class="breadcrumb"><span>EBC Share</span>${icon("chevron", true)}${crumb}</div>
-    <form class="top-search" id="global-search" role="search">${icon("search", true)}<input id="global-q" aria-label="${t("search")}" placeholder="${t("search")}" value="${esc(ui.globalQ)}" autocomplete="off"><kbd>⌘K</kbd></form>
     <div class="top-actions">
       <button class="lang-switch" data-action="language" aria-label="${bi("切换到 English", "Switch to 中文")}" title="${bi("切换到 English", "Switch to 中文")}"><span class="${state.lang === "zh" ? "on" : ""}">中</span><span class="${state.lang === "en" ? "on" : ""}">EN</span></button>
       <button class="icon-button" data-action="notifications" aria-label="${t("notification")}">${icon("bell")}${!state.notificationsRead ? '<span class="notification-dot"></span>' : ""}</button>
@@ -863,7 +868,7 @@
 <nav class="mobile-nav" aria-label="${t("mainNav")}">${nav
       .map(
         ([name, i]) =>
-          `<a href="#${name}" class="${active === name ? "active" : ""}" ${active === name ? 'aria-current="page"' : ""}>${icon(i)}<span>${name === "workspace" ? t("homeNav") : t(name)}</span>${name === "announcements" && unread ? '<i class="nav-dot"></i>' : ""}</a>`,
+          `<a href="#${name}" class="${active === name ? "active" : ""}" ${active === name ? 'aria-current="page"' : ""}>${icon(i)}<span>${name === "workspace" ? t("homeNav") : t(name)}</span></a>`,
       )
       .join("")}</nav>`;
   }
@@ -871,7 +876,7 @@
     return `<div class="page-heading"><div class="page-heading-copy">${kicker ? `<div class="page-kicker">${kicker}</div>` : ""}<h1>${title}</h1><p>${desc}</p></div>${action ? `<div class="page-heading-action">${action}</div>` : ""}</div>`;
   }
   function footer() {
-    return `<footer class="footer"><span>${icon("lock", true)}${t("internal")}</span><button data-action="preview-info">${t("preview")} v2.0 ${icon("external", true)}</button></footer>`;
+    return "";
   }
   /* Each app gets a small illustration built from CSS, so the directory needs no image requests.
      The Board illustration is drawn from the real monthly counts in BOARD_DATA. */
@@ -889,11 +894,6 @@
   }
   function statusChip(status) {
     return `<span class="status status-${status}"><i></i>${t(status)}</span>`;
-  }
-  function appCard(a, catalog = false) {
-    const status = appStatus(a),
-      fav = state.favorites.includes(a.id);
-    return `<article class="app-card tone-${a.tone} ${status === "building" ? "is-building" : ""}" data-spot><button class="app-open" data-action="app" data-id="${a.id}" aria-label="${t("viewApp")} ${appName(a)}"></button><div class="app-art-wrap" aria-hidden="true">${appArt(a)}</div><button class="star-button ${fav ? "active" : ""} ${ui.pop === "fav-" + a.id ? "pop" : ""}" data-action="favorite" data-id="${a.id}" aria-label="${fav ? t("unfavorite") : t("favorite")} ${appName(a)}" aria-pressed="${fav}">${icon("star", true)}</button><div class="app-body">${catalog ? `<div class="category-eyebrow">${a.owner}</div>` : ""}<h3>${appName(a)}</h3><p>${a.desc[L()]}</p><div class="app-footer">${statusChip(status)}<span class="app-go">${icon(status === "request" || status === "requested" ? "lock" : "arrow", true)}</span></div></div></article>`;
   }
   function media(p) {
     let art =
@@ -922,79 +922,42 @@
     const [m, d] = n.date.split("-");
     return `<button class="announcement-row ${read ? "is-read" : "is-unread"}" data-action="notice" data-id="${n.id}"><time class="a-date" datetime="2026-${n.date}"><b>${d}</b><small>${bi(Number(m) + "月", MONTHS_EN[Number(m) - 1])}</small></time><span class="announce-body"><strong>${!read ? `<i class="unread-dot" aria-label="${t("unread")}"></i>` : ""}${n.title[L()]}</strong><span class="a-meta">${n.dept[L()]}${noticeTag(n)}</span></span><span class="a-go">${icon("arrow", true)}</span></button>`;
   }
-  function recentChips() {
-    const items = state.recent
-      .slice(0, 3)
-      .map((id) => apps.find((x) => x.id === id))
-      .filter(Boolean);
-    return `<div class="recent-strip"><span class="recent-label">${icon("clock", true)}${t("recent")}</span>${items.length ? items.map((a) => `<button class="recent-chip" data-action="app" data-id="${a.id}"><span class="app-mini tone-${a.tone}">${icon(a.icon, true)}</span>${appName(a)}</button>`).join("") : `<span class="muted">${t("noRecent")}</span>`}</div>`;
-  }
   function workspace() {
-    const favorites = apps.filter((a) => state.favorites.includes(a.id));
-    const hello = esc(t("hello")).replace("Elijah", "<em>Elijah</em>");
+    const part = dayPart();
+    const [city, offset] = zoneParts();
     return `<section class="hero">
   <div class="hero-copy">
-    <div class="hero-date"><span>${currentDate()}</span><i></i><span>${icon("globe", true)}${zoneLabel()}</span></div>
-    <h1>${hello}</h1>
+    <div class="hero-date"><span class="hero-part" role="img" aria-label="${part.label}" title="${part.label}">${icon(part.icon, true)}</span><span>${icon("calendar", true)}${currentDate()}</span><span>${icon("location", true)}${city}</span><span>${icon("globe", true)}${offset}</span></div>
+    <h1>${part.hello}${bi("，", ", ")}<em>Elijah</em></h1>
     <p>${t("greeting")}</p>
   </div>
-  <div class="week-card">
-    <div class="week-head"><strong>${t("monthCalendar")}</strong><span>NOV 2026</span></div>
-    <div class="mini-calendar">${[9, 10, 11, 12, 13, 14, 15]
-      .map(
-        (d, i) =>
-          `<span class="cal-cell ${d === 12 ? "cal-today" : ""} ${i > 4 ? "cal-off" : ""}"><small>${bi(["一", "二", "三", "四", "五", "六", "日"], ["M", "T", "W", "T", "F", "S", "S"])[i]}</small><b>${d}</b></span>`,
-      )
-      .join("")}</div>
-    <button class="schedule-item" data-action="board-nov"><i class="schedule-bar"></i><span class="schedule-copy"><strong>${t("campaignReview")}</strong><small>${bi("查看本月活动与覆盖地区", "Explore this month’s campaigns and regions")}</small></span><span class="schedule-go">${t("seeBoard")}${icon("arrow", true)}</span></button>
-  </div>
-</section>
-<button class="notice-strip" data-action="notice" data-id="n1"><span class="notice-badge">${icon("megaphone", true)}${t("important")}</span><span class="notice-text">${t("noticeTitle")}</span><span class="notice-go">${t("details")}${icon("arrow", true)}</span></button>
-<section class="block">
-  <div class="section-head"><h2>${t("favoriteApps")}</h2>${recentChips()}<button class="text-button" data-action="manage-favorites">${icon("settings", true)}${t("manageApps")}</button></div>
-  <div class="app-grid">${favorites.length ? favorites.map((a) => appCard(a)).join("") : empty(t("selectTools"), t("chooseAppsDesc"), "manage-favorites", t("manageApps"))}</div>
-</section>
-<div class="workspace-grid">
-  <section class="panel news-panel">
-    <div class="panel-title"><h2>${t("importantNews")}</h2><a class="text-button" href="#announcements">${t("allNews")}${icon("arrow", true)}</a></div>
-    <div class="announcement-list">${notices.slice(0, 3).map(announcementRow).join("")}</div>
-  </section>
   <section class="me-card" aria-label="${t("personal")}">
     <div class="me-glow" aria-hidden="true"></div>
+    <div class="me-sheen" aria-hidden="true"></div>
     <div class="me-top">${xpRing()}<div class="me-id"><span class="me-kicker">${t("personal")}</span><h3>Elijah Wong</h3><p>${bi("每一次分享，都在积累。", "Every contribution counts.")}</p></div></div>
     <div class="me-xp"><strong data-count="${XP.now}">${XP.now}</strong><span>/ ${XP.goal} XP</span><em>${t("nextLevel")}</em></div>
-    <div class="personal-stats"><button data-action="growth"><span>${t("points")}</span><strong>${XP.now}</strong>${icon("arrow", true)}</button><button data-action="manage-favorites"><span>${t("favorites")}</span><strong>${state.favorites.length}</strong>${icon("arrow", true)}</button></div>
+    <div class="personal-stats"><button data-action="growth"><span class="reward-mark" aria-hidden="true">${icon("medal", true)}</span><span class="ps-copy"><span class="ps-label">${t("points")}</span><strong>${XP.now}</strong></span>${icon("go", true)}</button></div>
   </section>
-</div>
+</section>
+<button class="notice-strip" data-action="notice" data-id="n1"><span class="notice-badge">${icon("megaphone", true)}${t("important")}</span><span class="notice-text">${t("noticeTitle")}</span><span class="notice-go">${t("details")}${icon("go", true)}</span></button>
 <section class="block stories-section">
-  <div class="section-head"><h2>${t("latest")}</h2><a class="text-button" href="#community">${t("allUpdates")}${icon("arrow", true)}</a></div>
+  <div class="section-head"><h2>${t("latest")}</h2><a class="text-button" href="#community">${t("allUpdates")}${icon("go", true)}</a></div>
   <div class="story-grid">${allPosts().slice(0, 3).map(storyCard).join("")}</div>
 </section>${footer()}`;
   }
   function empty(title, desc, action = "", label = "") {
     return `<div class="empty"><span class="empty-icon">${icon("search")}</span><h3>${title}</h3><p>${desc}</p>${action ? `<button class="button" data-action="${action}">${label}</button>` : ""}</div>`;
   }
-  function appDirectory() {
-    const list = apps.filter(
-      (a) =>
-        (ui.appCategory === "all" || a.category === ui.appCategory) &&
-        (!ui.favOnly || state.favorites.includes(a.id)) &&
-        `${a.name.join(" ")} ${a.desc.join(" ")} ${a.owner}`.toLowerCase().includes(ui.appQ.toLowerCase()),
-    );
-    return `${pageHead(t("apps"), t("appsDesc"), `<button class="button" data-action="suggest">${icon("plus", true)}${t("submitTool")}</button>`, t("findTools"))}
-<div class="toolbar"><div class="tabs" role="group">${["all", "content", "collaboration", "websites"].map((c) => `<button class="tab ${ui.appCategory === c ? "active" : ""}" aria-pressed="${ui.appCategory === c}" data-action="app-category" data-value="${c}">${t(c)}</button>`).join("")}</div><div class="filters"><label class="toggle"><input type="checkbox" id="favorite-only" ${ui.favOnly ? "checked" : ""}><span class="toggle-ui"></span>${t("myFavorites")}</label><label class="search-wrap">${icon("search", true)}<input class="field search-field" id="app-q" aria-label="${t("appSearch")}" placeholder="${t("appSearch")}" value="${esc(ui.appQ)}"></label></div></div>
-<div class="app-grid app-catalog">${list.length ? list.map((a) => appCard(a, true)).join("") + `<div class="catalog-intro"><span class="ghost-plus">${icon("plus")}</span><h3>${t("moreTools")}</h3><p>${t("moreToolsDesc")}</p><button class="text-button" data-action="suggest">${t("submitTool")}${icon("arrow", true)}</button></div>` : empty(t("noResults"), t("tryAgain"), "clear-apps", t("clear"))}</div>${footer()}`;
-  }
   function leaderboard(full = false) {
     const names = ui.rankDept
-      ? ["MKT colleague A", "MKT colleague B", "MKT colleague C"]
-      : ["Team member A", "Team member B", "Team member C", "Team member D", "Team member E"];
-    const rows = names.slice(0, full ? 5 : 4).map((n, i) => ({
+      ? ["A", "B", "C", "D", "E", "F"].map((x) => "MKT colleague " + x)
+      : ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"].map((x) => "Team member " + x);
+    const rows = names.slice(0, full ? 10 : 8).map((n, i) => ({
       rank: i + 1,
       letter: n.split(" ").at(-1),
       name: bi("团队同事 " + n.split(" ").at(-1), n),
-      dept: ui.rankDept ? "MKT" : ["MKT", "SEO", "Design", "People", "IT"][i],
-      points: [660, 628, 586, 540, 485][i],
+      dept: ui.rankDept ? "MKT" : ["MKT", "SEO", "Design", "People", "IT", "MKT", "SEO", "Design", "People", "IT"][i],
+      points: [660, 628, 586, 540, 485, 452, 418, 390, 362, 335][i],
       color: ["red", "blue", "green"][i % 3],
     }));
     const pod = (x) =>
@@ -1018,8 +981,7 @@
 <div class="tab-line" role="tablist">${["work", "life"].map((x) => `<button role="tab" aria-selected="${ui.communityTab === x}" data-action="community-tab" data-value="${x}" class="${ui.communityTab === x ? "active" : ""}">${t(x)}</button>`).join("")}</div>
 <div class="community-layout"><div class="community-main"><div class="toolbar"><div class="tabs" role="group">${["all", "project", "sharing", "ideas"].map((x) => `<button class="tab ${ui.postCategory === x ? "active" : ""}" aria-pressed="${ui.postCategory === x}" data-action="post-category" data-value="${x}">${t(x)}</button>`).join("")}</div><select class="field" id="community-dept" aria-label="${t("department")}"><option value="all">${t("department")}</option>${["MKT", "SEO", "Brand", "Design", "People"].map((d) => `<option ${ui.department === d ? "selected" : ""}>${d}</option>`).join("")}</select></div>
 <div class="story-grid community-grid">${posts.map(storyCard).join("") || empty(t("noResults"), t("tryAgain"), "clear-community", t("clear"))}</div></div>
-<aside class="community-side"><section class="panel rank-panel"><div class="panel-title"><h2>${t("ranking")}</h2><span class="panel-icon">${icon("award", true)}</span></div><div class="tabs seg" role="group"><button class="tab ${!ui.rankDept ? "active" : ""}" aria-pressed="${!ui.rankDept}" data-action="rank" data-value="all">${t("wholeCompany")}</button><button class="tab ${ui.rankDept ? "active" : ""}" aria-pressed="${ui.rankDept}" data-action="rank" data-value="department">${t("myDepartment")}</button></div>${leaderboard()}<div class="rank-foot"><span class="muted">${t("rankingNote")}</span><button class="text-button" data-action="ranking">${t("viewRanking")}${icon("arrow", true)}</button></div></section>
-<div class="community-prompt"><span class="prompt-mark" aria-hidden="true">“</span><h3>${t("shareTitle")}</h3><p>${t("shareDesc")}</p><button class="text-button" data-action="publish">${t("writePost")}${icon("arrow", true)}</button></div></aside></div>${footer()}`;
+<aside class="community-side"><section class="panel rank-panel"><div class="panel-title"><h2>${t("ranking")}</h2><span class="panel-icon">${icon("award", true)}</span></div><div class="tabs seg" role="group"><button class="tab ${!ui.rankDept ? "active" : ""}" aria-pressed="${!ui.rankDept}" data-action="rank" data-value="all">${t("wholeCompany")}</button><button class="tab ${ui.rankDept ? "active" : ""}" aria-pressed="${ui.rankDept}" data-action="rank" data-value="department">${t("myDepartment")}</button></div>${leaderboard()}<div class="rank-foot"><button class="text-button" data-action="ranking">${t("viewRanking")}${icon("arrow", true)}</button></div></section></aside></div>${footer()}`;
   }
   function announcements() {
     const list = notices.filter(
@@ -1115,7 +1077,7 @@
       [
         "defaultHome",
         "defaultHomeDesc",
-        `<select class="field" id="setting-home" aria-label="${t("defaultHome")}">${["workspace", "community", "apps"].map((x) => `<option value="${x}" ${state.home === x ? "selected" : ""}>${t(x)}</option>`).join("")}</select>`,
+        `<select class="field" id="setting-home" aria-label="${t("defaultHome")}">${["workspace", "community"].map((x) => `<option value="${x}" ${state.home === x ? "selected" : ""}>${t(x)}</option>`).join("")}</select>`,
       ],
     ]
       .map(
@@ -1128,7 +1090,7 @@
 <button class="text-button reset-btn" data-action="reset">${t("reset")}</button>${footer()}`;
   }
   function translation() {
-    return `${pageHead(t("sampleTranslation"), t("translationHint"), `<button class="button" data-action="navigate" data-page="apps"><span class="flip">${icon("arrow", true)}</span>${t("back")}</button>`)}
+    return `${pageHead(t("sampleTranslation"), t("translationHint"), `<button class="button" data-action="navigate" data-page="workspace"><span class="flip">${icon("arrow", true)}</span>${t("back")}</button>`)}
 <section class="tool-placeholder"><div class="tool-bar"><span class="lang-pill">${t("source")}</span><span class="tool-arrow">${icon("arrow", true)}</span><span class="lang-pill">${t("target")}</span><span class="preview-label">${t("preview")}</span></div>
 <div class="tool-split"><div class="tool-pane"><textarea id="translation-input" aria-label="${t("source")}" placeholder="${t("translationSource")}"></textarea></div><div class="tool-pane out"><p id="translation-output" class="muted">${bi("选择“载入示例”，体验翻译工作区。", "Load the example to explore the translation workspace.")}</p></div></div>
 <div class="inline-actions"><button class="button" data-action="translation-load">${t("loadSample")}</button><button class="button primary" data-action="translation-run">${t("translateAction")}</button><button class="button" data-action="translation-copy">${icon("copy", true)}${t("copyLink").replace("链接", "译文").replace("link", "translation")}</button></div></section>${footer()}`;
@@ -1141,8 +1103,6 @@
         return community();
       case "announcements":
         return announcements();
-      case "apps":
-        return appDirectory();
       case "board":
         return board();
       case "profile":
@@ -1177,6 +1137,54 @@
       requestAnimationFrame(step);
     });
   }
+  const heroFx = (() => {
+    const canHover = matchMedia("(hover: hover) and (pointer: fine)");
+    const lerp = (a, b, k) => a + (b - a) * k;
+    const tilt = { rx: 0, ry: 0, gx: 70, gy: 20, l: 0, trx: 0, try: 0, tgx: 70, tgy: 20, tl: 0 };
+    let hoverEl = null, rect = null, frame = 0;
+    function frameStep() {
+      const k = hoverEl ? 0.12 : 0.06;
+      tilt.rx = lerp(tilt.rx, tilt.trx, k);
+      tilt.ry = lerp(tilt.ry, tilt.try, k);
+      tilt.gx = lerp(tilt.gx, tilt.tgx, k);
+      tilt.gy = lerp(tilt.gy, tilt.tgy, k);
+      tilt.l = lerp(tilt.l, tilt.tl, hoverEl ? 0.1 : 0.06);
+      const card = $(".me-card");
+      if (card) {
+        const s = card.style;
+        s.setProperty("--rx", tilt.rx.toFixed(3) + "deg");
+        s.setProperty("--ry", tilt.ry.toFixed(3) + "deg");
+        s.setProperty("--gx", tilt.gx.toFixed(1) + "%");
+        s.setProperty("--gy", tilt.gy.toFixed(1) + "%");
+        s.setProperty("--lift", tilt.l.toFixed(3));
+      }
+      const moving =
+        Math.abs(tilt.rx - tilt.trx) + Math.abs(tilt.ry - tilt.try) > 0.005 ||
+        Math.abs(tilt.gx - tilt.tgx) + Math.abs(tilt.gy - tilt.tgy) > 0.1 || Math.abs(tilt.l - tilt.tl) > 0.002;
+      frame = moving ? requestAnimationFrame(frameStep) : 0;
+    }
+    const kick = () => { if (!frame) frame = requestAnimationFrame(frameStep); };
+    function release() {
+      hoverEl = rect = null;
+      Object.assign(tilt, { trx: 0, try: 0, tgx: 70, tgy: 20, tl: 0 });
+      kick();
+    }
+    function move(e) {
+      if (e.pointerType !== "mouse" || !canHover.matches || reducedMotion()) return;
+      const el = e.target.closest?.(".me-card");
+      if (!el) { if (hoverEl) release(); return; }
+      if (el !== hoverEl) { release(); hoverEl = el; rect = el.getBoundingClientRect(); }
+      const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      const y = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+      Object.assign(tilt, { trx: -(y * 2 - 1) * 4, try: (x * 2 - 1) * 5, tgx: x * 100, tgy: y * 100, tl: 1 });
+      kick();
+    }
+    document.addEventListener("pointermove", move, { passive: true });
+    document.documentElement.addEventListener("pointerleave", () => hoverEl && release());
+    window.addEventListener("scroll", () => hoverEl && release(), { passive: true });
+    window.addEventListener("blur", () => hoverEl && release());
+    return { sync: kick };
+  })();
   function render() {
     const key = route() + "|" + state.lang;
     ui.entering = key !== renderedKey;
@@ -1188,6 +1196,7 @@
     ui.pop = null;
     if (keep && !$("#overlay-root").firstChild) $("#app " + keep)?.focus({ preventScroll: true });
     if (ui.entering) countUp();
+    heroFx.sync();
   }
   function openModal(title, body, footerContent = "", options = {}) {
     lastFocus = document.activeElement;
@@ -1276,20 +1285,6 @@
       );
       $(".modal input")?.select();
     }
-  }
-  function globalSearch() {
-    const q = ui.globalQ.trim().toLowerCase();
-    if (!q) {
-      $("#global-q")?.focus();
-      return;
-    }
-    const a = apps.filter((x) => [...x.name, ...x.desc, x.owner].join(" ").toLowerCase().includes(q));
-    const n = notices.filter((x) => x.title.join(" ").toLowerCase().includes(q));
-    const p = allPosts().filter((x) => (Array.isArray(x.title) ? x.title.join(" ") : x.title).toLowerCase().includes(q));
-    openModal(
-      t("search"),
-      `<div class="search-results"><p class="lead">${bi("搜索结果", "Results for")} “${esc(ui.globalQ)}”</p>${a.length ? `<h3>${t("apps")}</h3>${a.map((x) => `<button class="recent-item" data-action="app" data-id="${x.id}">${appIcon(x)}<span class="copy"><strong>${appName(x)}</strong><span class="muted">${x.owner}</span></span>${icon("arrow")}</button>`).join("")}` : ""}${n.length ? `<h3>${t("announcements")}</h3>${n.map(announcementRow).join("")}` : ""}${p.length ? `<h3>${t("community")}</h3>${p.map((x) => `<button class="notification-item" data-action="story" data-id="${x.id}"><span class="announce-icon">${icon("community", true)}</span><strong>${esc(postText(x, "title"))}</strong></button>`).join("")}` : ""}${!a.length && !n.length && !p.length ? empty(t("noResults"), t("tryAgain")) : ""}</div>`,
-    );
   }
   function actions(el) {
     const action = el.dataset.action,
@@ -1382,16 +1377,6 @@
         ui.noticeTab = "all";
         ui.noticeDept = "all";
         ui.noticeQ = "";
-        render();
-        break;
-      case "app-category":
-        ui.appCategory = v;
-        render();
-        break;
-      case "clear-apps":
-        ui.appQ = "";
-        ui.appCategory = "all";
-        ui.favOnly = false;
         render();
         break;
       case "community-tab":
@@ -1548,11 +1533,6 @@
     if (e.target.classList.contains("modal-backdrop")) closeModal();
   });
   document.addEventListener("keydown", (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
-      e.preventDefault();
-      $("#global-q")?.focus();
-      return;
-    }
     if (e.key === "Escape") {
       closeModal();
       $(".sidebar")?.classList.remove("is-open");
@@ -1580,9 +1560,6 @@
     const id = e.target.id,
       v = e.target.value;
     switch (id) {
-      case "favorite-only":
-        ui.favOnly = e.target.checked;
-        break;
       case "community-dept":
         ui.department = v;
         break;
@@ -1623,11 +1600,7 @@
   document.addEventListener("input", (e) => {
     const id = e.target.id,
       v = e.target.value;
-    if (id === "global-q") {
-      ui.globalQ = v;
-      return;
-    }
-    const mapping = { "app-q": "appQ", "notice-q": "noticeQ", "board-q": "boardQ" };
+    const mapping = { "notice-q": "noticeQ", "board-q": "boardQ" };
     if (mapping[id]) {
       ui[mapping[id]] = v;
       ui.boardPage = 1;
@@ -1644,10 +1617,6 @@
   document.addEventListener("submit", async (e) => {
     e.preventDefault();
     const form = e.target;
-    if (form.id === "global-search") {
-      globalSearch();
-      return;
-    }
     if (form.id === "favorites-form") return;
     if (form.id === "request-form") {
       const reason = form.elements.reason.value.trim();
@@ -1729,18 +1698,6 @@
     const id = new URLSearchParams(location.hash.split("?")[1] || "").get("story");
     if (route() === "community" && id) showStory(id);
   }
-  // Pointer-follow highlight on app tiles (purely decorative).
-  document.addEventListener(
-    "pointermove",
-    (e) => {
-      const el = e.target.closest?.("[data-spot]");
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      el.style.setProperty("--mx", e.clientX - r.left + "px");
-      el.style.setProperty("--my", e.clientY - r.top + "px");
-    },
-    { passive: true },
-  );
   window.addEventListener("hashchange", () => {
     closeModal();
     render();
