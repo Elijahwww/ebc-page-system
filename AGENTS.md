@@ -9,6 +9,7 @@
 新建网页需求再读取：
 - PM 主能力：`.claude/skills/pm-page-strategy/SKILL.md`（非 Claude Agent 也可当成通用文本协议）
 - 文案：`content/README.md`、`content/corpus/decision-index.csv`、`content/rules/review-rubric.md`、`.claude/skills/ebc-copy-evidence/SKILL.md`
+- 页面结构：`research/page-structures/README.md`、适用 Page Type 分册、`research/page-structures/review-2026-11-13.md`；按需读 `pm/methods/page-logic-and-content-scope.md` 与 `pm/methods/decision-tradeoffs-and-correction.md`
 - 外部基准研究：`research/README.md`、`.claude/skills/ebc-reference-discovery/SKILL.md`
 - 设计与实现：`design/README.md`、`design/foundations/tokens.css`、`.claude/skills/ebc-web-design/SKILL.md`
 - 历史源证据：`sources/INDEX.md`、`asset-review/00-HANDOFF-FOR-GPT.md`、`cases/`、`insights/`，按需读取目标版本。
@@ -34,9 +35,20 @@ D 需求 → R 研究 → U 用户决策心理和多路径模拟 → C 文案 �
 2. 市场和行业证据（观察/推断/未知分开，注明来源）；
 3. 2–3 种用户情境：顺畅、犹豫、误解/退出；CTA 后续动作；
 4. 完整的关键文案与替代策略；H1 / 副标题 / CTA 各自的信息职责；
-5. 至少两个实质不同的页面策略及取舍；各模块的用户问题和证据；
-6. V1→V2 的**具体修订记录**、剩余假设、需要测试的点。
+5. 真正不同的解决策略及**主动放弃/延后项**；已有锁定骨架时可以在同结构内比较信息、证据、CTA、Variant；各模块必须回答真正用户问题；
+6. **纠错触发**：新产品事实、用户意见或实际数据在什么情况下会推翻目前判断；
+7. V1→V2 的**具体修订记录**、剩余假设、需要测试的点。
 **一份只列模块名称和漂亮标题的方案不合格。**
+
+## 1A. 页面结构、取舍与纠错机制（2026-11-13）
+
+- 网页/LP/Campaign 先判断 `Page Type`、进入路径、用户决策任务及结构是否已获**用户明确确认**。读取 [Page Structure System](research/page-structures/README.md) 和 [GPT 跨案例复审](research/page-structures/review-2026-11-13.md)。**当前十份结构报告均为候选，没有 `STRUCTURE_LOCKED`。**
+- 历史模板可先用作**起点**，但不是必填或最多屏数。ETF/OIL/跟单七版均三正文位，只代表三个产品家族的历史写法；抽奖/达标/排名活动用同一骨架变体，不给每场硬加排行榜。
+- **新增内容准入**：它解决哪个当前用户未获回答的重要问题？现有模块/Variant 为什么无法承接？是否有真实数据/事实？若删除、合并、下沉、跳转，会造成什么具体信息缺口？见 [Page Logic & Content Scope](pm/methods/page-logic-and-content-scope.md)。
+- **必要内容完整性**：不可为了让页面短而丢失活动资格、真实获奖条件、重要交易风险、产品性质、地区/实体信息或其他适用披露。相反，不能为了“完美全面”生成与本次任务无关的品牌、FAQ、榜单、教育屏。
+- **方案必须取舍**：比较真正不同的策略，不为凑两个结构而增加屏。最终标明 `CHOSEN / REJECTED / SACRIFICE / FAILURE CONDITION`，说明主动放弃/推迟什么，以及何种新证据必须回到 PM 纠错。见 [Tradeoffs & Correction](pm/methods/decision-tradeoffs-and-correction.md)。
+- **权限边界**：用户明确锁定的结构在其项目/适用市场范围内应按模块职责执行；特殊业务变化走 Structure Override 并确认。历史候选可做本项目有据调整，但 Agent 不能自动将候选升格为用户已批准规范。
+- PM 结构只定义信息责任与必要用户路径；视觉可大胆创作，不强制历史配色、卡片/版式或固定行数。设计/代码无权因排版私自改业务事实/锁定文案。
 
 ## 2. 优先内部证据，但不能困在已有标准
 先查询 EBC 用户已审稿文案、同页面案例、源代码与官方事实。

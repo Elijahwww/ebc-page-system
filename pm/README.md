@@ -41,6 +41,13 @@ PM Agent 应当让模型先完成可检查的策略性工作，帮助人工集�
 - [当前事实冲突](context/fact-verification-issues.md)
 - `sources/` 与 `asset-review/` 已作为历史证据纳入当前 `main` 工作基线。它们证明“以前怎么做”，**不证明那个版本转化效果更好**。
 
+## 页面结构与决策取舍（2026-11-13）
+
+- [历史 Page Structure 候选](../research/page-structures/README.md)：分类为交易激励、产品 LP 与官网单例，**没有任何用户锁定结构**；[源码/locale 复审](../research/page-structures/review-2026-11-13.md) 强调 7 个 LP 的三个正文位不是强制最佳。
+- [Page Logic & Content Scope](methods/page-logic-and-content-scope.md)：研究内容不自动进入网页；优先现有模块/Variant，新增模块做独立职责和必要信息审查。
+- [Decision Tradeoffs & Correction](methods/decision-tradeoffs-and-correction.md)：方案必须明确“选中、放弃、代价、失败/反转信号”；不追求全维度伪完美。
+- **已锁定结构时**保留模块职责，比较同结构内策略；**候选结构时**允许基于真实任务提出例外并保留记录。必要风险和产品事实不能因极简被删。
+
 ## 四、其他资产位于“后半段”
 - [页面策略/归因基础](methods/page-strategy-and-conversion.md)
 - [项目执行与交付](workflows/pm-page-delivery.md)

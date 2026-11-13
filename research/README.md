@@ -4,6 +4,13 @@
 > 目标：让 PM、Research、User、Copy、Strategy、Design、QA 在 EBC 已有案例不足、结论冲突或迭代停滞时，主动检索外部优秀网页，读取正文和**真正的页面截图**，分析每条文案所在位置、模块职责、视觉节奏、路径，并用反证修改内部初稿。
 > **不是**一份静态竞品目录，也不是“先抄 Apple，再解释为什么好”。
 
+## 页面结构证据库（2026-11-13）
+
+- [Page Structure System](page-structures/README.md)：交易激励、产品推广、官网单例的**历史模块与 Variant 候选**，用于优先复用，不是硬性模块数量。
+- [GPT 跨案例复审](page-structures/review-2026-11-13.md)：Vue/中文 locale 核验、7/7 三正文位历史模板、三种机制及未核实线上/业务事实。
+- [PM 页面内容取舍](../pm/methods/page-logic-and-content-scope.md) 与 [决策纠错](../pm/methods/decision-tradeoffs-and-correction.md)：研究结果不等于页面内容；新增模块需要用户需求；好方案必须说明放弃了什么及失败时如何回退。
+- **状态提醒**：目前没有用户批准的 `STRUCTURE_LOCKED`；Claude 的 Required 与 CROSS_CASE_CONFIRMED 是研究标签，不自动成为公司强制标准。
+
 ## 使用入口
 - [检索触发与行业逐级扩展协议](methods/reference-escalation-loop.md)：触发、层级、排序、停止、对抗评审、回流节点。
 - [网页 + 截图双通道分析](methods/page-capture-and-analysis.md)：PC/MB 截图、HTML/DOM、文案落位、视觉和交互、失败标记。

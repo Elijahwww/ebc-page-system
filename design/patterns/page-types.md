@@ -3,6 +3,10 @@
 > 状态：DESIGN_BASELINE_CANDIDATE；历史案例索引见 sources/INDEX.md 与 asset-review/cases/CASE-00x.md（原始资源 PR #3）。
 > 模块是候选信息职责，不是固定屏数或必选模块列表。优先按 PM Brief 选择。
 
+## 结构骨架与视觉创作的边界（2026-11-13）
+
+新项目若匹配 `research/page-structures/README.md` 中历史候选，应先读取其结构与 `review-2026-11-13.md`。设计可以大胆改变构图、配色、字体、媒体、动效及同模块 Variant，但**不能为做满画面而新增无信息职责的区块**；若真实移动端或功能体验要求变更模块，将原因反馈 PM/Structure。现有 Claude 结构均非用户批准的锁定标准；三个正文槽位不是全局规则，必要风险和产品事实仍由本次审批决定。继续执行 `design/methods/visual-direction-and-iteration.md` 的截图驱动视觉评审。
+
 ## 默认中文设计，不等于中国市场
 普通多语言官网/LP 以中文已确认的页面逻辑与 Design Token 为主，目标语言进入独立 Localization 后检查真实排版影响；不按每种语言提前制作不同设计。`target_market` 若明确为日本等特定市场，需在 PM 阶段读取当地研究和规范，针对确有差异的模块/节日活动/CTA 进行小范围 Market Override。完整逻辑见 `localization/chinese-first-and-market-overrides.md`。
 

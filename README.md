@@ -25,7 +25,7 @@
 |---|---|
 | `pm/` | PM 五节点思考引擎、方法、验收、真实项目流程参考 |
 | `content/` | EBC 历史用户审稿决策卡、文案语义拆分、评价量表 |
-| `research/` | 跨行业网站发现、截图/DOM 与反证机制 |
+| `research/` | 跨行业参考、[页面结构候选](research/page-structures/README.md)、历史 Page Type 模块与 Variant、证据复审 |
 | `design/` | EBC 视觉方向/反 AI 模板审查、真实截图迭代、设计 Tokens、Header 与独立视觉/工程 QA |
 | `sources/` | 已脱敏的历史页面源码、页面截图和 manifest；**原始证据请勿覆盖** |
 | `asset-review/` | Claude 首轮原始案例分析、报告、来源登记 |
@@ -39,6 +39,10 @@
 
 ## 不同 AI 协作与交接
 GPT、Claude Desktop、Gemini、Grok 等共享同一项目目录和确认版本；切换 Agent 时使用 [统一交接协议](agents/cross-agent-handoff.md) 和 [交接包模板](projects/HANDOFF-TEMPLATE.md)。下一 Agent 只需读取最小交接包及必要源文件，不重建全部历史、不覆盖已确认中文文案；其他模型的独立建议保存在 `runs/` 并明确回流。
+
+## 页面结构、内容取舍与策略纠错 · 2026-11-13
+
+新活动/推广/官网页：先读 [Page Structure System](research/page-structures/README.md) 和 [GPT 跨案例源码复审](research/page-structures/review-2026-11-13.md)，识别候选而非机械锁定；再按 [PM 内容取舍](pm/methods/page-logic-and-content-scope.md) 与 [方案牺牲/纠错](pm/methods/decision-tradeoffs-and-correction.md) 判断模块存在理由。七版 LP 三个正文位是历史现象，不是必填或硬性上限；所有结构目前均未获用户 `STRUCTURE_LOCKED`。**策略竞争不等于新增屏；重要建议要说明主动放弃什么和何时推翻。**
 
 ## 视觉规范 v0.2 · 审美和功能单独验收
 重大页面设计与视觉重构应先阅读 [Art Direction 循环](design/methods/visual-direction-and-iteration.md) 和 [Visual Quality Scorecard](design/qa/visual-quality-scorecard.md)。要求真实项目专属视觉方向、代码运行后的 PC/Mobile 截图、视觉问题 V1→V2 实质修改；**功能通过不代表视觉得到用户认可**。用户的旧 Figma Make SKILL 只迁移设计方法，不复制旧产品文案、页长及蓝色 CTA。
