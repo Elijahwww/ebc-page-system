@@ -50,6 +50,8 @@ G5 footerEs
 2. 只有当需求明确要求"首屏直接注册"并得到用户确认时，才参考本文件，并按 Structure Override 记录。
 3. 需要先由用户确认这份代码对应的页面、市场和上线状态。
 
+> **GPT 2026-11-13 补充**：已直接读取 `sources/website/us-stocks/X-usstocks-code/code/usstocks/locales/zh_CN/index.ts`，可观察到“无税费”等历史营销字段；这并非当前获批事实。源码与官网美股设计图仍不能合并成同一页面，目标市场、线上状态、表单组件和商业文案需确认。
+
 ## F. 证据缺口
 
 设计图、URL、上线状态、归属、locale 文案（zh 与 es 的经验年限表述不一致，已在 `asset-review` 登记）、`footerEs` 与表单组件源码。
