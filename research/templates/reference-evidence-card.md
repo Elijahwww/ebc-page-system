@@ -3,7 +3,7 @@
 ID: REF-YYYYMMDD-NNN
 Research question:
 Trigger: NO_MATCH / LOW_CONFIDENCE / CONFLICT / STAGNATION / NOVEL_PROBLEM / USER_REQUEST / HIGH_IMPACT
-Source tier: T1 direct / T2 adjacent finance / T3 big tech / T4 other
+Source tier: T0 EBC official/internal / T1 CFD-Forex / T2 crypto-digital assets / T3 wider finance / T4 tech-other
 Official company & page name:
 URL (actual resolved):
 Market / language:
@@ -17,7 +17,17 @@ Source and access limitations:
 - What EBC current assumption was insufficient?
 - What would change if this example contradicts our V1?
 
-## 2. Module by module
+## 2. Ordered module structure map (when studying a web page)
+
+Page Family / Mechanic / Hero Conversion:
+Desktop Hero left vs right: (SCREENSHOT_CAPTURED / TEXT_ONLY / UNKNOWN)
+Embedded registration form? / Main CTA? / CTA verified destination:
+Mobile Hero action position:
+Ordered MODULE_MAP: Hero → ... → Rules/Legal (include conditional or absent modules)
+Cross-page role: CORE_COMMON / MECHANIC_CONDITIONAL / SOURCE_SPECIFIC / NOT_VERIFIED
+What could be reused in EBC without copying claims, code or adding redundant modules?
+
+## 3. Module by module
 | Module | Position/viewport | Visible text (brief) | Information job | Visual weight (only screenshot-proved) | Evidence / interaction | Interpretation |
 |---|---|---|---|---|---|---|
 
