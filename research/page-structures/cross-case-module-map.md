@@ -14,7 +14,7 @@
 | 通用模块 | 活动页 TC（3） | 产品 LP（7） | US-X（1） | 官网 US-D（1） | 说明 |
 |---|---|---|---|---|---|
 | `NAV` 导航 | ✓ 锚点 | ✓ 锚点 | ✗ | ✓ 主站全局导航 | 两种 Variant，不可互换 |
-| `HERO` | ✓ 内嵌表单 | ✓ 单一 CTA → 弹窗 | ✓ 内嵌表单 | ✓ CTA + 图片墙 | 见 §2 |
+| `HERO` | 历史 3/3 内嵌表单 | 历史 7/7 CTA → 弹窗 | 内嵌表单（单例） | 官网 Hero CTA/内容（单例） | **页面任务与转化 Variant 分开判断；这些是观察，不是硬规则** |
 | `REG-STRIP` / `TRUST` 监管/可信度区 | ✗ | ✓（7/7 有区域，**6/7 复用 jianguan，ETF-B 为独立 honor-list 监管轮播**） | ✓ | ✗（设计图） | 各实体牌照内容需重新核实，不把旧编号直接复用 |
 | `PRIZE` 奖励 | ✓ | ✗ | ✗ | ✗ | 活动页专有 |
 | `MECHANISM / LEADERBOARD` | ◐ 2/3 | ✗ | ✗ | ✗ | 活动页条件位 |
@@ -47,11 +47,12 @@
 
 | Variant | 结构 | 使用类型 | 证据 |
 |---|---|---|---|
-| `HERO-CTA-MODAL` | 两行 H1 + 一行副标题 + 一个 CTA，点击弹出注册 | 产品 LP 7/7 | 各 LP `section1` / `.hero` |
-| `HERO-FORM-EMBED` | 标题 + 副标题 + 日期 + 首屏内嵌注册表单 | 活动页 3/3；US-X | TC 各 `section1`；`usstocks` `section1` |
+| `HERO-CTA-MODAL` | H1 + 副标题 + 主 CTA→已配置的注册弹窗 | 历史产品 LP 7/7；其他需要弹窗的活动页也可选 | 各 LP `section1` / `.hero` |
+| `HERO-FORM-EMBED` | PC 左主题/主视觉、右侧注册表单；Mobile 适配保留表单 | 历史活动页 3/3；US-X 单例；未来仅候选默认 | TC 各 `section1`；`usstocks` `section1` |
+| `HERO-CTA-LINK/ANCHOR` | 首屏主 CTA 跳登录/Portal/报名页面或有效锚点，不内嵌 Hero 表单 | **当前项目可由用户明确指定，不声称历史样本已观察到** | PROJECT_REQUEST / CTA destination verification |
 | `HERO-SITE` | H1 + 卖点 + 标签 + CTA + 图片墙，下接产品分类切换 | 官网 1/1 | US-D 设计图 |
 
-选型规则（`STRUCTURE_CANDIDATE`）：页面类型决定 Hero Variant，不由 AI 按"转化更直接"自行改换。
+**选型规则（2026-11-13 修订）**：先按页面任务确定 `PAGE_FAMILY`，再以**用户明确要求 → 已批准项目转化流 → 同类来源默认**确定 `HERO_CONVERSION`。历史 Campaign 的右表单是无明确要求时的候选默认；若用户指定 Hero CTA 按钮，直接换 `CTA_MODAL` / `CTA_LINK` / `CTA_ANCHOR`，**不强制显示右侧表单、不改变 Campaign Page Type**。官网未指定时不复制活动页表单。详见 [三维匹配](matching-and-hero-contract.md)。
 
 ### STEPS
 
@@ -70,7 +71,7 @@
 | `WHY-EBC-METRICS` | 4 个执行数据卡 + 说明浮层 | OIL-B |
 | `ABOUT-EBC-PARAGRAPH` | 一段公司介绍 + 合作视觉 | TC-03、US-X |
 | `BRAND-PARTNER-CARDS` | 合作卡片轮播 | LP 7/7 |
-| `REG-STRIP` | 四地监管编号条 | LP 7/7、US-X |
+| `REG-STRIP` / `HONOR-LIST` | 历史监管条或四实体监管轮播；不得直接复用旧编号 | LP 7/7 有相关区域但组件不同、US-X |
 
 这几项都在回答"凭什么信任 EBC"。同一页面内不应把同一类证据重复放两次（ETF-B 历史稿里有重复文案）。
 
