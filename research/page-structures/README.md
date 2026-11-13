@@ -23,24 +23,24 @@
 | `WEB_PRODUCT` 官网产品页 | [website/product-page-us-stocks.md](website/product-page-us-stocks.md) | 1 版设计图 | `SINGLE_CASE_CANDIDATE` |
 | 官网品牌页 | — | 0 | 仓库无原始资料，未建文件 |
 
-辅助文件：[cross-case-module-map.md](cross-case-module-map.md)（通用模块与 Variant 对照）、[structure-exceptions.md](structure-exceptions.md)（未决差异、证据缺口、Override 登记）。
+辅助文件：[matching-and-hero-contract.md](matching-and-hero-contract.md)（**新网页必读：三维结构匹配、Hero 转化变体、EBC→CFD→数字货币→金融行业调研**）、[cross-case-module-map.md](cross-case-module-map.md)（通用模块与 Variant 对照）、[structure-exceptions.md](structure-exceptions.md)（未决差异、证据缺口、Override 登记）。
 
 ## 3. 使用方法（所有 Agent 相同；本章仍为候选规则）
 
 > **GPT 复审 2026-11-13**：[原始源码/locale 交叉复审与已知缺口](review-2026-11-13.md)。下文的 Required、固定顺序、不得新增等，描述的是 **Claude 历史案例的推荐基线**，除用户另有明确批准外，**不是全局强制模块数**。当前无 `STRUCTURE_LOCKED`。请先读 [PM 内容取舍门槛](../../pm/methods/page-logic-and-content-scope.md) 与 [方案放弃/纠错机制](../../pm/methods/decision-tradeoffs-and-correction.md)。
 
-1. **识别 Page Type**。按下表判断；判断不了先按 `NO_MATCH` 做需求/用户路径和最低成本研究；只有关键业务约束确实缺失才询问需求方，不要硬套最接近模板。
+1. **先读 [三维结构匹配与 Hero 转化契约](matching-and-hero-contract.md)**：区分页面用途、激励机制、Hero 表单/CTA 形式；再识别 Page Type。按下表判断；判断不了先按 `NO_MATCH` 做需求/用户路径和最低成本研究；只有关键业务约束确实缺失才询问需求方，不要硬套最接近模板。
 
 | 需求特征 | Page Type |
 |---|---|
-| 有活动期、有奖品或奖金、需要活动规则 | `CAMPAIGN_TRADING_INCENTIVE` |
+| 有活动期、有奖品或奖金、需要活动规则（交易大赛/抽奖/达标激励） | `CAMPAIGN_TRADING_INCENTIVE`；机制再细分，Hero 表单/CTA 不改变页面类型 |
 | 单一产品、广告流量、独立推广域名、目标是注册 | `LP_PRODUCT`，再读产品分册；没有分册的新产品只读共用骨架 |
 | 主站产品频道页，需要报价、FAQ 等完整信息 | `WEB_PRODUCT`（单例候选，需补对照案例） |
-| 以上都不符合 | `NO_MATCH`：走 `AGENTS.md` 的常规 PM 流程，并把结果作为新类型候选登记到 `structure-exceptions.md` |
+| 以上都不符合 | `NO_MATCH`：先查 EBC 官方实际页面，再按 CFD → 数字货币 → 更广金融 → 必要时科技研究；登记新类型候选，不硬套相近骨架 |
 
-2. **读取对应结构文件**的 B（历史模块结构）、C（模块标准表）、E（候选使用建议）；以 GPT 复审的证据边界为准，不把标题中的“锁定规则”误读为已锁定。
-3. **优先参考适用骨架**：如果项目有用户明确确认的 `STRUCTURE_LOCKED`，在其范围内遵守模块与顺序；若只有 `STRUCTURE_CANDIDATE`，将 Required/Conditional/Optional 当作**历史推荐**，先检验当前用户任务和必要事实，允许依据取舍增减，但需要简短理由。
-4. **只更新内容**：文案、图片与视觉、真实数据、必要的交互细节、语言与市场替换。各文件 C 表的"可变"栏列出了可以自由变化的部分。
+2. **读取对应结构文件**的 B（历史模块结构）、C（模块标准表）、E（候选使用建议）；**Hero 转化 Variant 独立选择**，用 CTA 的交易大赛仍是交易大赛，不改 Page Type；以 GPT 复审的证据边界为准，不把标题中的“锁定规则”误读为已锁定。
+3. **优先参考适用骨架**，不适用或证据薄弱时依 [分层调研](matching-and-hero-contract.md) 补充：如果项目有用户明确确认的 `STRUCTURE_LOCKED`，在其范围内遵守模块与顺序；若只有 `STRUCTURE_CANDIDATE`，将 Required/Conditional/Optional 当作**历史推荐**，先检验当前用户任务和必要事实，允许依据取舍增减，但需要简短理由。
+4. **优先更新内容与 Hero Variant**：文案、图片/视觉、真实数据、CTA/表单及真实去向、必要交互、语言与市场；用户明确指定 Hero 用 CTA 时不要保留 PC 右侧内嵌表单；各文件 C 表的"可变"栏列出了可以自由变化的部分。
 5. **不为完整感新增模块**。行业常见或视觉好看不是充分理由；先查 [模块变体](cross-case-module-map.md) 并做 MODULE_ADMISSION_GATE。如果确有新业务机制/不同入口、用户认知缺口或必要披露无法在现有槽位正确处理，可以提出 Structure Override 和取舍记录。
 6. **有实质结构偏离时记录 Structure Override**（模板见 §5），写清新问题、原有模块为何不能承接、放弃的收益/成本与撤销条件。对于尚未锁定的候选结构，Override 属当前项目的决策记录，不是禁止设计先探索。
 7. **未经用户确认的 Override 不得成为全局锁定标准**。项目级记录实际决定及其证据。多个有独立来源的项目重复出现同一变化后，再提请用户确定是否修订候选骨架。
