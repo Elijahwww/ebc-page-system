@@ -1,5 +1,11 @@
 # EBC Page System · 版本与关键变化
 
+## v0.4.0 · 2026-11-13 · 页面结构自动匹配、Hero 注册表单/CTA 独立选择与行业调研顺序
+- 新增 [三维匹配协议](research/page-structures/matching-and-hero-contract.md)：`PAGE_FAMILY / CAMPAIGN_MECHANIC / HERO_CONVERSION` 三个维度分开；交易大赛根据现有 Candidate 匹配活动模块；历史 Campaign 3/3 PC Hero 右侧表单仅为默认候选，**用户明确要求 CTA 时替换入口、无需重建正文或另造右表单**。官网主站不继承活动页表单。
+- 匹配不到/证据不足才启动定向网页结构研究，顺序：EBC 官网/核实自有 Campaign/LP → CFD/Forex → 数字货币平台 → 更广金融 → 必要时科技/其他；按顺序记录模块职责、Hero 左右/表单/CTA、报名路径、桌面/手机差异、规则与风险，不复制行业事实/陈述。
+- 同步更新 Page Structure/产品 LP/活动分册/跨案例 Hero Variant、AGENTS、PM Skill、Research Skill、PILOT、Claude/Gemini、PM/Research README 与研究证据卡，新增六项 [路由测试](pm/tests/page-family-hero-routing-regression.md)（`NOT_RUN`）。
+- **无任何历史源码/设计图改动**；此前的 `STRUCTURE_CANDIDATE` 与合规事实确认边界不变，真实 Agent 行为未运行验证。
+
 ## v0.3.0 · 2026-11-13 · Page Structure System × PM 内容取舍与可纠错方案
 - Claude 已归档 `research/page-structures/` 十份结构报告及三个 `sources/campaigns/trading-contest/` 来源；GPT 对三份活动 Vue/locale 与七份 LP Vue + 七份中文 locale 和 US-X 中文 locale 做证据复审。三种机制是**抽奖/达标/排名**；七版三正文位是历史模板观察，**不是最佳或全站上限**；官网美股、US-X 单例保持待核。
 - 新增 [结构证据复审](research/page-structures/review-2026-11-13.md)、三个活动 Manifest 与 `sources/INDEX.md` 索引，修正监管区形态、历史到期 ETF 优惠、OIL-A locale 遗留等问题；原始源码和 PNG 未改。

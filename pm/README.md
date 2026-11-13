@@ -43,6 +43,8 @@ PM Agent 应当让模型先完成可检查的策略性工作，帮助人工集�
 
 ## 页面结构与决策取舍（2026-11-13）
 
+- [页面类型匹配 × Hero 表单/CTA × 行业调研](../research/page-structures/matching-and-hero-contract.md)：每个新页面先判用途、活动机制、首屏转化方式；无法匹配时 EBC 官网 → CFD → 数字货币 → 金融行业按需研究，用户明确 CTA 覆盖历史表单。
+- [路由回归测试（尚未真实运行）](tests/page-family-hero-routing-regression.md)：交易大赛默认与 CTA 例外、主站 Hero、不匹配时研究顺序。
 - [历史 Page Structure 候选](../research/page-structures/README.md)：分类为交易激励、产品 LP 与官网单例，**没有任何用户锁定结构**；[源码/locale 复审](../research/page-structures/review-2026-11-13.md) 强调 7 个 LP 的三个正文位不是强制最佳。
 - [Page Logic & Content Scope](methods/page-logic-and-content-scope.md)：研究内容不自动进入网页；优先现有模块/Variant，新增模块做独立职责和必要信息审查。
 - [Decision Tradeoffs & Correction](methods/decision-tradeoffs-and-correction.md)：方案必须明确“选中、放弃、代价、失败/反转信号”；不追求全维度伪完美。

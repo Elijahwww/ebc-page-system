@@ -10,6 +10,7 @@ Status: ITERATIVE_NODE_CANDIDATE. Can run alone for a focused request, or be cal
 Read:
 - pm/operating-system/iterative-pm-engine.md
 - pm/methods/strategy-debate-and-scenario-testing.md
+- research/page-structures/matching-and-hero-contract.md (independent page type, mechanic, Hero conversion, EBC→CFD→crypto→finance escalation)
 - research/page-structures/README.md and matching case (no structures locked yet)
 - research/page-structures/review-2026-11-13.md
 - pm/methods/page-logic-and-content-scope.md

@@ -42,7 +42,7 @@ GPT、Claude Desktop、Gemini、Grok 等共享同一项目目录和确认版本�
 
 ## 页面结构、内容取舍与策略纠错 · 2026-11-13
 
-新活动/推广/官网页：先读 [Page Structure System](research/page-structures/README.md) 和 [GPT 跨案例源码复审](research/page-structures/review-2026-11-13.md)，识别候选而非机械锁定；再按 [PM 内容取舍](pm/methods/page-logic-and-content-scope.md) 与 [方案牺牲/纠错](pm/methods/decision-tradeoffs-and-correction.md) 判断模块存在理由。七版 LP 三个正文位是历史现象，不是必填或硬性上限；所有结构目前均未获用户 `STRUCTURE_LOCKED`。**策略竞争不等于新增屏；重要建议要说明主动放弃什么和何时推翻。**
+新活动/推广/官网页：先读 [Page Type × Hero Conversion 匹配协议](research/page-structures/matching-and-hero-contract.md)（用户明确要求 CTA 时不可照搬右侧表单；无匹配按 EBC 官方 → CFD → 数字货币 → 金融行业研究），再读 [Page Structure System](research/page-structures/README.md) 和 [GPT 跨案例源码复审](research/page-structures/review-2026-11-13.md)，识别候选而非机械锁定；再按 [PM 内容取舍](pm/methods/page-logic-and-content-scope.md) 与 [方案牺牲/纠错](pm/methods/decision-tradeoffs-and-correction.md) 判断模块存在理由。七版 LP 三个正文位是历史现象，不是必填或硬性上限；所有结构目前均未获用户 `STRUCTURE_LOCKED`。**策略竞争不等于新增屏；重要建议要说明主动放弃什么和何时推翻。**
 
 ## 视觉规范 v0.2 · 审美和功能单独验收
 重大页面设计与视觉重构应先阅读 [Art Direction 循环](design/methods/visual-direction-and-iteration.md) 和 [Visual Quality Scorecard](design/qa/visual-quality-scorecard.md)。要求真实项目专属视觉方向、代码运行后的 PC/Mobile 截图、视觉问题 V1→V2 实质修改；**功能通过不代表视觉得到用户认可**。用户的旧 Figma Make SKILL 只迁移设计方法，不复制旧产品文案、页长及蓝色 CTA。
