@@ -4,7 +4,7 @@
 - Working language：zh-CN
 - Target market / channel：全球 / 社交媒体广告。不套用单一国家画像。
 - Current stage / sending Agent / receiving Agent：Demo 与中文主稿已可审。发送方 Cursor Grok。接收方未指定。
-- Repository / branch / commit SHA：`cursor/us-stocks-social-lp-b09a`。SHA 在本文件末行，于推送前写入。
+- Repository / branch / commit SHA：`cursor/us-stocks-social-lp-b09a` @ `c5deaad0f58aaba9da9cd605269cb097025d3205`（项目内容）。本交接包的 SHA 行修订在其后的提交，以分支 HEAD 为准。
 - Updated at：2026-11-13
 - Current source files + versions：
   - `brief.md`：v1，含两则 USER_CONFIRMED_IN_CHAT
@@ -49,4 +49,4 @@
 - 输出文件位置：
 - 需要上游重新判断的事项：
 
-SHA：PENDING
+SHA：`c5deaad0f58aaba9da9cd605269cb097025d3205`
