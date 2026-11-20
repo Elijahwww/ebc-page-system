@@ -2,15 +2,15 @@
 
 > 状态：DESIGN_BASELINE_CANDIDATE。审核每项标记 PASS / FAIL / N-A / TO_CONFIRM；记录证据、责任人与修正优先级。与 PM G2–G5 检查联动。
 
-## 0. 独立视觉审查（新增强制 Gate）
+## 0. 独立视觉审查（按双轨分流执行 · v0.6 更新）
 另按 [Visual Quality Scorecard](visual-quality-scorecard.md) 检查**实际渲染截图**。功能/溢出测试 PASS 不代表审美 PASS，用户明确否定视觉意味着该 Gate 未通过。参见 [设计方向迭代方法](../methods/visual-direction-and-iteration.md)。
-- [ ] 用户审美目标（包括 negative references）被明确理解，不从旧 Pre-IPO SKILL/Apple 一键搬参数
-- [ ] 初版给出有理由的 Art Direction 和被拒的模板默认值/备选方向
+- [ ] **已正确区分视觉轨道**：`Mode 1 / 轨道 B`（产品 LP / 常规活动）对齐了 `sources/.../pc.png` 真实截图、`tokens-lp.css` 投放皮肤与密度硬尺（未触发 `LP_BLOAT_FAIL`、未擅自改成浅白文章流）；`Mode 2 / 轨道 A`（官网/品牌/大改版）给出了有理由的双方向 Art Direction 与被拒模板
+- [ ] 页面 UI 中无任何内部开发/审稿调试字样泄漏（如 `COPY-M01`、`授权视觉待替换`、`TODO`），且零死按钮
 - [ ] 首屏具有清楚主角；不是同级别的白卡片墙；颜色强调与模块密度有节奏
 - [ ] 有真实 Desktop/Mobile 截图或标 `VISUAL_QA_PENDING`（不能凭代码自评）
 - [ ] Visual Critique 逐条指出区域、原因、真实调整和 V1→V2 对比截图
 - [ ] 独立记录视觉 `USER_APPROVED / REVIEW_READY / NOT_PASSED` 状态，不能由工程 PASS 自动推导
-- [ ] 无用户明确确认时不能将本次项目的字体/色彩作为 EBC 全局强制 Token
+- [ ] 无用户明确确认时不能将单次项目的临时样式作为 EBC 全局强制 Token
 
 ## A. 输入与方向
 - [ ] 已识别页面类型、受众、主要市场与语言、渠道、主 CTA 及目标去向

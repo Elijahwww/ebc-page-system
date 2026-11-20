@@ -1,5 +1,23 @@
 # EBC Page System · 版本与关键变化
 
+## v0.6.0 · 2026-11-20 · 全链路端到端升级（极速路由、事实总表、LP 视觉 Token、代码交付与品牌素材清单）
+- **极速路由卡（[START-HERE-FAST-TRACK.md](START-HERE-FAST-TRACK.md)）**：解决跨模型上下文过载与漏读标准问题——按 `LP_PRODUCT` / `CAMPAIGN` / `WEB_PRODUCT` / `BRAND` 四类任务直接映射精确的 3–4 份必读文档 + 必看 `pc.png` 原图路径。
+- **业务事实与文案红线总表（[content/facts/current-facts-and-bans.md](content/facts/current-facts-and-bans.md)）**：把散落在 6 个文档中的 `SAFE_TO_USE`、`HARD_BANS`（禁用“小股东/分享增长/印花税/过期 0 费率/外汇券商/假实时报价”等）与 `NEEDS_LIVE_CHECK` 收口为单页 SSOT。
+- **补齐视觉与代码交付断层**：
+  - 新增 [design/foundations/tokens-lp.css](design/foundations/tokens-lp.css)（轨道 B EBC 投放 LP 专用视觉 Token，确保 Codex / Claude / Gemini / Cursor 默认渲染出一致的深酒红黑渐变 + 融合监管条 + 2×2 短卡基因）；
+  - 新增 [design/patterns/code-delivery-contract.md](design/patterns/code-delivery-contract.md)（零构建单目录静态预览优先、零死按钮、零内部调试文案泄漏、本地与公网预览边界）；
+  - 新增 [design/assets/README.md](design/assets/README.md) 并**完成首批 38 份官方品牌与合作物料入库**（14 语种深底反白 + 浅底彩色 EBC×FCB 联合 Logo 共 28 份，以及巴萨 / TradingView / 联合国基金会 / 牛津大学 / CCTV 的 PC+Mobile 成品合作卡共 10 份），同步接入 `2026-11-us-stocks-ant-lp` Demo。
+- **清除残留规则冲突**：同步修订 `ebc-pm-strategy-debate`、`ebc-pm-copy-critique`、`trading-contest.md`（补必看截图路径）与 `design-review-checklist.md`（按双轨分流验收），消除子 Skill 里“未锁定结构 / 自由加屏”的旧指令；同步清理 `2026-11-us-stocks-ant-lp` Demo 合作卡内的调试文字。
+- 完整复盘见 [ITER-20261120-007](iterations/2026-11-20-full-pipeline-optimization-v0-6.md)。**未改动 `sources/` 任何原始文件**。
+
+## v0.5.0 · 2026-11-20 · 双模式执行开关、必看基准截图门禁、LP 密度硬尺与视觉双轨分流
+- **触发根因**：真实项目 `2026-11-us-stocks-ant-lp` 跨模型对比（Codex / Claude / Gemini）暴露三家首版均产出“2000 字白底产品说明书”；根因为规则自由度过高、未强制读取历史 `pc.png` 截图、缺少防啰嗦否决项，以及 `design/` 浅白 Apple 规范与现行黑红 LP 皮肤冲突。
+- **双模式开关 + 开工回执（`AGENTS.md` §0B）**：拆出 `Mode 1 · STANDARD_PRODUCTION`（默认用于 `LP_PRODUCT` 与常规活动页，沿用现行骨架、密度与皮肤，PM 深度思考留在 `pm-decision.md` 不泄漏进 UI）与 `Mode 2 · EXPLORATORY_REDESIGN`（官网/品牌/内部平台/明确大改版）。动工前强制输出 4 项 Pre-Flight 开工回执并**必须实际读取对应 `sources/.../design/pc.png`**。
+- **`LP_PRODUCT` 升格与密度硬尺**：在 `research/page-structures/README.md` 与 `landing-pages/product-lp-common.md` 将 `LP_PRODUCT` 升级为 **`DEFAULT_PRODUCTION_BASELINE`**，固化 Hero 左侧 3 元素、底部融合监管条、正文位禁嵌套子模块/FAQ、优势卡 1 标题+1 短句（≤ 16 字）、整页主文案 250–450 字等密度硬尺。
+- **文案新增第 5 项硬否决（`content/rules/review-rubric.md`）**：新增 `LP_BLOAT_FAIL`（投放页说明书化一票否决），即使单句事实正确，一旦超密/嵌套科普墙也必须强制压字剪枝（Copy Compression），同时在单行脚注保留 CFD 性质与风险底线。
+- **视觉双轨分流（`design/README.md`、`design/methods/visual-direction-and-iteration.md`）**：轨道 A（官网/品牌/工作台）走 `tokens.css` 浅白 Apple-inspired 探索；轨道 B（投放 LP/活动页）默认继承 EBC 深酒红黑渐变现行投放皮肤，消除规则打架。
+- 同步更新 `PILOT.md` 通用提示词、`CLAUDE.md`、`GEMINI.md`、`.cursor/rules/ebc-page-pilot.mdc`、`pm-page-strategy` 与 `ebc-web-design` Skills；完整复盘见 [ITER-20261120-006](iterations/2026-11-20-lp-production-baseline-and-anti-bloat-v0-5.md)。**未改动 `sources/` 任何原始文件**。
+
 ## v0.4.0 · 2026-11-13 · 页面结构自动匹配、Hero 注册表单/CTA 独立选择与行业调研顺序
 - 新增 [三维匹配协议](research/page-structures/matching-and-hero-contract.md)：`PAGE_FAMILY / CAMPAIGN_MECHANIC / HERO_CONVERSION` 三个维度分开；交易大赛根据现有 Candidate 匹配活动模块；历史 Campaign 3/3 PC Hero 右侧表单仅为默认候选，**用户明确要求 CTA 时替换入口、无需重建正文或另造右表单**。官网主站不继承活动页表单。
 - 匹配不到/证据不足才启动定向网页结构研究，顺序：EBC 官网/核实自有 Campaign/LP → CFD/Forex → 数字货币平台 → 更广金融 → 必要时科技/其他；按顺序记录模块职责、Hero 左右/表单/CTA、报名路径、桌面/手机差异、规则与风险，不复制行业事实/陈述。

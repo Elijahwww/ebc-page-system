@@ -1,8 +1,8 @@
-# EBC Page Structure System · 页面结构规范（候选）
+# EBC Page Structure System · 页面结构规范（v0.5）
 
-> 状态：**`STRUCTURE_CANDIDATE`**，2026-11-13 由 Claude 依据 `sources/` 原始资料整理，已补 GPT 源码与中文 locale 复审记录，仍待用户确认。
-> **本目录目前没有任何 `STRUCTURE_LOCKED` 结构。** 在用户确认之前，这些文件是"默认建议"，不是强制标准。
-> Claude 初版未修改 `sources/` 或全局 Agent 规则；此次整合新增三个只读来源 manifest 和 `sources/INDEX.md` 索引，并更新跨 Agent 入口与 PM/Copy/Design 规则，**未改原始 Vue/PNG**。
+> 状态更新（2026-11-20 v0.5）：经真实项目复盘（`2026-11-us-stocks-ant-lp` 及跨模型对比），用户明确确认 **`LP_PRODUCT`（产品获客推广页）升级为 `DEFAULT_PRODUCTION_BASELINE`（常规投放默认生产基线）**，并配套**必看截图门禁与内容密度硬尺**，以杜绝 Agent 将 LP 写成“长篇说明书”。
+> 其余类型（`CAMPAIGN_TRADING_INCENTIVE` / `WEB_PRODUCT` / `LP_FORM_IN_HERO`）仍保持 `STRUCTURE_CANDIDATE` 或 `SINGLE_CASE_CANDIDATE`，待后续真实项目逐一确认。
+> Claude 初版未修改 `sources/` 或全局 Agent 规则；此次整合与 v0.5 升级**均未修改原始 Vue/PNG**。
 
 ## 1. 这套规范解决什么
 
@@ -15,7 +15,7 @@
 | Page Type | 文件 | 案例数 | 结构状态 |
 |---|---|---|---|
 | `CAMPAIGN_TRADING_INCENTIVE` 交易激励活动页 | [campaigns/trading-contest.md](campaigns/trading-contest.md) | 3 个活动（抽奖、达标、排名各 1） | `STRUCTURE_CANDIDATE`；骨架 5 项中 4 项 `CROSS_CASE_CONFIRMED` 3/3 |
-| `LP_PRODUCT` 产品获客推广页（共用骨架） | [landing-pages/product-lp-common.md](landing-pages/product-lp-common.md) | 3 个产品、7 个版本 | `STRUCTURE_CANDIDATE`；共用骨架 `CROSS_CASE_CONFIRMED` 7/7 |
+| `LP_PRODUCT` 产品获客推广页（共用骨架） | [landing-pages/product-lp-common.md](landing-pages/product-lp-common.md) | 3 个产品、7 个版本 | **`DEFAULT_PRODUCTION_BASELINE`**（2026-11-20 确认；含密度硬尺与必看截图） |
 | └ ETF CFD | [landing-pages/etf-cfd-lp.md](landing-pages/etf-cfd-lp.md) | 3 版 | `STRUCTURE_CANDIDATE` |
 | └ 原油 CFD | [landing-pages/oil-cfd-lp.md](landing-pages/oil-cfd-lp.md) | 2 版 | `STRUCTURE_CANDIDATE` |
 | └ Copy Trading | [landing-pages/copy-trading-lp.md](landing-pages/copy-trading-lp.md) | 2 版 | `STRUCTURE_CANDIDATE` |

@@ -6,7 +6,7 @@
 
 作为独立评审 Agent 时，先读 [跨 Agent 交接协议](agents/cross-agent-handoff.md) 及项目 `handoff.md`，核对仓库 Commit 与已确认的 Copy Sheet 版本。Gemini 的批评或备选方案先写入独立 `runs/`，不自动覆盖用户批准的中文文案和 PM 方案。若使用的是旧导入快照，应标 `STALE_HANDOFF` 并刷新版本。
 
-新 Campaign/LP/官网页复审先查 `research/page-structures/matching-and-hero-contract.md` 和 `research/page-structures/README.md` 与 `review-2026-11-13.md`，再看 `pm/methods/page-logic-and-content-scope.md` 和 `decision-tradeoffs-and-correction.md`；应指出真实新增模块的不足、删减是否损害必要信息、被放弃项与反转条件。**不能把历史候选骨架冒充用户锁定的标准**。
+新 Campaign/LP/官网页执行或复审先按 `AGENTS.md` §0B 判定 `Mode 1 · STANDARD_PRODUCTION`（默认用于产品 LP/常规活动，**必看 `sources/landing-pages/etf/B/design/pc.png` 与 `oil/B/design/pc.png`**，严格执行 `LP_PRODUCT` 密度硬尺与 `LP_BLOAT_FAIL` 防说明书门禁，采用 EBC 投放视觉皮肤）或 `Mode 2 · EXPLORATORY_REDESIGN`；再查 `research/page-structures/matching-and-hero-contract.md`、`research/page-structures/README.md` 与 `review-2026-11-13.md`，以及 `pm/methods/page-logic-and-content-scope.md` 和 `decision-tradeoffs-and-correction.md`。`LP_PRODUCT` 已确认为默认生产基线，其余历史候选不得冒充用户锁定标准。
 
 核心：PM 的 D/R/U/C/S 五节点要分别批判与实质修订；资料不足主动执行跨行业网页文本/截图研究；不伪造用户反馈、A/B 转化结果或未实际取得的视觉证据。
 

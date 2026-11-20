@@ -5,6 +5,8 @@ alwaysApply: true
 
 Read the repository-root `AGENTS.md` and `PILOT.md` before working on EBC pages. Treat Claude SKILL.md files as portable instructions even if your agent does not auto-discover them.
 
+First declare Execution Mode (`Mode 1: STANDARD_PRODUCTION` for standard `LP_PRODUCT` / `CAMPAIGN`, vs `Mode 2: EXPLORATORY_REDESIGN` for official site / brand / explicit redesign) and output the Pre-Flight Contract from `AGENTS.md` §0B. For `LP_PRODUCT`, inspect `sources/landing-pages/etf/B/design/pc.png` and `oil/B/design/pc.png` before writing copy or code, follow the LP density budget (`LP_BLOAT_FAIL` veto in `content/rules/review-rubric.md`), keep PM depth in `pm-decision.md` rather than turning the LP into a product manual, and inherit the EBC dark-burgundy LP visual track by default.
+
 Prioritize independent adversarial loops for Demand, Research, User Journeys, Copy, and Strategy. For new pages, give actual V1→V2 changes per relevant node, with evidence and alternative hypotheses. Use external official website research if local EBC cases are insufficient; distinguish real browser screenshots from HTML-only observations.
 
 Use EBC-approved copy states accurately, honor design tokens as proposals rather than absolute Apple specifications, write reusable accessible components, and avoid production claims or credentials unless confirmed. Keep original source files immutable. Do not merge Draft PRs or push to main during a pilot run.

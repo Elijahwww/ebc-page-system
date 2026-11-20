@@ -23,8 +23,11 @@
 9. [用户 Figma Make SKILL 可迁移机制](research/user-figma-make-skill-analysis-2026-11-12.md)：保留节奏与分层，不继承旧 Pre-IPO 事实和固定参数。
 10. [GitHub / X 开源参考研究](research/ai-coding-visual-skills-2026-11-12.md)：结合真实来源和适用边界，不直接安装全部技能。
 
-## 设计立场
-- **Art Direction first**：避免只凭“Apple / 科技感 / 高级感”生成统一模板；区分项目真实审美目标和历史页面风格，以真实 UI 和用户评审作反馈。
+## 设计立场与视觉双轨分流（v0.5 · 2026-11-20）
+- **视觉双轨分流（严禁规则打架）**：
+  - **轨道 A · 官网 / 品牌页 / 内部平台（`Mode 2 · EXPLORATORY_REDESIGN`）**：默认以 `design/foundations/tokens.css` 的 **Apple-inspired 浅白/浅灰舞台**为起点，执行完整 Art Direction 双方向选型与反模板自审。
+  - **轨道 B · 产品投放 LP 与常规活动页（`Mode 1 · STANDARD_PRODUCTION`）**：默认继承 **EBC 现行投放视觉皮肤**（深酒红/黑渐变 Hero + 顶部透明导航 + Hero 底部融合监管条 + 深浅交替 2×2 极简短卡 + 合作横卡 + 简单三步 + 白色吸底 CTA 条），先实际读取 `sources/landing-pages/etf/B/design/pc.png` 与 `oil/B/design/pc.png` 对齐节奏与字数密度；视觉创新聚焦在主视觉、数据图形与局部细节，**未经用户明确要求，禁止将常规 LP 改画成浅白文章流或强制跑两套风格大改**。
+- **Art Direction first（适用于轨道 A 与明确要求改版的项目）**：避免只凭“Apple / 科技感 / 高级感”生成统一模板；区分项目真实审美目标和历史页面风格，以真实 UI 和用户评审作反馈。
 - **视觉 QA ≠ 工程 QA**：真实代码通过交互和响应式断言，不证明用户认可的审美；需要截图→评审→修订→再次截图。
 - **Apple-inspired, EBC-owned**：学习清晰、层级、排版、留白和克制的动效；不复制 Apple 商标、图片、网站代码、受限制字体或独特网页装饰。
 - 当前不依赖旧 EBC 共享组件；可以由 Agent 新建可复用代码，但必须符合本仓库 PM 方案与业务事实。

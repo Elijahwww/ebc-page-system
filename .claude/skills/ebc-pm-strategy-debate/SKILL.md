@@ -8,10 +8,11 @@ description: Compare EBC page strategies and alternate non-page solutions with m
 Status: ITERATIVE_NODE_CANDIDATE. Can run alone for a focused request, or be called in the parent pm-page-strategy workflow.
 
 Read:
+- START-HERE-FAST-TRACK.md and AGENTS.md §0B (Execution Mode 1 vs Mode 2, mandatory benchmark screenshot check)
 - pm/operating-system/iterative-pm-engine.md
 - pm/methods/strategy-debate-and-scenario-testing.md
 - research/page-structures/matching-and-hero-contract.md (independent page type, mechanic, Hero conversion, EBC→CFD→crypto→finance escalation)
-- research/page-structures/README.md and matching case (no structures locked yet)
+- research/page-structures/README.md and matching case (`LP_PRODUCT` is `DEFAULT_PRODUCTION_BASELINE` with strict density caps; non-LP types remain candidates)
 - research/page-structures/review-2026-11-13.md
 - pm/methods/page-logic-and-content-scope.md
 - pm/methods/decision-tradeoffs-and-correction.md
@@ -28,7 +29,7 @@ Read:
 7. ROUTE: PASS_WITH_ASSUMPTIONS, REVISIT, EVIDENCE_BLOCKED or NEED_USER_DECISION; identify other PM nodes to revisit.
 
 ## Domain execution
-Compare meaningful strategies, including light changes, variants/CTA and no-page options. Only propose a structurally different layout when no approved skeleton applies or the old modules fail a real user need. Show per-module user job/proof, run MODULE_ADMISSION_GATE, identify an actual sacrificed benefit and a falsifiable reversal condition. Challenge ordering/CTA friction, simulate success/hesitation/exit and revise. Historical 3-section LPs are candidates, not optimal limits.
+Compare meaningful strategies, including light changes, content-role swaps, CTA variants and no-page options. In `Mode 1 · STANDARD_PRODUCTION` (`LP_PRODUCT` default production baseline), compete on **messaging angle, proof selection, body-slot role allocation, and CTA path WITHIN the baseline 3-section skeleton and density budget** — do NOT invent extra sections, nested sub-blocks, or FAQ walls. Only propose structurally different layouts in `Mode 2` or when an unmet real user/business requirement passes `MODULE_ADMISSION_GATE` as a documented Structure Override. Always identify an actual sacrificed benefit and a falsifiable reversal condition.
 
 ## Quality stop
 A fixed page skeleton or two same-flow layouts do not count as strategic alternatives **by themselves**; neither does inventing a different module count merely for contrast. With a user-locked skeleton, different content roles, proof depth, user journeys or CTA strategies may be the meaningful alternatives. A convincing recommendation must say what is rejected/deferred and why it may later need reversal.

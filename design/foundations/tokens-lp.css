@@ -1,0 +1,84 @@
+/*
+ * EBC Performance Landing Page Visual Tokens (Track B · Mode 1) · v0.6
+ * STATUS: DEFAULT_PRODUCTION_BASELINE_TOKENS (Aligned to sources/landing-pages/{etf,oil,copy-trading}/design/pc.png)
+ * Scope: Product LPs (LP_PRODUCT) and standard Trading Incentive Campaigns.
+ * For Official Website / Brand / Workspace (Track A · Mode 2), use design/foundations/tokens.css instead.
+ */
+
+:root {
+  /* Brand & Action */
+  --lp-brand-red: #a52933;
+  --lp-brand-red-hover: #8d212b;
+  --lp-brand-red-active: #6e1722;
+  --lp-hero-cta-bg: linear-gradient(90deg, #e03a45 0%, #b82433 100%);
+  --lp-hero-cta-shadow: 0 10px 28px rgba(224, 58, 69, 0.35);
+
+  /* Track B Hero & Alternating Stages */
+  --lp-hero-bg:
+    radial-gradient(760px 440px at 78% 36%, rgba(181, 34, 62, 0.42), transparent 64%),
+    radial-gradient(620px 380px at 18% 12%, rgba(122, 22, 46, 0.50), transparent 65%),
+    linear-gradient(155deg, #2b0915 0%, #14080d 55%, #0c0b0e 100%);
+  --lp-dark-section-bg:
+    radial-gradient(640px 360px at 50% 0%, rgba(165, 41, 51, 0.32), transparent 68%),
+    linear-gradient(180deg, #1a0910 0%, #120b0f 100%);
+  --lp-partners-bg:
+    radial-gradient(540px 320px at 15% 50%, rgba(28, 39, 108, 0.35), transparent 65%),
+    radial-gradient(540px 320px at 85% 50%, rgba(165, 41, 51, 0.32), transparent 65%),
+    #0e0f17;
+  --lp-highlight-card-bg: linear-gradient(135deg, #7f1428 0%, #3d0917 100%);
+
+  /* Light Surfaces & Cards */
+  --lp-bg-light: #ffffff;
+  --lp-card-light: #f6f6f8;
+  --lp-card-dark: rgba(255, 255, 255, 0.06);
+  --lp-border-light: #e8e8ed;
+  --lp-border-dark: rgba(255, 255, 255, 0.10);
+
+  /* Text Hierarchy */
+  --lp-text-main: #1d1d1f;
+  --lp-text-muted: #6e6e73;
+  --lp-text-inverse: #ffffff;
+  --lp-text-inverse-muted: rgba(255, 255, 255, 0.72);
+  --lp-text-accent-rose: #fda4af;
+  --lp-market-up: #34d399;
+  --lp-focus: #005fcc;
+
+  /* Typography */
+  --lp-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --lp-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Layout & Density */
+  --lp-container-wide: 72rem;   /* 1152px — Hero, Nav, Partners */
+  --lp-container-narrow: 58rem; /* 928px — B1/B2/B3 2x2 Cards & Steps */
+  --lp-section-pad: clamp(3.5rem, 5.5vw, 5rem);
+  --lp-radius-md: 1rem;
+  --lp-radius-lg: 1.25rem;
+  --lp-radius-pill: 999px;
+}
+
+.lp-container {
+  width: min(calc(100% - 3rem), var(--lp-container-wide));
+  margin-inline: auto;
+}
+
+.lp-container--narrow {
+  width: min(calc(100% - 3rem), var(--lp-container-narrow));
+}
+
+@media (max-width: 720px) {
+  .lp-container,
+  .lp-container--narrow {
+    width: calc(100% - 2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

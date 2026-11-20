@@ -3,8 +3,9 @@
 | 字段 | 内容 |
 |---|---|
 | Page Type ID | `CAMPAIGN_TRADING_INCENTIVE`；与 `HERO_CONVERSION` 分离 |
-| 结构状态 | `STRUCTURE_CANDIDATE`（待 GPT 复审 + 用户确认；本轮无 `STRUCTURE_LOCKED`） |
-| 分析日期 | 2026-11-13 |
+| 结构状态 | `STRUCTURE_CANDIDATE`（`Mode 1` 默认活动骨架起点；用户指定 Hero CTA 时优先覆盖右表单） |
+| 必看视觉基准截图 | 动工前**必须实际查看**：`sources/campaigns/trading-contest/case-01/PC设计图.png`（抽奖型）；达标型另看 `case-02/PC设计图.png`；排名型另看 `case-03/PC设计图.png` |
+| 更新日期 | 2026-11-20（原分析 2026-11-13） |
 | 证据范围 | 3 个案例的 PC/Mobile 设计图 + `+Page.vue` + 页面级 locale。**线上地址本轮未核验**（见 §F） |
 | 文件名说明 | 沿用 `sources/campaigns/trading-contest/` 的目录名。但 3 个案例里只有 1 个是严格意义的"比赛"，类型名建议改为"交易激励活动"，见 [structure-exceptions.md](../structure-exceptions.md) EX-01 |
 

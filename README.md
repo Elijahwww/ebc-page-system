@@ -4,10 +4,11 @@
 
 > **默认使用 `main`**：始终保持最新可用的 Agent 知识与工作流。可以直接做真实页面、交付 Demo 并持续优化；候选规则与已确认资料仍按状态标记，不等于官网正式发布审批。
 
-## 开始使用（只需看这三份）
-1. **[AGENTS.md](AGENTS.md)** — 所有 AI/Agent 共享的工作原则和文件入口。
+## 开始使用（只需看这四份）
+0. **[START-HERE-FAST-TRACK.md](START-HERE-FAST-TRACK.md)** — **最快入口（v0.6）**：按页面类型直接路由到 3–4 份必读文件 + 必看真实截图，防上下文过载。
+1. **[AGENTS.md](AGENTS.md)** — 所有 AI/Agent 共享的工作原则、双模式开关与文件入口。
 2. **[PILOT.md](PILOT.md)** — 日常真实项目的完整生成流程、跨模型通用提示词。
-3. **[pilot/EVALUATION.md](pilot/EVALUATION.md)** — 不同模型的 PM/Copy/Research/Design/Code 可验证评分表。
+3. **[content/facts/current-facts-and-bans.md](content/facts/current-facts-and-bans.md)** — EBC 业务事实、文案红线与禁用雷区总表（SSOT）。
 
 ### 常见 Agent 入口
 - Claude Code：`CLAUDE.md` 和 `.claude/skills/`；
@@ -39,6 +40,12 @@
 
 ## 不同 AI 协作与交接
 GPT、Claude Desktop、Gemini、Grok 等共享同一项目目录和确认版本；切换 Agent 时使用 [统一交接协议](agents/cross-agent-handoff.md) 和 [交接包模板](projects/HANDOFF-TEMPLATE.md)。下一 Agent 只需读取最小交接包及必要源文件，不重建全部历史、不覆盖已确认中文文案；其他模型的独立建议保存在 `runs/` 并明确回流。
+
+## 双模式生产、LP 密度硬尺与双轨视觉 · 2026-11-20（v0.5）
+
+- **先判模式再动工（`AGENTS.md` §0B）**：常规产品投放页（`LP_PRODUCT`）与常规活动页默认走 **`Mode 1 · STANDARD_PRODUCTION`**，动工前**必须实际读取 `sources/landing-pages/{etf,oil}/.../design/pc.png` 真实截图**并输出 4 项 Pre-Flight 开工回执；官网新频道、品牌页、内部工具或明确大改版走 **`Mode 2 · EXPLORATORY_REDESIGN`**。
+- **`LP_PRODUCT` 升级为 `DEFAULT_PRODUCTION_BASELINE`**：见 [product-lp-common.md](research/page-structures/landing-pages/product-lp-common.md) §E 密度硬尺（Hero 左侧 3 元素 + 底部融合监管条、3 个单结构正文位禁嵌套 FAQ/账本、优势卡 1 标题+1 短句 ≤ 16 字、整页主文案 250–450 字）；PM 深度思考留在 `pm-decision.md`，进入 LP UI 必过 `content/rules/review-rubric.md` 的 **`LP_BLOAT_FAIL` 说明书化否决**。
+- **视觉双轨分流**：官网/品牌/平台走 `design/tokens.css` 浅白 Apple-inspired 探索（轨道 A）；投放 LP 默认继承 EBC 深酒红黑渐变投放皮肤（轨道 B），不再互相打架。
 
 ## 页面结构、内容取舍与策略纠错 · 2026-11-13
 

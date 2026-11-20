@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>从 Anthropic (ANT) 出发，布局核心美股 CFD · EBC 金融集团</title>
+  <meta name="description" content="Anthropic (ANT) 纳斯达克新近上市。一个 EBC 账户，多空灵活交易 ANT 及英伟达、苹果、微软等核心美股 CFD。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Hero + 顶部透明锚点导航 + 底部监管条（对齐 EBC LP_PRODUCT 视觉标准） -->
+  <section class="hero-stage" id="top" aria-labelledby="hero-title">
+    <!-- G2: 精简悬浮锚点导航 -->
+    <header class="lp-nav">
+      <div class="lp-container lp-nav__inner">
+        <a href="#top" class="lp-brand" aria-label="EBC Financial Group 巴塞罗那足球俱乐部官方合作伙伴">
+          <img
+            src="assets/logo-cn-dark.svg"
+            alt="EBC Financial Group — 巴塞罗那足球俱乐部官方合作伙伴"
+            class="lp-brand__logo"
+            width="245"
+            height="40"
+          />
+        </a>
+
+        <nav class="lp-nav__links" aria-label="页面导航">
+          <a href="#ant-focus">ANT 焦点</a>
+          <a href="#us-cfd">美股产品</a>
+          <a href="#why-ebc">EBC 优势</a>
+          <a href="#partners">合作伙伴</a>
+          <a href="#steps">如何开始</a>
+        </nav>
+
+        <button
+          type="button"
+          class="lp-menu-btn"
+          id="menuToggle"
+          aria-label="打开导航菜单"
+          aria-expanded="false"
+          aria-controls="mobileDrawer"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="lp-mobile-drawer" id="mobileDrawer" hidden>
+        <a href="#ant-focus">ANT 焦点</a>
+        <a href="#us-cfd">美股产品</a>
+        <a href="#why-ebc">EBC 优势</a>
+        <a href="#partners">合作伙伴</a>
+        <a href="#steps">如何开始</a>
+        <button type="button" class="lp-btn lp-btn--primary" data-open-modal="移动端菜单开户">立即开户</button>
+      </div>
+    </header>
+
+    <!-- M01: Hero 主内容（两行 H1 + 一行副标题 + 单一主 CTA + 右侧 ANT 视觉焦点） -->
+    <div class="lp-container hero__grid">
+      <div class="hero__copy">
+        <span class="hero__tag">NASDAQ: ANT 新近上市 · 美股 CFD</span>
+        <h1 class="hero__title" id="hero-title">
+          从 Anthropic 出发<br />布局核心美股资产
+        </h1>
+        <p class="hero__subtitle">
+          一个账户，多空灵活交易 ANT 及热门美股 CFD
+        </p>
+        <div class="hero__cta-wrap" id="heroCtaAnchor">
+          <button type="button" class="lp-btn lp-btn--hero" data-open-modal="Hero 主按钮">
+            开设账户 <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero 右侧：高辨识度 ANT 上市首日走势视觉卡 + 美股生态浮标 -->
+      <div class="hero__visual" aria-label="Anthropic 首日表现与热门美股标识">
+        <div class="ant-hero-card">
+          <div class="ant-hero-card__top">
+            <div>
+              <span class="ant-hero-card__code">ANT · Anthropic</span>
+              <span class="ant-hero-card__date">11/19 纳斯达克首日</span>
+            </div>
+            <div class="ant-hero-card__price-box">
+              <strong>$97.17</strong>
+              <span>+17.07%</span>
+            </div>
+          </div>
+
+          <svg viewBox="0 0 360 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="ant-hero-svg" role="img" aria-label="ANT 首日价格路径：发行 83 美元，最高 114.99 美元，收盘 97.17 美元">
+            <defs>
+              <linearGradient id="antGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FF5A67" stop-opacity="0.34" />
+                <stop offset="100%" stop-color="#FF5A67" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <line x1="12" y1="104" x2="348" y2="104" stroke="rgba(255,255,255,0.16)" stroke-dasharray="4 4" />
+            <path d="M16 104 L118 32 L192 18 L344 64 L344 104 Z" fill="url(#antGrad)" />
+            <path d="M16 104 L118 32 L192 18 L344 64" stroke="#FF6B76" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="16" cy="104" r="4" fill="#181216" stroke="#fff" stroke-width="2" />
+            <circle cx="118" cy="32" r="4" fill="#181216" stroke="#FF6B76" stroke-width="2" />
+            <circle cx="192" cy="18" r="5" fill="#FF6B76" stroke="#181216" stroke-width="2" />
+            <circle cx="344" cy="64" r="4.5" fill="#34D399" stroke="#181216" stroke-width="2" />
+            <text x="12" y="121" fill="rgba(255,255,255,0.58)" font-size="10.5" font-family="ui-monospace, Menlo, monospace">发行 $83</text>
+            <text x="160" y="12" fill="#FFFFFF" font-size="10.5" font-weight="600" font-family="ui-monospace, Menlo, monospace">最高 $114.99</text>
+            <text x="278" y="121" fill="rgba(255,255,255,0.58)" font-size="10.5" font-family="ui-monospace, Menlo, monospace">收盘 $97.17</text>
+          </svg>
+
+          <div class="ant-hero-card__tickers">
+            <span>NVDA</span>
+            <span>AAPL</span>
+            <span>MSFT</span>
+            <span>TSLA</span>
+            <span>META</span>
+            <span>+ 更多美股</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M02: 底部融合监管条（对齐 ETF-A/B 首屏底部监管条） -->
+    <div class="hero-reg-bar" aria-label="国际顶级监管">
+      <div class="lp-container hero-reg-bar__grid">
+        <div class="reg-item">
+          <strong>英国 FCA 监管</strong>
+          <span>由英国金融行为监管局授权和监管</span>
+        </div>
+        <div class="reg-item">
+          <strong>开曼 CIMA 监管</strong>
+          <span>由开曼群岛金融管理局授权和监管</span>
+        </div>
+        <div class="reg-item">
+          <strong>澳大利亚 ASIC 监管</strong>
+          <span>由澳大利亚证券和投资委员会授权和监管</span>
+        </div>
+        <div class="reg-item">
+          <strong>南非 FSCA 监管</strong>
+          <span>由南非金融部门行为监管局授权和监管</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- B1 (WHY-CARE · 白底): ANT 新上市表现与核心买点（借鉴 ETF-A 对比大卡结构，极简一眼扫完） -->
+    <section class="lp-section lp-section--light" id="ant-focus" aria-labelledby="b1-title">
+      <div class="lp-container lp-container--narrow">
+        <h2 class="lp-heading" id="b1-title">Anthropic (ANT) 登陆纳斯达克，引爆美股 AI 关注</h2>
+
+        <div class="ant-compare-card">
+          <!-- 左：深酒红高亮核心数据 -->
+          <div class="ant-compare-card__highlight">
+            <span class="ant-compare-card__label">NASDAQ: ANT · 2026-11-19 首日表现</span>
+            <div class="ant-compare-card__big">+17.07%</div>
+            <p class="ant-compare-card__sub">收盘 $97.17 · 较 $83.00 发行价显著走高</p>
+            <dl class="ant-compare-card__mini">
+              <div>
+                <dt>首日开盘</dt>
+                <dd>$111.50</dd>
+              </div>
+              <div>
+                <dt>盘中最高</dt>
+                <dd>$114.99</dd>
+              </div>
+              <div>
+                <dt>基础募资</dt>
+                <dd>~$813 亿</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- 右：三大简练买点 -->
+          <div class="ant-compare-card__points">
+            <div class="buy-point">
+              <strong>AI 旗舰级 IPO</strong>
+              <p>高于指导区间定价，全球资本高度聚焦</p>
+            </div>
+            <div class="buy-point">
+              <strong>首日宽幅波动</strong>
+              <p>高开 $111.50 至收盘 $97.17，多空皆有机会</p>
+            </div>
+            <div class="buy-point">
+              <strong>催化美股主线</strong>
+              <p>联动英伟达、微软等 AI 算力与科技龙头</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="lp-footnote">
+          *数据来源：纳斯达克 2026-11-19 公开首日成交记录，非实时报价，历史表现不代表未来收益。
+        </p>
+      </div>
+    </section>
+
+    <!-- B2 (PRODUCT · 深色对比屏): 美股 CFD 热门标的 + 2x2 交易优势（对齐 ETF-A / OIL-B 深色屏密度） -->
+    <section class="lp-section lp-section--burgundy" id="us-cfd" aria-labelledby="b2-title">
+      <div class="lp-container lp-container--narrow">
+        <h2 class="lp-heading lp-heading--inverse" id="b2-title">一个账户，灵活交易热门美股 CFD</h2>
+
+        <!-- 精炼美股主题标的条（可一键切换，不堆长卡片） -->
+        <div class="ticker-strip">
+          <div class="ticker-strip__tabs" role="tablist" aria-label="热门美股主题">
+            <button type="button" class="ticker-tab is-active" role="tab" aria-selected="true" data-group="ai">AI 前沿</button>
+            <button type="button" class="ticker-tab" role="tab" aria-selected="false" data-group="chip">算力芯片</button>
+            <button type="button" class="ticker-tab" role="tab" aria-selected="false" data-group="tech">科技龙头</button>
+          </div>
+
+          <div class="ticker-strip__list" id="tickerList" role="tabpanel">
+            <!-- JS 动态切换 4 个精炼标的小胶囊 -->
+          </div>
+        </div>
+
+        <!-- 2x2 极简四卡（对齐 ETF-A 深色四卡：标题 + 一句短说明 + 图标） -->
+        <div class="feature-grid feature-grid--dark">
+          <article class="feature-card feature-card--dark">
+            <div>
+              <h3>多空双向交易</h3>
+              <p>无需借券，涨跌行情均可灵活布局</p>
+            </div>
+            <span class="feature-icon feature-icon--dark" aria-hidden="true">⇅</span>
+          </article>
+
+          <article class="feature-card feature-card--dark">
+            <div>
+              <h3>保证金灵活配置</h3>
+              <p>按合约比例投入，提升资金使用效率</p>
+            </div>
+            <span class="feature-icon feature-icon--dark" aria-hidden="true">◈</span>
+          </article>
+
+          <article class="feature-card feature-card--dark">
+            <div>
+              <h3>覆盖美股核心主线</h3>
+              <p>ANT 及 AI、芯片、科技龙头一站交易</p>
+            </div>
+            <span class="feature-icon feature-icon--dark" aria-hidden="true">⊞</span>
+          </article>
+
+          <article class="feature-card feature-card--dark">
+            <div>
+              <h3>MT5 规格透明可查</h3>
+              <p>实时报价、代码与纳斯达克时段一目了然</p>
+            </div>
+            <span class="feature-icon feature-icon--dark" aria-hidden="true">◷</span>
+          </article>
+        </div>
+
+        <p class="lp-footnote lp-footnote--inverse">
+          *美股 CFD 为金融衍生品，不涉及真实股票所有权或 IPO 配售；新上市标的初期流动性与波动较大，建仓或平仓时可结合市场情况考虑分笔操作。具体点差、杠杆与可交易标的以所属实体 MT5 平台显示为准。
+        </p>
+      </div>
+    </section>
+
+    <!-- B3 (WHY-EBC · 白底): 为什么选择 EBC（严格对齐 ETF-B / OIL-B 2x2 极简卡片） -->
+    <section class="lp-section lp-section--light" id="why-ebc" aria-labelledby="b3-title">
+      <div class="lp-container lp-container--narrow">
+        <h2 class="lp-heading" id="b3-title">为什么选择 EBC</h2>
+        <p class="lp-subheading">EBC 金融集团旗下各实体在对应司法管辖区内均受严格监管</p>
+
+        <div class="feature-grid feature-grid--light">
+          <article class="feature-card feature-card--light">
+            <div>
+              <h3>多地权威监管</h3>
+              <p>FCA / CIMA / ASIC / FSCA 合规持牌运营</p>
+            </div>
+            <span class="feature-icon feature-icon--light" aria-hidden="true">🛡</span>
+          </article>
+
+          <article class="feature-card feature-card--light">
+            <div>
+              <h3>MT5 专业执行</h3>
+              <p>支持止损止盈与多周期图表，稳定可控</p>
+            </div>
+            <span class="feature-icon feature-icon--light" aria-hidden="true">⚡</span>
+          </article>
+
+          <article class="feature-card feature-card--light">
+            <div>
+              <h3>资金规范托管</h3>
+              <p>按对应法律实体要求严格隔离客户资金</p>
+            </div>
+            <span class="feature-icon feature-icon--light" aria-hidden="true">◉</span>
+          </article>
+
+          <article class="feature-card feature-card--light">
+            <div>
+              <h3>多资产一账户</h3>
+              <p>美股、股指、商品与货币对一站覆盖</p>
+            </div>
+            <span class="feature-icon feature-icon--light" aria-hidden="true">◎</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- M07 (全球合作伙伴 · 真实官方 PC/Mobile 成品横卡 + 横向切换) -->
+    <section class="lp-section lp-section--partners" id="partners" aria-labelledby="partners-title">
+      <div class="lp-container">
+        <h2 class="lp-heading lp-heading--inverse" id="partners-title">全球合作伙伴</h2>
+
+        <div class="partners-carousel" id="partnersTrack" role="region" aria-label="全球合作伙伴展示">
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="assets/partners/mobile/fcb.png" />
+              <img src="assets/partners/pc/fcb.png" alt="EBC 金融集团 — 巴萨官方合作伙伴" loading="lazy" />
+            </picture>
+          </figure>
+
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="assets/partners/mobile/tradingview.png" />
+              <img src="assets/partners/pc/tradingview.png" alt="EBC 金融集团 × TradingView — 携手打造专业级交易体验" loading="lazy" />
+            </picture>
+          </figure>
+
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="assets/partners/mobile/un.png" />
+              <img src="assets/partners/pc/un.png" alt="EBC 金融集团 — 携手联合国基金会抗击疟疾" loading="lazy" />
+            </picture>
+          </figure>
+
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="assets/partners/mobile/oxford.png" />
+              <img src="assets/partners/pc/oxford.png" alt="EBC 金融集团 — 联合牛津大学举办研讨会" loading="lazy" />
+            </picture>
+          </figure>
+
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="assets/partners/mobile/cctv.png" />
+              <img src="assets/partners/pc/cctv.png" alt="EBC 接受 CCTV 专访" loading="lazy" />
+            </picture>
+          </figure>
+        </div>
+
+        <div class="partners-controls" aria-label="切换合作伙伴卡片">
+          <button type="button" class="partners-arrow" id="partnerPrev" aria-label="查看上一张合作卡片">‹</button>
+          <button type="button" class="partners-arrow" id="partnerNext" aria-label="查看下一张合作卡片">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- M08 (简单三步 · 对齐 OIL-B / ETF-B 极简三步) -->
+    <section class="lp-section lp-section--light lp-section--steps" id="steps" aria-labelledby="steps-title">
+      <div class="lp-container lp-container--narrow">
+        <h2 class="lp-heading" id="steps-title">简单三步，开启美股 CFD 交易</h2>
+
+        <ol class="steps-row">
+          <li>
+            <span class="step-badge">1</span>
+            <strong>注册账户</strong>
+          </li>
+          <li>
+            <span class="step-badge">2</span>
+            <strong>身份验证</strong>
+          </li>
+          <li>
+            <span class="step-badge">3</span>
+            <strong>登录 MT5 交易</strong>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- L1: 极简合规页脚（对齐 ETF-A/B & OIL-B 页脚密度） -->
+  <footer class="lp-footer" id="legal-footer">
+    <div class="lp-container lp-container--narrow">
+      <p class="lp-footer__copy">© 2026 EBC Financial Group（演示预览页，正式实体版权与监管披露按目标市场替换）</p>
+      <p class="lp-footer__risk">
+        市场有风险，投资需谨慎。差价合约（CFD）属杠杆衍生品，存在亏损风险；ANT 上市首日数据仅供参考，不构成投资建议。
+      </p>
+    </div>
+  </footer>
+
+  <!-- G3: 吸底条（对齐 ETF-A / OIL-B 底部白色吸底 CTA 条） -->
+  <div class="sticky-bar" id="stickyBar" aria-hidden="true">
+    <div class="lp-container lp-container--narrow sticky-bar__inner">
+      <div class="sticky-bar__title">
+        <span class="sticky-bar__pill">ANT 新上市</span>
+        <strong>布局核心美股 CFD</strong>
+      </div>
+      <button type="button" class="lp-btn lp-btn--primary" data-open-modal="吸底悬浮条">
+        立即开户
+      </button>
+    </div>
+  </div>
+
+  <!-- G4: 注册弹窗（Demo 交互） -->
+  <div class="modal-backdrop" id="registerModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog" role="document">
+      <button type="button" class="modal-close" id="modalClose" aria-label="关闭弹窗">×</button>
+
+      <div id="modalFormView">
+        <span class="modal-tag">演示 Demo 表单</span>
+        <h2 id="modalTitle">开设 EBC 美股 CFD 账户</h2>
+        <p class="modal-desc" id="modalContext">填写基本信息，体验开户流程（本地演示不会发送真实数据）。</p>
+
+        <form class="reg-form" id="registerForm" novalidate>
+          <div class="field">
+            <label for="regName">姓名 / 称呼 *</label>
+            <input type="text" id="regName" placeholder="请输入您的称呼" required />
+            <span class="field__err" id="errName" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="regEmail">电子邮箱 *</label>
+            <input type="email" id="regEmail" placeholder="name@example.com" required />
+            <span class="field__err" id="errEmail" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="regPhone">手机号码 *</label>
+            <div class="phone-row">
+              <select id="regDial" aria-label="区号">
+                <option value="+852">+852</option>
+                <option value="+886">+886</option>
+                <option value="+65">+65</option>
+                <option value="+60">+60</option>
+                <option value="+86">+86</option>
+              </select>
+              <input type="tel" id="regPhone" placeholder="请输入手机号" required />
+            </div>
+            <span class="field__err" id="errPhone" role="alert"></span>
+          </div>
+
+          <label class="risk-check">
+            <input type="checkbox" id="regRisk" required />
+            <span>我已知悉美股 CFD 为带杠杆金融衍生品，存在亏损风险，且本页为预览 Demo。</span>
+          </label>
+          <span class="field__err" id="errRisk" role="alert"></span>
+
+          <button type="submit" class="lp-btn lp-btn--primary lp-btn--full">提交开户意向（Demo）</button>
+        </form>
+      </div>
+
+      <div id="modalSuccessView" class="modal-success" hidden>
+        <div class="modal-success__check" aria-hidden="true">✓</div>
+        <h3>Demo 意向已提交</h3>
+        <p id="modalSuccessText"></p>
+        <button type="button" class="lp-btn lp-btn--primary" id="modalDoneBtn">返回页面</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
