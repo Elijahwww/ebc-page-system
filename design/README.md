@@ -5,7 +5,8 @@
 > 目标：为 EBC 官网、产品页、广告落地页和活动页提供可由 AI 设计与 Claude Code 直接执行、可迭代的网页设计基线。
 > 范围：Web，而非 iOS/macOS App 原样复刻。
 
-## 先读什么
+## 先读什么（v0.7.0 强制顺序）
+0. **[Apple-Grade 前端视觉与组件基础规范](foundations/apple-ui-component-spec.md)** + **[tokens-apple-ui.css](foundations/tokens-apple-ui.css)**（**所有项目强制先遵守**：字体字重阶梯、纯净中性表面禁止大面积铺渐变色、极细分割线、实心胶囊按钮、`1.5px` 线性 Icon、紧凑 PC 模块高度、无逗号两行标题、Hero 右侧纯视觉元素严禁放文案卡片）。
 1. **[视觉方向与真实渲染迭代](methods/visual-direction-and-iteration.md)**：先审美方向，后编码；真实截图批评和实际 V1→V2 重构。
 2. **[独立视觉质量评分表](qa/visual-quality-scorecard.md)**：专门检查审美/信息层级/密度，不与功能 QA 混用。
 3. [基础规范与详细参数](foundations/web-design-system.md)：布局、字体、色彩、留白、组件状态、运动、响应式、图像、可访问性。

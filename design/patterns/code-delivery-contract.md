@@ -14,11 +14,17 @@
 
 ---
 
-## 2. 视觉与样式继承铁律
+## 2. 视觉与样式继承铁律（v0.8.0 强制）
 
-- **Track B（`Mode 1` 常规产品 LP / 活动页）**：必须继承 [design/foundations/tokens-lp.css](../foundations/tokens-lp.css) 的色系、版心与深浅交替节奏，并对齐已读取的 `sources/.../design/pc.png` 视觉密度。
-- **Track A（`Mode 2` 官网 / 品牌页 / 工具平台）**：从 [design/foundations/tokens.css](../foundations/tokens.css) 起步，按项目 Art Direction 声明 Design Override。
-- 字体使用合法系统字体栈 + `font-variant-numeric: tabular-nums`（用于价格、涨跌幅、序号与倒计时）；**严禁打包受限 Apple SF Pro 字体文件**。
+- **全站统一 Apple-Grade 地基**：所有页面必须严格遵守 [apple-ui-component-spec.md](../foundations/apple-ui-component-spec.md) 与 [tokens-apple-ui.css](../foundations/tokens-apple-ui.css)：
+  - **全站唯一统一无衬线字体 `--ui-font-sans`**：股票代码（`NVDA`/`AAPL`）、序号（`01`/`02`/`03`）与财务数字严禁使用 `monospace` 等宽字体，仅加 `font-variant-numeric: tabular-nums`；
+  - **宽版心与大呼吸间距**：PC 标准版心 `1200px` / 宽版心 `1320px`，模块垂直留白 Desktop `88px–116px` / Mobile `64px–72px`，彻底告别窄版心和过扁拥挤模块；
+  - **纯净表面 + 重点有彩不单调**：中性舞台（`#000000 / #161617 / #FFFFFF / #F5F5F7`，不铺大片泥泞渐变），但卖点模块采用 **Bento 主次分层 + 独立 3D 视觉 + 微交互**，标的代码必须带**彩色品牌识别徽标**；
+  - **Hero 大胆纯视觉 & 配图透明底/满出血铁律（v0.9.0）**：推荐居中全幅 3D 背景图 Hero（核心元素呈现在按钮下方），监管与平台卖点按 `content/selling-points/ebc-selling-points-library.md` 智能分配位置；**所有 3D 独立配图必须为真透明底 PNG 且与标题/标签轴线明确对齐**（严禁把带黑色矩形底色的 JPG 直接贴进卡片露出方框边界）；带背景的完整场景图只能作为整张卡片或整个模块的满出血背景融合呈现，**严禁左文右无容器散图**；
+  - 标题去逗号拆两行展示；主按钮用实心 `#A52933` 胶囊，Icon 用 `1.5px` 去盒化线性矢量，分割线用 `1px` 极细线。
+- **Track B（`Mode 1` 常规产品 LP / 活动页）**：在 `tokens-apple-ui.css` 上叠加 [tokens-lp.css](../foundations/tokens-lp.css) 与 LP 密度硬尺。
+- **Track A（`Mode 2` 官网 / 品牌页 / 工具平台）**：在 `tokens-apple-ui.css` 上结合项目 Art Direction 声明 Design Override。
+- 字体使用合法系统字体栈；**严禁打包受限 Apple SF Pro 字体文件**。
 - 响应式使用现代 CSS Grid / Flex + `clamp()`；**严禁复制旧代码全站 `vw-rem` 缩放或硬编码 `5600px` 固定高度**。
 
 ---

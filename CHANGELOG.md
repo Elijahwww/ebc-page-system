@@ -1,5 +1,31 @@
 # EBC Page System · 版本与关键变化
 
+## v0.10.0 · 2026-11-24 · 全量接入 EBC V14.1 官方卖点资产库与核准监管号表
+- **完整替换入库（[content/selling-points/ebc-selling-points-library.md](content/selling-points/ebc-selling-points-library.md)）**：完整合入用户最新整理的 `EBC_Selling_Points_Library_V14_1.md`（A–L 共 12 个维度、55+ 独立编号卖点 + 22 条已确认品牌主张 + 来源页码索引），保留顶部「零、AI 智能选点与落位指南」矩阵，并自动关联 `design/assets/partners/` 官方成品合作卡路径。
+- **同步基础事实速查卡（[content/facts/current-facts-and-bans.md](content/facts/current-facts-and-bans.md)）**：写入最新核准的四大监管实体与监管号唯一口径（FCA `927552` / ASIC `500991` / CIMA `2038223` / FSCA `51541`）及核心规模/执行/保障指标，消除旧版“待核验”冲突。
+- **同步路由入口**：更新 [START-HERE-FAST-TRACK.md](START-HERE-FAST-TRACK.md) 至 `v0.10.0`。
+
+## v0.9.1 · 2026-11-24 · 合规边界大幅轻量化（仅限基础事实核查，释放 Agent 创意发挥）
+- **用户校准方向**：明确合规要求仅限于**基础事实防错**（不编造/写错监管牌照号与实体归属、不把 CFD 写成实股、不复用已过期优惠、不造假实时行情），**不做重型全方位法务/合规审批，也不在规则里长篇大论束缚 Agent 发挥**；具体合规细节由用户基于 Demo 实际效果直接审查把关。
+- **规则瘦身**：精简 [content/facts/current-facts-and-bans.md](content/facts/current-facts-and-bans.md)（v0.7 基础事实速查卡）、[content/selling-points/ebc-selling-points-library.md](content/selling-points/ebc-selling-points-library.md)（v0.2，去掉冗余合规字段与审稿说教，简化为 5 行速填模板）、[AGENTS.md](AGENTS.md)（§1A、§5）、[content/rules/review-rubric.md](content/rules/review-rubric.md) 与 [START-HERE-FAST-TRACK.md](START-HERE-FAST-TRACK.md)。
+
+## v0.9.0 · 2026-11-24 · 配图透明底/满出血融合铁律 & 模块化 EBC 卖点资产库（智能选点与落位）
+- **配图透明底与满出血融合硬规（`apple-ui-component-spec.md`、`code-delivery-contract.md`）**：明确所有独立 3D 元素配图必须为**真正透明底 PNG（Alpha）且与卡片内文字/标签轴线建立明确对齐关系**，严禁把带黑色或纯色矩形底色的图片直接贴在卡片内露出方框边界；凡带完整背景的渲染/场景图，**只能作为整张卡片或整个模块的满出血背景（Full-Bleed `object-fit: cover`）彻底融合**，严禁孤立摆放。
+- **新建模块化 EBC 卖点资产库（[content/selling-points/ebc-selling-points-library.md](content/selling-points/ebc-selling-points-library.md)）**：将监管、资金规范托管、TradingView、MT5、多空双向、多资产、全球合作伙伴与限时活动拆分为结构化卖点积木（含事实状态、适用受众、推荐落位、三档字数文案、关联素材、去重互斥规则），并附「受众 × 渠道 × 端别」智能落位矩阵（让 AI 自动判断放 Hero 底条/轮播还是放 B3 为什么选 EBC）与用户速填模板。
+- **同步落地**：接入 `START-HERE-FAST-TRACK.md` 与 `AGENTS.md`，记录至 [ITER-20261124-010](iterations/2026-11-24-transparent-3d-and-selling-points-library-v0-9.md)；并按新规将 `projects/2026-11-us-stocks-nvda-lp` B1 主卡升级为真正满出血融合渲染（彻底消除内嵌黑框边界）。
+
+## v0.8.0 · 2026-11-24 · 全站统一无衬线字体、1200px Apple 宽版心大呼吸、全幅 3D Hero、Bento 分层与标的品牌色规范
+- **触发根因**：用户基于 `2026-11-us-stocks-nvda-lp` V2 手机与 PC 5 张实屏截图提出 5 项系统级校准，并要求**先改规则文件再执行页面**：① 手机端 Hero 过挤且监管条不再强制锁死在 Hero 底边，支持更大胆的全幅 Hero 背景图（核心视觉置于按钮下方）；② 卖点模块避免全黑白平铺单调，引入 Bento 主次分层、独立 3D 素材与微交互；③ 标的代码加入彩色品牌识别徽标，规定配图必须为无缝 3D 元素或满容器填充图（严禁左文右散图）；④ 全面禁用 `monospace`，公司代码、序号与数字统一 Apple 无衬线字体；⑤ PC 版心过窄（896px）且模块过扁，升级至 `1200px / 1320px` 宽版心与 `88px–116px` 舒展呼吸间距。
+- **规则升级**：同步升级 `design/foundations/tokens-apple-ui.css`、`apple-ui-component-spec.md`、`tokens-lp.css`、`research/page-structures/landing-pages/product-lp-common.md`、`design/patterns/code-delivery-contract.md`，记录至 [ITER-20261124-009](iterations/2026-11-24-apple-bento-wide-canvas-and-typography-v0-8.md)。
+
+## v0.7.0 · 2026-11-24 · Apple-Grade 强制前端设计地基、纯净表面克制、紧凑 PC 高度与纯视觉 Hero 规范
+- **触发根因**：用户基于 `2026-11-us-stocks-nvda-lp` V1 实屏截图给出明确审定：整体结构与文案已达标，但视觉存在四项共性问题——① Hero 右侧塞了文字数据卡而非 3D/透明元素；② PC 各模块高度过高；③ 全页多处铺了大面积暗红渐变色；④ 缺少严格的 Apple.com 级前端基础规范（字体字重阶梯、卡片、分割线、实心按钮、1.5px 线性 Icon 及标题去逗号两行排版）。
+- **新增强制基础规范**：
+  - [design/foundations/tokens-apple-ui.css](design/foundations/tokens-apple-ui.css) 与 [design/foundations/apple-ui-component-spec.md](design/foundations/apple-ui-component-spec.md)：确立全站统一的 Apple.com 级字体/字重（`400/500/600`）、纯中性表面（`#FFFFFF / #F5F5F7 / #000000 / #161617`，**禁止乱铺大面积渐变色**）、极细 `1px` 分割线、实心 `#A52933` 胶囊按钮、`1.5px` 去盒化线性 Icon、紧凑 PC 模块高度（`56px–64px`）与**标题去逗号两行排版**规则。
+  - **Hero 纯视觉铁律**：Hero 右侧只放无文字 3D 渲染物或透明底品牌元素，禁止放文字图表卡片。
+  - 重构 [design/foundations/tokens-lp.css](design/foundations/tokens-lp.css) 继承 `tokens-apple-ui.css`，清除所有大面积暗红渐变背景。
+- **同步落地**：更新 `START-HERE-FAST-TRACK.md`、`AGENTS.md`、`design/README.md`、`design/patterns/code-delivery-contract.md`；并在 `projects/2026-11-us-stocks-nvda-lp` 完成 V2 视觉全面重构（含新生成的纯黑无缝 3D AI 芯片主视觉）。完整复盘见 [ITER-20261124-008](iterations/2026-11-24-apple-ui-foundation-and-hero-visual-v0-7.md)。
+
 ## v0.6.0 · 2026-11-20 · 全链路端到端升级（极速路由、事实总表、LP 视觉 Token、代码交付与品牌素材清单）
 - **极速路由卡（[START-HERE-FAST-TRACK.md](START-HERE-FAST-TRACK.md)）**：解决跨模型上下文过载与漏读标准问题——按 `LP_PRODUCT` / `CAMPAIGN` / `WEB_PRODUCT` / `BRAND` 四类任务直接映射精确的 3–4 份必读文档 + 必看 `pc.png` 原图路径。
 - **业务事实与文案红线总表（[content/facts/current-facts-and-bans.md](content/facts/current-facts-and-bans.md)）**：把散落在 6 个文档中的 `SAFE_TO_USE`、`HARD_BANS`（禁用“小股东/分享增长/印花税/过期 0 费率/外汇券商/假实时报价”等）与 `NEEDS_LIVE_CHECK` 收口为单页 SSOT。

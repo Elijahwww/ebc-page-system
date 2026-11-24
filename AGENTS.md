@@ -9,10 +9,10 @@
 核心必读基础：`README.md`、本文件、**`content/facts/current-facts-and-bans.md`（事实与文案红线总表）**、`pm/README.md`、`pm/operating-system/iterative-pm-engine.md`。
 按页面类型再读取：
 - PM 主能力：`.claude/skills/pm-page-strategy/SKILL.md`（非 Claude Agent 也可当成通用文本协议）
-- 文案：`content/facts/current-facts-and-bans.md`、`content/rules/review-rubric.md`（含 `LP_BLOAT_FAIL` 否决）、`content/corpus/decision-index.csv`、`.claude/skills/ebc-copy-evidence/SKILL.md`
+- 文案与卖点：`content/facts/current-facts-and-bans.md`、**`content/selling-points/ebc-selling-points-library.md`（模块化卖点积木与受众/落位智能决策矩阵）**、`content/rules/review-rubric.md`（含 `LP_BLOAT_FAIL` 否决）、`content/corpus/decision-index.csv`、`.claude/skills/ebc-copy-evidence/SKILL.md`
 - 页面结构：`research/page-structures/README.md`、**`research/page-structures/matching-and-hero-contract.md`（每个新网页必读）**、适用 Page Type 分册（`LP_PRODUCT` 读 `product-lp-common.md` 并**必看 `etf/B` 与 `oil/B` 原图**）、`research/page-structures/review-2026-11-13.md`
 - 外部基准研究：`research/README.md`、`.claude/skills/ebc-reference-discovery/SKILL.md`
-- 设计与代码交付：`design/README.md`、`design/foundations/tokens-lp.css`（轨道 B 投放 LP） / `design/foundations/tokens.css`（轨道 A 官网）、**`design/patterns/code-delivery-contract.md`**、**`design/assets/README.md`**、`.claude/skills/ebc-web-design/SKILL.md`
+- 设计与代码交付：`design/README.md`、**`design/foundations/apple-ui-component-spec.md`（v0.7 强制前端基础规范：Apple.com 级字体/字重/纯净色彩/卡片/分割线/实心按钮/1.5px 线性 Icon/紧凑 PC 高度/无逗号两行标题/纯视觉 3D Hero）**、`design/foundations/tokens-apple-ui.css`、`design/foundations/tokens-lp.css`、`design/patterns/code-delivery-contract.md`、`design/assets/README.md`、`.claude/skills/ebc-web-design/SKILL.md`
 - 历史源证据：`sources/INDEX.md`、`asset-review/00-HANDOFF-FOR-GPT.md`、`cases/`、`insights/`，按需读取目标版本。
 
 **不要一次把整个仓库 230+ 文件塞进模型上下文。** 读取目录/索引 → 选择 1–3 个相关页面 → 进入文件与证据。
@@ -56,7 +56,7 @@ D 需求 → R 研究 → U 用户决策心理和多路径模拟 → C 文案 �
 - **先自动匹配结构库**：在 `Mode 1` 下直接沿用 `LP_PRODUCT` 默认生产基线及其密度硬尺（见 `research/page-structures/landing-pages/product-lp-common.md` §E），只替换主题、买点、真实数据与主视觉；确有业务例外时再提交 Structure Override。**不能因 Hero 用 CTA 就把交易赛分类成产品推广 LP**。历史 Campaign 3/3 在 PC Hero 右侧内嵌注册表单，作为用户未指定时的默认候选；若用户明确要求 Hero CTA，直接改为按钮并按真实目标弹窗/跳转，**无需再生成右侧表单**。官网主站页未要求表单时不复制这一模式。
 - **反说明书硬控**：PM 深度思考留在 `pm-decision.md`；进入 LP UI 前必须通过 `content/rules/review-rubric.md` 的 `LP_BLOAT_FAIL` 检查（整页主文案 250–450 字、每张功能卡 1 标题 + 1 短句 ≤ 16 字、正文槽位不嵌套 FAQ/账本）。
 - **新增内容准入**：它解决哪个当前用户未获回答的重要问题？现有模块/Variant 为什么无法承接？是否有真实数据/事实？若删除、合并、下沉、跳转，会造成什么具体信息缺口？见 [Page Logic & Content Scope](pm/methods/page-logic-and-content-scope.md)。
-- **必要内容完整性**：不可为了让页面短而丢失活动资格、真实获奖条件、重要交易风险、产品性质、地区/实体信息或其他适用披露——在 `Mode 1` 投放页中用**贴近模块的单行高信噪比脚注 + 精炼页脚**承接，绝不借“完整合规”之名堆砌长篇说明书。
+- **必要信息与轻量边界**：落地页保留简洁单行风险/产品性质脚注即可，不做重型合规审查，绝不借“完整合规”之名堆砌长篇说明书或束缚营销表达。
 - **方案必须取舍**：比较真正不同的策略，不为凑两个结构而增加屏。最终标明 `CHOSEN / REJECTED / SACRIFICE / FAILURE CONDITION`，说明主动放弃/推迟什么，以及何种新证据必须回到 PM 纠错。见 [Tradeoffs & Correction](pm/methods/decision-tradeoffs-and-correction.md)。
 - **权限边界**：`DEFAULT_PRODUCTION_BASELINE`（当前 `LP_PRODUCT`）与用户明确锁定的结构在常规生产中默认遵守；特殊业务变化走 Structure Override 并确认。历史候选可做本项目有据调整，但 Agent 不能自动将其他候选升格为用户已批准规范。
 - 视觉采用**双轨分流**：官网/品牌页/工具平台（`Mode 2`）采用 Apple-inspired 浅色基线并鼓励大胆创作；投放 LP（`Mode 1`）默认继承 EBC 现行投放视觉皮肤（深酒红黑渐变 Hero + 融合监管条 + 深浅交替短卡 + 吸底条），未经要求不改成浅白文章流。设计/代码无权因排版私自改业务事实/锁定文案。
@@ -87,9 +87,9 @@ D 需求 → R 研究 → U 用户决策心理和多路径模拟 → C 文案 �
 - Figma 不是强制步骤。需要代码 Demo 时优先给可运行的结果，避免只输出伪截图。
 - 没有真实 API/凭证时不得编造生产数据或私自放入 Token。不要把真实客户信息写进仓库。
 
-## 5. 一期合规和发布边界
-第一期不做冗长合规审批，但应确保 EBC、监管/实体、产品性质、交易状态、费率/数字/收益等事实不被写错或误导；必要风险披露仍需清楚保留。
-`Demo` ≠ `Ready for Production`。正式上线还需按当前公司实际要求完成审批、注册/数据流/语言/归因与 QA。
+## 5. 轻量事实核查与发布边界
+合规检查仅限于**基础事实核对**（不编造/写错监管牌照号与实体归属、不把 CFD 写成实股、不复用已过期活动、不造假实时行情），**不做重型全方位合规审查，也不限制 Agent 的营销文案与创意发挥**；具体合规尺度由用户基于 Demo 实际效果直接审查把关。
+`Demo` ≠ `Ready for Production`。正式上线由用户团队按实际流程完成审批、接口对接与发布。
 
 ## 5A. 不同 AI / Agent 的交接与单一事实来源
 任何跨 GPT、Claude Desktop、Gemini、Grok、Cursor 的任务切换，统一执行 [跨 Agent 交接协议](agents/cross-agent-handoff.md)，使用 `projects/<slug>/handoff.md`（[模板](projects/HANDOFF-TEMPLATE.md)）记录**当前任务、Git commit/版本、已确认中文文案、允许改动范围、必读文件、验收条件和回流位置**。
