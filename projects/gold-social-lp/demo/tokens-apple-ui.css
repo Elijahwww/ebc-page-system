@@ -1,0 +1,109 @@
+/*
+ * EBC Unified Apple-Grade UI Foundation Tokens · v0.8.0
+ * STATUS: MANDATORY_FRONTEND_FOUNDATION (User-calibrated 2026-11-24)
+ *
+ * Key v0.8.0 upgrades:
+ * 1. SINGLE unified Apple-style sans font across ALL text, tickers (NVDA/AAPL), and numbers (01/02/03).
+ *    Monospace / code fonts are FORBIDDEN in marketing UI; use tabular-nums for numeric alignment only.
+ * 2. True Apple.com Desktop canvas width (1200px standard / 1320px wide) & generous vertical breathing room.
+ * 3. Pure neutral surfaces (#000000 / #161617 / #FFFFFF / #F5F5F7) with disciplined brand accent (#A52933)
+ *    and subtle focal highlights — never muddy full-bleed colored gradients.
+ */
+
+:root {
+  /* 1. Pure Neutral Surfaces */
+  --ui-bg-white: #ffffff;
+  --ui-bg-gray: #f5f5f7;
+  --ui-bg-black: #000000;
+  --ui-bg-charcoal: #161617;
+  --ui-bg-elevated-dark: #1d1d1f;
+
+  /* 2. Text Hierarchy (WCAG AA+) */
+  --ui-text-primary: #1d1d1f;
+  --ui-text-secondary: #6e6e73;
+  --ui-text-tertiary: #86868b;
+  --ui-text-inverse-primary: #f5f5f7;
+  --ui-text-inverse-secondary: #a1a1a6;
+  --ui-text-inverse-tertiary: #86868b;
+
+  /* 3. Brand Action & Focal Accents */
+  --ui-brand: #a52933;
+  --ui-brand-hover: #8d212b;
+  --ui-brand-active: #6e1722;
+  --ui-brand-tint: rgba(165, 41, 51, 0.08);
+  --ui-focus: #0071e3;
+
+  /* 4. Hairline Dividers & Card Borders */
+  --ui-divider-light: rgba(0, 0, 0, 0.08);
+  --ui-divider-dark: rgba(255, 255, 255, 0.12);
+  --ui-border-card-light: rgba(0, 0, 0, 0.06);
+  --ui-border-card-dark: rgba(255, 255, 255, 0.10);
+
+  /* 5. SINGLE Unified Apple Typography Stack (Use for ALL text, stock tickers, and numbers!) */
+  --ui-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+
+  /* 6. Apple.com Wide-Canvas Type Scale (Desktop) */
+  --ui-fs-hero: clamp(2.75rem, 4.4vw, 3.875rem);  /* 44px–62px */
+  --ui-lh-hero: 1.08;
+  --ui-ls-hero: -0.025em;
+
+  --ui-fs-h2: clamp(2rem, 3.1vw, 2.75rem);        /* 32px–44px */
+  --ui-lh-h2: 1.15;
+  --ui-ls-h2: -0.022em;
+
+  --ui-fs-h3: 1.375rem;                           /* 22px */
+  --ui-lh-h3: 1.28;
+  --ui-ls-h3: -0.012em;
+
+  --ui-fs-lead: clamp(1.0625rem, 1.4vw, 1.25rem); /* 17px–20px */
+  --ui-lh-lead: 1.46;
+
+  --ui-fs-body: 1rem;                             /* 16px */
+  --ui-lh-body: 1.56;
+
+  --ui-fs-caption: 0.875rem;                      /* 14px */
+  --ui-fs-footnote: 0.75rem;                      /* 12px */
+  --ui-lh-caption: 1.5;
+
+  --ui-fw-regular: 400;
+  --ui-fw-medium: 500;
+  --ui-fw-semibold: 600;
+
+  /* 7. Wide Apple PC Canvas & Generous Vertical Breathing Room */
+  --ui-container: 75rem;                          /* 1200px standard content canvas */
+  --ui-container-wide: 82.5rem;                   /* 1320px Hero / visual canvas */
+  --ui-gutter: clamp(1.5rem, 4vw, 4rem);
+  --ui-section-py: clamp(5.5rem, 7vw, 7.25rem);   /* 88px–116px generous PC rhythm */
+  --ui-section-py-compact: clamp(4.5rem, 5.5vw, 5.75rem);
+
+  /* 8. Radii, Controls & Linear Icons */
+  --ui-radius-sm: 0.875rem;                       /* 14px */
+  --ui-radius-md: 1.25rem;                        /* 20px */
+  --ui-radius-lg: 1.5rem;                         /* 24px — Apple Bento card radius */
+  --ui-radius-pill: 999px;
+
+  --ui-btn-h: 2.875rem;                           /* 46px */
+  --ui-btn-h-lg: 3.25rem;                         /* 52px */
+  --ui-icon-size: 1.5rem;                         /* 24px */
+  --ui-icon-stroke: 1.5;
+
+  --ui-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ui-dur-fast: 180ms;
+  --ui-dur-base: 280ms;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --ui-fs-hero: 2.25rem;        /* 36px */
+    --ui-lh-hero: 1.12;
+    --ui-fs-h2: 1.75rem;          /* 28px */
+    --ui-lh-h2: 1.2;
+    --ui-fs-h3: 1.1875rem;        /* 19px */
+    --ui-fs-lead: 1rem;           /* 16px */
+    --ui-fs-body: 0.9375rem;      /* 15px */
+    --ui-gutter: 1.25rem;         /* 20px */
+    --ui-section-py: 4.25rem;     /* 68px generous mobile spacing */
+    --ui-section-py-compact: 3.5rem;
+  }
+}

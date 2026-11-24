@@ -1,0 +1,38 @@
+/*
+ * EBC Performance Landing Page Tokens (Track B · Mode 1) · v0.8.0
+ * Inherits Apple-Grade UI Foundation (tokens-apple-ui.css):
+ * - Single unified Apple sans font (ZERO monospace for tickers/numbers)
+ * - Wide 1200px / 1320px PC canvas & generous 88px–116px section breathing room
+ * - Full-bleed Hero visual stage + Bento hierarchy + pure neutral surfaces
+ */
+@import url("./tokens-apple-ui.css");
+
+:root {
+  --lp-hero-bg: #000000;
+  --lp-stage-dark: #000000;
+  --lp-stage-light: #ffffff;
+  --lp-stage-soft: #f5f5f7;
+  --lp-card-dark: #161617;
+  --lp-card-light: #f5f5f7;
+  --lp-card-white: #ffffff;
+}
+
+.lp-container {
+  width: min(calc(100% - 2 * var(--ui-gutter)), var(--ui-container-wide));
+  margin-inline: auto;
+}
+
+.lp-container--standard {
+  width: min(calc(100% - 2 * var(--ui-gutter)), var(--ui-container));
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
