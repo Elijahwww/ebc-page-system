@@ -1,5 +1,17 @@
 # EBC Page System · 版本与关键变化
 
+## v1.0.0 · 2026-11-24 · 三 Agent 正式分工流水线（`Codex → Claude → Gemini`）& 高转化可选内容范式定型
+- **固化三模型最佳接力流程（[agents/cross-agent-handoff.md](agents/cross-agent-handoff.md) §0、[START-HERE-FAST-TRACK.md](START-HERE-FAST-TRACK.md)）**：基于美股与黄金主题三模型真实对比，明确确立 **`Codex（严谨方案起稿 + 高质棚拍主图生图）` → `Claude Code（PM 评审与营销洞察拔高 · Approve）` → `Gemini / Antigravity（视觉导演 + 最终页面执行交付）`** 的接力分工与三段开箱即用派单指令。
+- **沉淀实战验证的高转化可选范式（[research/page-structures/landing-pages/product-lp-common.md](research/page-structures/landing-pages/product-lp-common.md) §E.3）**：收录 ① B1 现实行情/生活体感钩子、② B2「传统方式 vs CFD」极简 3 行对比卡、③ B3「三栏卖点 + 底部 4 列监管号条」一体化信任面板，并补充品牌语感提醒（避免“别人…EBC…”类拉踩广告套话）。
+- **修正跨模型生图能力画像（`apple-ui-component-spec.md`、`code-delivery-contract.md`、`design/starters/lp-product/README.md`）**：明确 Codex 与 Gemini 均具备高质商业级生图能力（Hero 与 B1 独立生图不撞图），无原生生图能力的 Agent（如 Claude Code）严禁手绘粗糙 SVG 冒充商业 3D 图，应复用上游素材或降级为大号数字指标卡 + `1.5px` 线性 Icon。
+
+## v0.11.0 · 2026-11-24 · 反“合规过度警惕”、移动端居中无副标题、跨模型降级与官方 LP Starter 底座
+- **触发根因**：基于 Codex 实战产出 `EBC-Gold.html` 跨模型诊断及用户明确拍板——修复四大系统性问题，同时保留跨模型正常创意差异、不矫枉过正。
+- **反“合规过度警惕”，释放 V14.1 营销张力（`current-facts-and-bans.md`、`ebc-selling-points-library.md`、`AGENTS.md`、`review-rubric.md`、`ebc-copy-evidence/SKILL.md`）**：明确唯一强制合规检查仅限**基本监管信息（实体名与监管号）准确**；严禁为了“安全”在每张卖点卡里塞入亏损泼冷水句式或放弃 V14.1 王牌卖点；其他需留意项在交付说明顺手告知用户看 Demo 过滤即可。
+- **移动端精简与对齐铁律（`apple-ui-component-spec.md`）**：PC 端全页模块标题对齐保持统一（不半页左对齐、半页居中）；**移动端（`≤ 767px`）所有模块标题与 Hero 副标题一律居中，大标题带逗号去逗号拆两行，且除 Hero 空间充足时外，移动端其他正文模块一律不展示副标题**。
+- **跨模型配图降级策略（`apple-ui-component-spec.md`、`code-delivery-contract.md`）**：严禁相邻模块复用同一张底图；无生图能力的 Agent（Codex / Claude Code）在 B1 改用「大号核准核心数字卡 + `1.5px` 线性 SVG Icon」撑起视觉层次。
+- **新建官方干净底座 [design/starters/lp-product/](design/starters/lp-product/)**：沉淀零残留的通用 LP 框架（官方 EBC×巴萨页头、移动端抽屉、M07 5 张合作成品卡、M08 三步、极简页脚、吸底条、`inert` 无障碍弹窗与移动端隐藏非 Hero 副标题样式），彻底解决 Agent 复制旧业务项目代码导致串台的问题；同时在 `code-delivery-contract.md` 明确多文件仓库交付与单文件导出（禁 Base64 进 `og:image`）边界。
+
 ## v0.10.0 · 2026-11-24 · 全量接入 EBC V14.1 官方卖点资产库与核准监管号表
 - **完整替换入库（[content/selling-points/ebc-selling-points-library.md](content/selling-points/ebc-selling-points-library.md)）**：完整合入用户最新整理的 `EBC_Selling_Points_Library_V14_1.md`（A–L 共 12 个维度、55+ 独立编号卖点 + 22 条已确认品牌主张 + 来源页码索引），保留顶部「零、AI 智能选点与落位指南」矩阵，并自动关联 `design/assets/partners/` 官方成品合作卡路径。
 - **同步基础事实速查卡（[content/facts/current-facts-and-bans.md](content/facts/current-facts-and-bans.md)）**：写入最新核准的四大监管实体与监管号唯一口径（FCA `927552` / ASIC `500991` / CIMA `2038223` / FSCA `51541`）及核心规模/执行/保障指标，消除旧版“待核验”冲突。

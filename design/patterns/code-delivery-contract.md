@@ -1,27 +1,29 @@
-# EBC 页面代码交付标准（Code Delivery Contract · v0.6）
+# EBC 页面代码交付标准（Code Delivery Contract · v0.11.0）
 
-> **目标**：让 Codex / Claude Code / Gemini / Cursor 每次产出的页面代码都**开箱即预览、零依赖崩溃、交互全真实、可直接升级生产**，彻底避免“只跑得起一半”或“把文档塞进网页”。
+> **目标**：让 Codex / Claude Code / Gemini / Cursor 每次产出的页面代码都**开箱即预览、零依赖崩溃、交互全真实、可直接升级生产**，彻底避免“只跑得起一半”或“东拼西凑抄上一个业务项目”。
 
 ---
 
-## 1. 默认技术栈选择（零构建优先，拒绝过度工程化）
+## 1. 默认技术栈与官方 Starter 底座（v0.11.0）
 
-- **默认 Demo / 预览页（除非用户明确指定 React / Vue / Vike / Next.js）**：
-  - 使用**单目录纯静态原生三件套**：`projects/<slug>/demo/index.html`、`styles.css`、`app.js`。
-  - **零外部 CDN 强依赖、零 `npm install` 阻断**：既可以直接双击 `index.html` 离线预览，也可以用任意静态服务器（`python3 -m http.server` / Vercel / Netlify / GitHub Pages）秒级部署。
+- **常规产品 LP（`LP_PRODUCT` / `Mode 1`）起步铁律**：
+  - **直接基于干净的官方底座 [design/starters/lp-product/](../starters/lp-product/) 开发**（含官方 EBC×巴萨页头、移动端抽屉、M07 官方 5 张合作伙伴 `<picture>` 成品卡、M08 简单三步、极简页脚、吸底条与 `inert` 无障碍弹窗），**不要直接去 `projects/` 目录复制上一个业务项目的 Demo 源码**（容易带入旧主题残留注释和上下对齐割裂）。
+- **仓库多文件交付 vs 可选单文件预览**：
+  - **仓库默认交付形态**：在 `projects/<slug>/demo/` 下保持**分离多文件原生三件套**（`index.html`、`styles.css`、`app.js` + `assets/`），零构建工具依赖、零外部 CDN 强依赖，既可双击 `index.html` 离线预览，也方便 Git diff 与前端拆组件。
+  - **可选单文件分发版**：仅在用户需要单个 HTML 发人分享时可额外导出内嵌版，且**严禁把几十/几百 KB 的 Base64 图片塞进 `<meta property="og:image">`**（社媒抓取器不支持 data URI，只会白白让体积翻倍）。
   - **严禁直接引用缺失的历史内部共享组件**（如仓库中没有源码的 `topMenuNoA`、`registryFormSSR`、`jianguan`、`ClosingSection`）。
 - **当用户明确要求接入现有前端工程（如 Vike / Vue 3）**：再按目标工程结构拆分组件，并明确列出需后端对接的接口与共享组件清单。
 
 ---
 
-## 2. 视觉与样式继承铁律（v0.8.0 强制）
+## 2. 视觉与样式继承铁律（v0.11.0 强制）
 
 - **全站统一 Apple-Grade 地基**：所有页面必须严格遵守 [apple-ui-component-spec.md](../foundations/apple-ui-component-spec.md) 与 [tokens-apple-ui.css](../foundations/tokens-apple-ui.css)：
-  - **全站唯一统一无衬线字体 `--ui-font-sans`**：股票代码（`NVDA`/`AAPL`）、序号（`01`/`02`/`03`）与财务数字严禁使用 `monospace` 等宽字体，仅加 `font-variant-numeric: tabular-nums`；
-  - **宽版心与大呼吸间距**：PC 标准版心 `1200px` / 宽版心 `1320px`，模块垂直留白 Desktop `88px–116px` / Mobile `64px–72px`，彻底告别窄版心和过扁拥挤模块；
-  - **纯净表面 + 重点有彩不单调**：中性舞台（`#000000 / #161617 / #FFFFFF / #F5F5F7`，不铺大片泥泞渐变），但卖点模块采用 **Bento 主次分层 + 独立 3D 视觉 + 微交互**，标的代码必须带**彩色品牌识别徽标**；
-  - **Hero 大胆纯视觉 & 配图透明底/满出血铁律（v0.9.0）**：推荐居中全幅 3D 背景图 Hero（核心元素呈现在按钮下方），监管与平台卖点按 `content/selling-points/ebc-selling-points-library.md` 智能分配位置；**所有 3D 独立配图必须为真透明底 PNG 且与标题/标签轴线明确对齐**（严禁把带黑色矩形底色的 JPG 直接贴进卡片露出方框边界）；带背景的完整场景图只能作为整张卡片或整个模块的满出血背景融合呈现，**严禁左文右无容器散图**；
-  - 标题去逗号拆两行展示；主按钮用实心 `#A52933` 胶囊，Icon 用 `1.5px` 去盒化线性矢量，分割线用 `1px` 极细线。
+  - **全站唯一统一无衬线字体 `--ui-font-sans`**：资产代码（`NVDA`/`XAUUSD`）、序号（`01`/`02`/`03`）与数字严禁使用 `monospace`，仅加 `font-variant-numeric: tabular-nums`；
+  - **宽版心与大呼吸间距**：PC 标准版心 `1200px` / 宽版心 `1320px`，模块垂直留白 Desktop `88px–116px` / Mobile `64px–72px`；
+  - **全页标题对齐一致 + 移动端精简居中铁律**：PC 端全页模块标题对齐方式必须统一（全居中或全左对齐，严禁上半页左对齐、下半页居中）；**移动端（`≤ 767px`）各模块大标题与副标题一律居中，大标题去逗号拆两行，且除 Hero 空间充足时外，移动端其他正文模块默认不展示副标题**；
+  - **跨模型配图铁律与降级方案**：① 独立 3D 元素必须为真透明底 PNG 且与标题/标签轴线对齐；② 完整场景图必须满出血铺满容器（`object-fit: cover`）+ 柔和遮罩；③ **禁止相邻模块复用同一张底图**；④ 有商业级生图能力时（如 Codex / Gemini）为 Hero 与 B1 分别定制高质实图；无原生生图能力时（如 Claude Code）严禁手绘粗糙 SVG 充当 3D 图，B1 改用**「大号核准数字指标卡 + `1.5px` 线性 SVG Icon」**建立视觉重心；
+  - 主按钮用实心 `#A52933` 胶囊，Icon 用 `1.5px` 去盒化线性矢量，分割线用 `1px` 极细线。
 - **Track B（`Mode 1` 常规产品 LP / 活动页）**：在 `tokens-apple-ui.css` 上叠加 [tokens-lp.css](../foundations/tokens-lp.css) 与 LP 密度硬尺。
 - **Track A（`Mode 2` 官网 / 品牌页 / 工具平台）**：在 `tokens-apple-ui.css` 上结合项目 Art Direction 声明 Design Override。
 - 字体使用合法系统字体栈；**严禁打包受限 Apple SF Pro 字体文件**。

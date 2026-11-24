@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EBC 金融集团 · 产品推广页模板</title>
+  <meta name="description" content="EBC 金融集团多资产交易推广页官方基础模板。" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- ==================== HERO STAGE（页头 + 主视觉） ==================== -->
+  <section class="hero-stage" id="top">
+    <header class="lp-nav">
+      <div class="lp-container lp-nav__inner">
+        <a href="#top" class="lp-brand" aria-label="EBC Financial Group — 巴塞罗那足球俱乐部官方合作伙伴">
+          <img
+            src="../../assets/logos/on-dark/cn.svg"
+            alt="EBC Financial Group — 巴塞罗那足球俱乐部官方合作伙伴"
+            class="lp-brand__logo"
+            width="230"
+            height="36"
+          />
+        </a>
+
+        <nav class="lp-nav__links" aria-label="页面导航">
+          <a href="#highlights">核心亮点</a>
+          <a href="#product">交易优势</a>
+          <a href="#why-ebc">为什么选 EBC</a>
+          <a href="#partners">合作伙伴</a>
+          <a href="#steps">如何开始</a>
+        </nav>
+
+        <button
+          type="button"
+          class="lp-menu-btn"
+          id="menuToggle"
+          aria-label="打开导航菜单"
+          aria-expanded="false"
+          aria-controls="mobileDrawer"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="lp-mobile-drawer" id="mobileDrawer" hidden>
+        <a href="#highlights">核心亮点</a>
+        <a href="#product">交易优势</a>
+        <a href="#why-ebc">为什么选 EBC</a>
+        <a href="#partners">合作伙伴</a>
+        <a href="#steps">如何开始</a>
+        <button type="button" class="ui-btn ui-btn--primary ui-btn--full" data-open-modal="移动端菜单">
+          立即开户
+        </button>
+      </div>
+    </header>
+
+    <div class="lp-container hero-body">
+      <div class="hero-copy">
+        <!-- 标题中间有逗号时，直接去逗号拆两行 -->
+        <h1>一个账户<br />直连全球热门市场</h1>
+        <p class="hero-lead">覆盖 300+ 交易品种，20ms 平均执行，多空双向灵活布局</p>
+        <button type="button" class="ui-btn ui-btn--primary ui-btn--lg" id="heroCtaAnchor" data-open-modal="首屏主按钮">
+          立即开户 <span class="ui-chevron" aria-hidden="true">›</span>
+        </button>
+      </div>
+
+      <!-- 视觉位：有生图能力放全幅 3D/场景满出血图或透明底 3D PNG；严禁放文字数据卡 -->
+      <div class="hero-visual" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ==================== B1: 主题卖点 Bento（移动端不设模块副标题） ==================== -->
+    <section class="lp-section lp-section--dark" id="highlights" aria-labelledby="highlights-title">
+      <div class="lp-container lp-container--standard">
+        <h2 class="ui-h2 ui-h2--inverse" id="highlights-title">
+          机构级环境<br />把握每一次行情
+        </h2>
+
+        <!-- Bento 布局：左侧主卡支持全幅融合视觉或大号核心数据卡（无生图模型优雅降级，不复用 Hero 同图） -->
+        <div class="bento-grid">
+          <article class="bento-card bento-card--feature">
+            <span class="ui-tag">机构流动性</span>
+            <p class="bento-metric">20ms</p>
+            <h3>极速订单执行</h3>
+            <p>对接 50+ 国际机构报价资源，87.6%+ 订单获得更优成交价格</p>
+          </article>
+
+          <article class="bento-card">
+            <span class="ui-icon ui-icon--brand-light" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </span>
+            <h3>0.0 pips 原始点差</h3>
+            <p>专业账户银行级原始点差，标准账户免交易佣金</p>
+          </article>
+
+          <article class="bento-card">
+            <span class="ui-icon ui-icon--brand-light" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </span>
+            <h3>多空双向交易</h3>
+            <p>涨跌行情皆可灵活部署策略，实时响应市场波动</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== B2: 产品与标的区（浅白对比段） ==================== -->
+    <section class="lp-section lp-section--white" id="product" aria-labelledby="product-title">
+      <div class="lp-container lp-container--standard">
+        <h2 class="ui-h2" id="product-title">
+          全球多元资产<br />一站便捷交易
+        </h2>
+
+        <div class="two-col-grid">
+          <article class="surface-card surface-card--light">
+            <span class="ui-eyebrow ui-eyebrow--brand">核心机制</span>
+            <h3>灵活多空 · 保证金交易</h3>
+            <p>一个账户直达黄金、原油、外汇、全球股指与热门美股 ETF CFD。</p>
+            <button type="button" class="ui-btn ui-btn--primary" data-open-modal="产品区主卡">
+              开启交易 <span class="ui-chevron" aria-hidden="true">›</span>
+            </button>
+          </article>
+
+          <article class="surface-card surface-card--light">
+            <span class="ui-eyebrow">专业终端</span>
+            <h3>MT4 / MT5 · EBC App · TradingView</h3>
+            <p>多终端同步行情、图表与持仓，随时随地敏捷执行。</p>
+            <button type="button" class="ui-btn ui-btn--secondary" data-open-modal="终端了解">
+              立即体验 <span class="ui-chevron" aria-hidden="true">›</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== B3: 为什么选择 EBC（从 V14.1 抽取 3 项高转化王牌卖点） ==================== -->
+    <section class="lp-section lp-section--gray" id="why-ebc" aria-labelledby="why-title">
+      <div class="lp-container lp-container--standard">
+        <h2 class="ui-h2" id="why-title">为什么选择 EBC</h2>
+
+        <div class="three-col-grid">
+          <article class="surface-card surface-card--white">
+            <span class="ui-icon ui-icon--brand" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <h3>四大权威监管</h3>
+            <p>英国 FCA、澳洲 ASIC、开曼 CIMA、南非 FSCA 持牌监管</p>
+          </article>
+
+          <article class="surface-card surface-card--white">
+            <span class="ui-icon ui-icon--brand" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <h3>巴克莱托管与千万保险</h3>
+            <p>巴克莱企业集团账户独立托管，劳合社与 QBE 超 3,000 万美元保险</p>
+          </article>
+
+          <article class="surface-card surface-card--white">
+            <span class="ui-icon ui-icon--brand" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </span>
+            <h3>连续 5 年 100% 出金记录</h3>
+            <p>超 800 万全球投资者的选择，月交易量突破 6,000 亿美元</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== M07: 全球合作伙伴（官方成品图，严禁二次叠字） ==================== -->
+    <section class="lp-section lp-section--white" id="partners" aria-labelledby="partners-title">
+      <div class="lp-container">
+        <h2 class="ui-h2" id="partners-title">全球合作伙伴</h2>
+
+        <div class="partners-carousel" id="partnersTrack" role="region" aria-label="全球合作伙伴展示">
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="../../assets/partners/mobile/fcb.png" />
+              <img src="../../assets/partners/pc/fcb.png" alt="EBC 金融集团 — 巴萨官方合作伙伴" loading="lazy" />
+            </picture>
+          </figure>
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="../../assets/partners/mobile/tradingview.png" />
+              <img src="../../assets/partners/pc/tradingview.png" alt="EBC 金融集团 × TradingView — 携手打造专业级交易体验" loading="lazy" />
+            </picture>
+          </figure>
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="../../assets/partners/mobile/un.png" />
+              <img src="../../assets/partners/pc/un.png" alt="EBC 金融集团 — 携手联合国基金会抗击疟疾" loading="lazy" />
+            </picture>
+          </figure>
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="../../assets/partners/mobile/oxford.png" />
+              <img src="../../assets/partners/pc/oxford.png" alt="EBC 金融集团 — 联合牛津大学举办研讨会" loading="lazy" />
+            </picture>
+          </figure>
+          <figure class="partner-slide">
+            <picture>
+              <source media="(max-width: 720px)" srcset="../../assets/partners/mobile/cctv.png" />
+              <img src="../../assets/partners/pc/cctv.png" alt="EBC 接受 CCTV 专访" loading="lazy" />
+            </picture>
+          </figure>
+        </div>
+
+        <div class="partners-controls" aria-label="切换合作伙伴卡片">
+          <button type="button" class="partners-arrow" id="partnerPrev" aria-label="上一张">‹</button>
+          <button type="button" class="partners-arrow" id="partnerNext" aria-label="下一张">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== M08: 简单三步 ==================== -->
+    <section class="lp-section lp-section--dark" id="steps" aria-labelledby="steps-title">
+      <div class="lp-container lp-container--standard">
+        <h2 class="ui-h2 ui-h2--inverse" id="steps-title">
+          简单三步<br />开启全球交易
+        </h2>
+
+        <ol class="steps-grid">
+          <li class="step-card">
+            <span class="step-card__num">01</span>
+            <strong>注册开户</strong>
+          </li>
+          <li class="step-card">
+            <span class="step-card__num">02</span>
+            <strong>身份验证</strong>
+          </li>
+          <li class="step-card">
+            <span class="step-card__num">03</span>
+            <strong>开始交易</strong>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== L1: 极简页脚 ==================== -->
+  <footer class="lp-footer" id="legal-footer">
+    <div class="lp-container lp-container--standard">
+      <p>© 2026 EBC Financial Group</p>
+      <p>市场有风险，投资需谨慎。差价合约（CFD）属带杠杆金融衍生品，可能存在本金亏损风险。</p>
+    </div>
+  </footer>
+
+  <!-- ==================== G3: 吸底条（滚出首屏出现） ==================== -->
+  <div class="sticky-bar" id="stickyBar" aria-hidden="true">
+    <div class="lp-container lp-container--standard sticky-bar__inner">
+      <div class="sticky-bar__title">
+        <span class="sticky-bar__pill">EBC</span>
+        <strong>一个账户，交易全球 300+ 市场</strong>
+      </div>
+      <button type="button" class="ui-btn ui-btn--primary" data-open-modal="吸底悬浮条">
+        立即开户
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== G4: 无障碍开户弹窗 ==================== -->
+  <div class="modal-backdrop" id="registerModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog" role="document">
+      <button type="button" class="modal-close" id="modalClose" aria-label="关闭弹窗">×</button>
+
+      <div id="modalFormView">
+        <span class="modal-tag">开户流程预览</span>
+        <h2 id="modalTitle">开设 EBC 交易账户</h2>
+        <p class="modal-desc" id="modalContext">填写基本信息即可体验开户流程（演示页面不提交真实数据）。</p>
+
+        <form class="reg-form" id="registerForm" novalidate>
+          <div class="field">
+            <label for="regName">姓名 / 称呼 *</label>
+            <input type="text" id="regName" placeholder="请输入您的称呼" required autocomplete="name" />
+            <span class="field__err" id="errName" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="regEmail">电子邮箱 *</label>
+            <input type="email" id="regEmail" placeholder="name@example.com" required autocomplete="email" />
+            <span class="field__err" id="errEmail" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="regPhone">手机号码 *</label>
+            <div class="phone-row">
+              <select id="regDial" aria-label="区号">
+                <option value="+852">+852</option>
+                <option value="+886">+886</option>
+                <option value="+65">+65</option>
+                <option value="+60">+60</option>
+                <option value="+86">+86</option>
+              </select>
+              <input type="tel" id="regPhone" placeholder="请输入手机号" required autocomplete="tel-national" />
+            </div>
+            <span class="field__err" id="errPhone" role="alert"></span>
+          </div>
+
+          <label class="risk-check">
+            <input type="checkbox" id="regRisk" required />
+            <span>我已知悉差价合约（CFD）属带杠杆金融衍生品，存在投资风险。</span>
+          </label>
+          <span class="field__err" id="errRisk" role="alert"></span>
+
+          <button type="submit" class="ui-btn ui-btn--primary ui-btn--full">提交开户意向（Demo）</button>
+        </form>
+      </div>
+
+      <div id="modalSuccessView" class="modal-success" hidden>
+        <div class="modal-success__check" aria-hidden="true">✓</div>
+        <h3>开户流程演示完成</h3>
+        <p id="modalSuccessText"></p>
+        <button type="button" class="ui-btn ui-btn--primary" id="modalDoneBtn">返回页面</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

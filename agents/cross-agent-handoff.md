@@ -1,7 +1,29 @@
-# EBC 跨 AI / Agent 交接协议 v0.1
+# EBC 跨 AI / Agent 交接协议 v1.0.0
 
-> 状态：USER_WORKFLOW_DERIVED / RUNTIME_NOT_YET_VALIDATED。适用 GPT、Claude Desktop（含 Code）、Gemini、Grok、Cursor 等。**不假设不同 AI 能直接互相发消息、自动同步聊天记忆或自动获得同一 GitHub 权限。**
-> 目标：切换模型后**不丢用户原始需求、不覆盖已确认中文文案、不重复调研、不把候选方案误升为最终方案**。此协议负责交接，不替代 PM 五节点深度审查或独立翻译流程。
+> 状态：`PRODUCTION_WORKFLOW`（2026-11-24 经美股 + 黄金三模型实战校准定型）。适用 Codex、Claude Code、Gemini（Antigravity）、Cursor 等。**不假设不同 AI 能直接互相发消息或自动同步聊天记忆，统一以项目目录 `projects/<slug>/` 与 `handoff.md` 作为唯一交接载体。**
+
+---
+
+## 零、推荐三 Agent 接力分工流水线（`Codex → Claude → Gemini`）
+
+基于真实项目跨测结论，三家模型按最强工位接力，兼顾**方案严谨度、商业级生图、营销说服力与 Apple 级最终落地**：
+
+| 棒次 | 负责 Agent | 核心职责 | 交付产物 |
+| :--- | :--- | :--- | :--- |
+| **第 1 棒** | **Codex**<br>（严谨方案 + 高质生图） | 发挥高严谨度、强守规与**顶级棚拍级生图能力**：完成初版页面策略、基础事实/监管号核对，并生成高质感核心主视觉图（不同模块分别生图，不撞图） | `projects/<slug>/brief.md`<br>`pm-decision.md`<br>`copy-sheet.md`（V1）<br>`demo/assets/` 主视觉图 |
+| **第 2 棒** | **Claude Code**<br>（PM 评审与营销拔高 · Approve） | 审核并拔高 Codex 初稿：打通现实痛点与说服链路（如 B1 现实行情钩子、B2「传统方式 vs CFD」3 行对比卡、从 V14.1 抽取王牌硬数据卖点），消除防御性/平淡文案与拉踩套话 | 审定版 `copy-sheet.md`（V2）<br>`handoff.md`（供用户 2 分钟快速拍板） |
+| **第 3 棒** | **Gemini / Antigravity**<br>（视觉导演 + 最终执行交付） | 读取已审定的 `copy-sheet.md` 与 Codex 生成的高质视觉素材（按需补齐缺失的 3D/满出血配图），基于官方干净底座 `design/starters/lp-product/` 完成 Apple 级视觉精修、Bento 层级、移动端居中且非 Hero 无副标题排版与完整交互交付 | 可直接双击预览的最终 `projects/<slug>/demo/` + 交付说明 |
+
+### 三段极简派单指令（直接复制填空）
+
+- **派给第 1 棒（Codex）**：
+  > 请读 `START-HERE-FAST-TRACK.md` 与 `content/selling-points/ebc-selling-points-library.md`（V14.1）。本次需求：`<主题 / 受众 / 渠道>`。请负责第 1 棒：在 `projects/<slug>/` 输出严谨的 `brief.md`、`pm-decision.md`、`copy-sheet.md`（V1），并生成高质感 Hero 主视觉图（及按需 B1 独立配图，两屏不撞图）存入 `projects/<slug>/demo/assets/`，暂不写最终 HTML。
+- **派给第 2 棒（Claude Code · Approve）**：
+  > 请读 `projects/<slug>/` 下的 Codex 初稿、`START-HERE-FAST-TRACK.md` 与 `content/selling-points/ebc-selling-points-library.md`（V14.1）。请负责第 2 棒评审与营销拔高：重点检查说服逻辑、现实场景挂钩、B2 差异对比与 V14.1 王牌卖点张力，去掉过度保守的防亏损说教和“别人…EBC…”类拉踩句式，输出审定版 `copy-sheet.md`（V2）与 `handoff.md`。
+- **派给第 3 棒（Gemini / Antigravity · 执行交付）**：
+  > 请读 `projects/<slug>/handoff.md` 与审定版 `copy-sheet.md`，复用 `projects/<slug>/demo/assets/` 中 Codex 已生成的高质配图（如有缺口按 `apple-ui-component-spec.md` 补齐 3D/满出血视觉），基于 `design/starters/lp-product/` 底座完成最终页面视觉精修与完整交互交付，写入 `projects/<slug>/demo/`。
+
+---
 
 ## 一、只有一份项目事实来源（Single Source of Truth）
 

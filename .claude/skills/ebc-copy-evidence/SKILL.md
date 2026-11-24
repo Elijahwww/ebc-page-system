@@ -3,7 +3,11 @@ name: ebc-copy-evidence
 description: Read and apply EBC website and landing-page copy that was actually reviewed by the user, observed in live pages, or extracted from historical source code. Decompose why each statement worked in its context, reject vague slogan imitation, red-team and rewrite copy using an evidence-status-aware 8-dimension rubric. Integrates with PM Copy loop.
 ---
 
-# EBC Copy Intelligence · evidence first v0.1
+# EBC Copy Intelligence · evidence first v0.2
+
+## Priority Entry & Anti-Over-Caution Rule (v0.11.0)
+- **First read** `content/selling-points/ebc-selling-points-library.md` (V14.1 full verified selling points) and `content/facts/current-facts-and-bans.md` (official regulatory entities & license numbers).
+- **Conversion-first, no compliance over-caution**: For ad LPs (`Mode 1`), **write persuasive, high-clarity marketing copy** using V14.1 headline proof points (e.g., 8M+ investors, 5-year 100% withdrawal record, 20ms execution, 0.0 pips raw spread, Barclays custody, $30M+ insurance). The **only mandatory compliance check** is verifying that basic regulatory entities and license numbers are accurate; do NOT inject repetitive loss warnings into selling-point cards. Flag any edge cases briefly in your delivery notes so the user can filter on the Demo.
 
 ## Chinese-first writing and independent localization
 Draft and critique EBC copy in Chinese first, preserving user-verified decision cards and original meaning; do not launch full translation until the Chinese Copy Sheet is approved. Translation is later transcreation, not literal substitution. For market-targeted copy (e.g., Japan campaigns), take local audience, channels and cultural context into account **before** Chinese internal drafting. `working_language=zh-CN` does not imply `target_market=China`. Read `localization/chinese-first-and-market-overrides.md`.

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { Reflector } from 'three/addons/objects/Reflector.js';
+
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1600, H = +q.get('h') || 800;
+const shot = q.get('shot') || 'hero';
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1);
+renderer.setSize(W, H);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envTex = pmrem.fromScene(new RoomEnvironment(renderer), 0.03).texture;
+scene.environment = envTex;
+
+// engraved top texture (bump)
+function topBump() {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 256;
+  const g = c.getContext('2d');
+  g.fillStyle = '#808080'; g.fillRect(0, 0, 512, 256);
+  g.strokeStyle = '#5a5a5a'; g.lineWidth = 6; g.strokeRect(40, 40, 432, 176);
+  g.fillStyle = '#5a5a5a'; g.font = '600 64px Helvetica, Arial'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText('FINE GOLD', 256, 108);
+  g.font = '600 52px Helvetica, Arial'; g.fillText('999.9', 256, 170);
+  const t = new THREE.CanvasTexture(c); return t;
+}
+const bump = topBump();
+
+const goldSide = new THREE.MeshPhysicalMaterial({ color: 0xe9ad45, metalness: 1, roughness: 0.17, clearcoat: 0.4, clearcoatRoughness: 0.12, envMapIntensity: 0.75 });
+
+function ingotGeometry(w, h, d, taper) {
+  const geo = new RoundedBoxGeometry(w, h, d, 6, Math.min(h, w, d) * 0.12);
+  const pos = geo.attributes.position;
+  for (let i = 0; i < pos.count; i++) {
+    const y = pos.getY(i);
+    const t = (y + h / 2) / h; // 0 bottom -> 1 top
+    const s = 1 - taper * t;
+    pos.setX(i, pos.getX(i) * s);
+    pos.setZ(i, pos.getZ(i) * (1 - taper * 0.9 * t));
+  }
+  geo.computeVertexNormals();
+  return geo;
+}
+const IG = ingotGeometry(2.4, 0.62, 1.15, 0.2);
+
+function makeIngot(x, y, z, ry, tilt = 0) {
+  const grp = new THREE.Group();
+  const m = new THREE.Mesh(IG, goldSide);
+  m.castShadow = true; m.receiveShadow = true;
+  grp.add(m);
+  // engraved plate on top
+  const plateMat = new THREE.MeshPhysicalMaterial({ color: 0xe9ad45, metalness: 1, roughness: 0.22, bumpMap: bump, bumpScale: 2.2, envMapIntensity: 0.75 });
+  const plate = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.68), plateMat);
+  plate.rotation.x = -Math.PI / 2; plate.position.y = 0.311;
+  grp.add(plate);
+  grp.position.set(x, y + 0.31, z);
+  grp.rotation.y = ry; grp.rotation.z = tilt;
+  scene.add(grp);
+  return grp;
+}
+
+// Floor: dark mirror
+const mirror = new Reflector(new THREE.CircleGeometry(200, 64), { textureWidth: W, textureHeight: H, color: 0x2a2a2c });
+mirror.rotation.x = -Math.PI / 2; mirror.position.y = -0.001; scene.add(mirror);
+const dim = new THREE.Mesh(new THREE.CircleGeometry(200, 64), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.8, fog: false }));
+dim.rotation.x = -Math.PI / 2; dim.receiveShadow = true; scene.add(dim);
+const fadeC=document.createElement('canvas');fadeC.width=fadeC.height=512;const fg=fadeC.getContext('2d');const gr=fg.createRadialGradient(256,256,0,256,256,256);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(0.16,'rgba(0,0,0,0)');gr.addColorStop(0.5,'rgba(0,0,0,1)');gr.addColorStop(1,'rgba(0,0,0,1)');fg.fillStyle=gr;fg.fillRect(0,0,512,512);
+const fade=new THREE.Mesh(new THREE.PlaneGeometry(60,60),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(fadeC),transparent:true,depthWrite:false}));fade.rotation.x=-Math.PI/2;fade.position.y=0.004;scene.add(fade);
+const outer=new THREE.Mesh(new THREE.RingGeometry(29,300,64),new THREE.MeshBasicMaterial({color:0}));outer.rotation.x=-Math.PI/2;outer.position.y=0.005;scene.add(outer);
+const shadowCatcher = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.55 }));
+shadowCatcher.rotation.x = -Math.PI / 2; shadowCatcher.position.y = 0.002; shadowCatcher.receiveShadow = true; scene.add(shadowCatcher);
+
+// Stack: pyramid 3-2-1
+const L = 2.5, Hh = 0.62;
+if (shot === 'hero') {
+  [-1.28, 1.28].forEach((x) => {});
+  makeIngot(-L * 1.02, 0, 0, 0);
+  makeIngot(0, 0, 0, 0);
+  makeIngot(L * 1.02, 0, 0, 0);
+  makeIngot(-L * 0.5, Hh, 0, 0);
+  makeIngot(L * 0.5, Hh, 0, 0);
+  makeIngot(0, Hh * 2, 0, 0);
+  makeIngot(-5.0, 0, 1.6, 0.5);
+  makeIngot(4.9, 0, 1.8, -0.55);
+} else {
+  makeIngot(0, 0, 0, 0.35);
+  makeIngot(-0.1, Hh*0.97, -0.05, 0.28);
+  makeIngot(2.6, 0, 1.4, -0.4);
+  makeIngot(-2.7, 0, 1.3, 0.75);
+}
+
+// Lights
+scene.add(new THREE.AmbientLight(0xffffff, 0.05));
+const key = new THREE.SpotLight(0xfff1d6, 420, 40, Math.PI / 5, 0.6, 1.6);
+key.position.set(2, 11, 6); key.target.position.set(0, 0.6, 0);
+key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0004; key.shadow.radius = 6;
+scene.add(key, key.target);
+const rim = new THREE.SpotLight(0xa52933, 220, 40, Math.PI / 4, 0.7, 1.5);
+rim.position.set(-6, 5, -8); rim.target.position.set(0, 0.6, 0); scene.add(rim, rim.target);
+const rim2 = new THREE.SpotLight(0xffd9a0, 120, 40, Math.PI / 4, 0.7, 1.5);
+rim2.position.set(7, 4, -6); rim2.target.position.set(0, 0.6, 0); scene.add(rim2, rim2.target);
+
+const fill = new THREE.SpotLight(0xffe7c2, 140, 60, Math.PI/6, 0.8, 1.4); fill.position.set(-3, 3.2, 14); fill.target.position.set(0,0.8,0); scene.add(fill, fill.target);
+const haloC=document.createElement('canvas');haloC.width=haloC.height=256;const hg=haloC.getContext('2d');const hgr=hg.createRadialGradient(128,128,0,128,128,128);hgr.addColorStop(0,'rgba(165,41,51,0.55)');hgr.addColorStop(0.45,'rgba(120,28,36,0.18)');hgr.addColorStop(1,'rgba(0,0,0,0)');hg.fillStyle=hgr;hg.fillRect(0,0,256,256);
+const halo=new THREE.Mesh(new THREE.PlaneGeometry(shot==='hero'?26:16, shot==='hero'?11:9),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(haloC),transparent:true,depthWrite:false,blending:THREE.AdditiveBlending}));halo.position.set(0,shot==='hero'?2.4:2.2,shot==='hero'?-4:-3.5);
+const cam = new THREE.PerspectiveCamera(shot === 'hero' ? 26 : 30, W / H, 0.1, 100);
+if (shot === 'hero') { cam.position.set(0, 4.6, 15.5); cam.lookAt(0, 0.85, 0); }
+else { cam.position.set(1.5, 4.4, 9.2); cam.lookAt(-0.2, 0.55, 0.3); }
+
+renderer.render(scene, cam);
+window.__done = true;
+</script>
+</body></html>
